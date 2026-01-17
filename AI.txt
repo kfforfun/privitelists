@@ -31,8 +31,6 @@ DOMAIN-SUFFIX,anthropic.com
 DOMAIN,copilot.microsoft.com
 DOMAIN,sydney.bing.com
 DOMAIN,www.bing.com
-# > GitHub Copilot
-DOMAIN-SUFFIX,githubcopilot.com
 
 # > Grok
 DOMAIN-SUFFIX,grok.com
