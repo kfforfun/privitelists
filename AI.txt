@@ -12,7 +12,11 @@ DOMAIN,o33249.ingest.sentry.io
 DOMAIN,openaiapi-site.azureedge.net
 DOMAIN-KEYWORD,openaiapi
 DOMAIN-KEYWORD,openaicom
-
+# 鉴权与验证 (极其重要，否则无法登录)
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,arkoselabs.com
+DOMAIN-SUFFIX,sentinelone.net
 
 # > Apple Intelligence
 DOMAIN-SUFFIX,apps.mzstatic.com
@@ -36,6 +40,10 @@ DOMAIN,www.bing.com
 # > Grok
 DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,grok.x.ai
+# Grok 的 API 接口
+DOMAIN-SUFFIX,api.x.ai
+DOMAIN-SUFFIX,assets.grok.x.ai
 
 # > Perplexity
 DOMAIN-SUFFIX,perplexity.ai
