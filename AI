@@ -32,11 +32,6 @@ DOMAIN,guzzoni.apple.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,anthropic.com
 
-# > Microsoft Copilot
-DOMAIN,copilot.microsoft.com
-DOMAIN,sydney.bing.com
-DOMAIN,www.bing.com
-
 # > Grok
 DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,x.ai
@@ -48,4 +43,6 @@ DOMAIN-SUFFIX,assets.grok.x.ai
 # > Perplexity
 DOMAIN-SUFFIX,perplexity.ai
 DOMAIN-SUFFIX,pplx.ai
-DOMAIN,pplx-res.cloudinary.com
+# Perplexity 的 API 与实验室子域 (已被上方 .ai 覆盖，但保留以防特殊路由)
+DOMAIN-SUFFIX,labs.perplexity.ai
+DOMAIN-SUFFIX,api.perplexity.ai
