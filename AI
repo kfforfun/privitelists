@@ -1,48 +1,43 @@
-# > ChatGPT
-DOMAIN-SUFFIX,chat.com
+# =========================================
+# 🧠 Rule Set 3: AI Services (OpenAI / Grok / Claude / Perplexity)
+# Updated: 2026-01-26 (包含 2026 最新 GPT-5.2 & Grok 5 接口)
+# =========================================
+
+# --- OpenAI (ChatGPT & Sora) ---
 DOMAIN-SUFFIX,chatgpt.com
-DOMAIN-SUFFIX,livekit.cloud
+DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
-DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chat.com
 DOMAIN-SUFFIX,sora.com
-DOMAIN,api.statsig.com
-DOMAIN,api-iam.intercom.io
-DOMAIN,o33249.ingest.sentry.io
-DOMAIN,openaiapi-site.azureedge.net
-DOMAIN-KEYWORD,openaiapi
-DOMAIN-KEYWORD,openaicom
-# 鉴权与验证 (极其重要，否则无法登录)
+# 2. 鉴权、验证与 Voice 增强 (Persona 验证服务)
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,identrust.com
 DOMAIN-SUFFIX,arkoselabs.com
 DOMAIN-SUFFIX,sentinelone.net
+DOMAIN-SUFFIX,persona.org
 
-# > Apple Intelligence
-DOMAIN-SUFFIX,apps.mzstatic.com
-DOMAIN-SUFFIX,smoot.apple.com
-DOMAIN,gspe1-ssl.ls.apple.com
-DOMAIN,apple-relay.apple.com
-DOMAIN,apple-relay.cloudflare.com
-DOMAIN,apple-relay.fastly-edge.com
-DOMAIN,cp4.cloudflare.com
-DOMAIN,guzzoni.apple.com
-
-# > Claude
+# --- Anthropic (Claude & CoWork) ---
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,anthropic.com
+# 2. 静态资源与虚拟执行环境
+DOMAIN-SUFFIX,servd.host
 
-# > Grok
+# --- xAI (Grok 5 & Business) ---
 DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,grok.x.ai
-# Grok 的 API 接口
 DOMAIN-SUFFIX,api.x.ai
 DOMAIN-SUFFIX,assets.grok.x.ai
+# 2. Grok 视频与多媒体生成 CDN
+DOMAIN-SUFFIX,ibyteimg.com
+DOMAIN-SUFFIX,ipstatp.com
 
-# > Perplexity
+# --- Perplexity AI (Deep Research & Government) ---
 DOMAIN-SUFFIX,perplexity.ai
 DOMAIN-SUFFIX,pplx.ai
-# Perplexity 的 API 与实验室子域 (已被上方 .ai 覆盖，但保留以防特殊路由)
-DOMAIN-SUFFIX,labs.perplexity.ai
+# 2. API 与实验性后端
 DOMAIN-SUFFIX,api.perplexity.ai
+DOMAIN-SUFFIX,labs.perplexity.ai
+
+
