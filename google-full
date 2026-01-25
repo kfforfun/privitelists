@@ -100,34 +100,4 @@ DOMAIN-SUFFIX,clients6.google.com
 DOMAIN-SUFFIX,clients4.google.com
 DOMAIN-SUFFIX,clients2.google.com
 
-# =========================================
-# 🎵 Rule Set 4: TikTok (Global & US Infra)
-# Updated: 2026-01-25
-# Note: Since TikTok ownership changed, prioritize US nodes.
-# =========================================
-
-# --- Core Domains (核心业务) ---
-DOMAIN-SUFFIX,tiktok.com
-DOMAIN-SUFFIX,tiktokv.com
-DOMAIN-SUFFIX,tiktokcdn.com
-DOMAIN-SUFFIX,tiktokcdn-us.com
-DOMAIN-SUFFIX,tiktokd.org
-DOMAIN-SUFFIX,tik-tokapi.com
-
-# --- Legacy & Infrastructure (旧版与基础架构) ---
-DOMAIN-SUFFIX,musical.ly
-DOMAIN-SUFFIX,muscdn.com
-DOMAIN-SUFFIX,byteoversea.com
-DOMAIN-SUFFIX,ibytedtos.com
-DOMAIN-SUFFIX,ibyteimg.com
-DOMAIN-SUFFIX,ipstatp.com
-DOMAIN-SUFFIX,sgpstatp.com
-
-# --- Live Streaming (直播流媒体) ---
-DOMAIN-SUFFIX,tlivecdn.com
-DOMAIN-SUFFIX,ttlivecdn.com
-
-# --- Third-party Integrations (登录与分发) ---
-DOMAIN-SUFFIX,tiktok.com.c.worldfcdn.com
-DOMAIN-KEYWORD,tiktokcdn
 
