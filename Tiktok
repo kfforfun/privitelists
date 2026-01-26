@@ -1,33 +1,39 @@
 # =========================================
-# 🎵 Rule Set 4: TikTok (2026 New USDS JV)
-# Updated: 2026-01-26 (TikTok 已出售版)
-# (建议策略：美国节点 - 获取 2026 新版美区算法流)
+# 🎵 Rule Set 4: TikTok (2026 Post-Sale)
+# Updated: 2026-01-27
+# Note: Prioritize US Nodes for Oracle Infra
 # =========================================
 
 # --- 2026 新增：USDS 合资公司与 Oracle 基础设施 ---
 DOMAIN-SUFFIX,tiktokusds.com
 DOMAIN-SUFFIX,tiktokv.us
-DOMAIN-SUFFIX,tiktokcdn-us.com
 DOMAIN-SUFFIX,ttdns2.com
 
-# --- 核心业务域名 (保持稳定) ---
+# --- 核心业务域名 ---
 DOMAIN-SUFFIX,tiktok.com
 DOMAIN-SUFFIX,tiktokv.com
 DOMAIN-SUFFIX,tiktokcdn.com
+DOMAIN-SUFFIX,tiktokcdn-us.com
 DOMAIN-SUFFIX,tiktokd.org
 DOMAIN-SUFFIX,tik-tokapi.com
+DOMAIN-SUFFIX,tiktokmusic.app
 
-# --- 媒体分发与 CDN (甲骨文云/Akamai) ---
+# --- 基础设施与 CDN ---
 DOMAIN-SUFFIX,byteoversea.com
 DOMAIN-SUFFIX,ibytedtos.com
 DOMAIN-SUFFIX,ibyteimg.com
 DOMAIN-SUFFIX,ipstatp.com
 DOMAIN-SUFFIX,sgpstatp.com
+DOMAIN-SUFFIX,isnssdk.com
+DOMAIN-SUFFIX,muscdn.com
+DOMAIN-SUFFIX,musical.ly
 
-# --- 直播与短视频分发 ---
+# --- 直播流媒体 ---
 DOMAIN-SUFFIX,tlivecdn.com
 DOMAIN-SUFFIX,ttlivecdn.com
+DOMAIN,p16-tiktokcdn-com.akamaized.net
 
-# --- 2026 关键匹配符 ---
+# --- 匹配符 ---
 DOMAIN-KEYWORD,tiktokcdn
 DOMAIN-KEYWORD,-tiktok-
+USER-AGENT,TikTok*
