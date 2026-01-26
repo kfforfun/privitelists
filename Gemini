@@ -1,6 +1,7 @@
 # =========================================
-# 🤖 Rule Set 1: Gemini & AI Dedicated (Update: 2026-01-20)
-# (建议策略：美国节点 / 支持 AI 生成的节点)
+# 🤖 Rule Set 1: Gemini & AI Dedicated
+# Updated: 2026-01-27
+# Description: 包含 Gemini 3.0, Antigravity, DeepMind
 # =========================================
 
 # 1. 网页前端与实验室
@@ -15,23 +16,22 @@ DOMAIN-SUFFIX,jules.google
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepmind.google
 DOMAIN-SUFFIX,labs.google
+DOMAIN-SUFFIX,antigravity.google
 
-# 2. AI 核心 API (2026 新增：支持 Personal Intelligence 跨应用流转)
+# 2. AI 核心 API (含 2026 Personal Intelligence)
 DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
 DOMAIN-SUFFIX,jnn-pa.googleapis.com
 DOMAIN-SUFFIX,geller-pa.googleapis.com
 DOMAIN-SUFFIX,robinfrontend-pa.googleapis.com
 DOMAIN-SUFFIX,optimizationguide-pa.googleapis.com
-# [2026-01-20 新增] 支持 Gemini 3 高速回答与上下文记忆
 DOMAIN-SUFFIX,personal-intelligence.googleapis.com
 DOMAIN-SUFFIX,answer-now.googleapis.com
 
-# 3. 内部客户端特定 AI 接口 (保持最新匹配)
+# 3. 内部客户端特定 AI 接口
 DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com
 DOMAIN-SUFFIX,waa-pa.clients6.google.com
 DOMAIN-SUFFIX,ogads-pa.clients6.google.com
-# [2026-01-20 新增] 针对 Gemini 移动端 App 的新鉴权接口
 DOMAIN-SUFFIX,assistant-pa.clients6.google.com
 
 # 4. 机器学习平台
@@ -41,4 +41,3 @@ DOMAIN-SUFFIX,kaggle.io
 DOMAIN-SUFFIX,tensorboard.dev
 DOMAIN-SUFFIX,tensorflow.org
 DOMAIN-SUFFIX,tfhub.dev
-
