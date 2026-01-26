@@ -1,6 +1,7 @@
 # =========================================
-# 🧠 Rule Set 3: AI Services (OpenAI / Grok / Claude / Perplexity)
-# Updated: 2026-01-26 (包含 2026 最新 GPT-5.2 & Grok 5 接口)
+# 🧠 Rule Set 3: AI Services (All-in-One)
+# Updated: 2026-01-27
+# Services: ChatGPT, Grok, Claude, Perplexity
 # =========================================
 
 # --- OpenAI (ChatGPT & Sora) ---
@@ -10,34 +11,30 @@ DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,chat.com
 DOMAIN-SUFFIX,sora.com
-# 2. 鉴权、验证与 Voice 增强 (Persona 验证服务)
+# 鉴权与验证
+DOMAIN-SUFFIX,persona.org
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,identrust.com
 DOMAIN-SUFFIX,arkoselabs.com
 DOMAIN-SUFFIX,sentinelone.net
-DOMAIN-SUFFIX,persona.org
 
-# --- Anthropic (Claude & CoWork) ---
+# --- Anthropic (Claude) ---
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,anthropic.com
-# 2. 静态资源与虚拟执行环境
+DOMAIN-SUFFIX,platform.claude.com
 DOMAIN-SUFFIX,servd.host
 
-# --- xAI (Grok 5 & Business) ---
+# --- xAI (Grok) ---
 DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,grok.x.ai
 DOMAIN-SUFFIX,api.x.ai
 DOMAIN-SUFFIX,assets.grok.x.ai
-# 2. Grok 视频与多媒体生成 CDN
 DOMAIN-SUFFIX,ibyteimg.com
 DOMAIN-SUFFIX,ipstatp.com
 
-# --- Perplexity AI (Deep Research & Government) ---
+# --- Perplexity AI ---
 DOMAIN-SUFFIX,perplexity.ai
 DOMAIN-SUFFIX,pplx.ai
-# 2. API 与实验性后端
 DOMAIN-SUFFIX,api.perplexity.ai
 DOMAIN-SUFFIX,labs.perplexity.ai
-
-
