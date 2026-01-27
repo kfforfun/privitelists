@@ -9,6 +9,7 @@ DOMAIN-SUFFIX,appleid.apple.com,
 DOMAIN,gsa.apple.com,
 DOMAIN,gsa.idms-apple.com.akadns.net,
 DOMAIN,idmsa.apple.com,
+DOMAIN,idmsa-urm-new.apple.com,
 
 # 证书安全验证
 DOMAIN,ocsp.apple.com,
@@ -26,6 +27,8 @@ DOMAIN,api.icloud.com,
 DOMAIN,api.icloud.com.cn,
 DOMAIN,gateway.icloud.com,
 DOMAIN,gateway.icloud.com.cn,
+DOMAIN,containers.icloud.com,
+DOMAIN,query.icloud.com,
 
 # iCloud 基础功能
 DOMAIN,contacts.icloud.com,
@@ -57,6 +60,7 @@ DOMAIN-SUFFIX,push.apple.com,
 # 查找网络
 DOMAIN-SUFFIX,findmy.network,
 DOMAIN,gateway.fe2.apple-dns.net,
+DOMAIN,gateway-carry.icloud.com,
 
 # FaceTime / iMessage 激活
 DOMAIN-SUFFIX,gc.apple.com,
@@ -64,3 +68,4 @@ DOMAIN,init.ess.apple.com,
 
 # 设备管理
 DOMAIN,gdmf.apple.com,
+DOMAIN,mdmenrollment.apple.com,
