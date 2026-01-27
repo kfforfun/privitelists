@@ -1,121 +1,105 @@
 # =============================================
-# Apple 订阅/购买服务代理规则
-# 作用：副账号涉及的所有订阅、购买、内容、权益验证
-# 包含：App Store、Apple Music、TV+、播客、图书、iCloud+ 权益、TestFlight
+# Apple 订阅/购买/媒体服务
+# 适用：副账号 App Store、所有订阅内容、权益验证
 # =============================================
 
-# --- App Store 核心（购买/下载/更新）---
-DOMAIN-SUFFIX,itunes.apple.com,PROXY
-DOMAIN,itunes.apple.com,PROXY
-DOMAIN,s.itunes.apple.com,PROXY
-DOMAIN,mz.itunes.apple.com,PROXY
-DOMAIN,buy.itunes.apple.com,PROXY
-DOMAIN,buy.itunes.apple.com.akadns.net,PROXY
-DOMAIN,search.itunes.apple.com,PROXY
-DOMAIN,init.itunes.apple.com,PROXY
-DOMAIN,ax.itunes.apple.com,PROXY
+# App Store 核心
+DOMAIN-SUFFIX,itunes.apple.com,
+DOMAIN,itunes.apple.com,
+DOMAIN,s.itunes.apple.com,
+DOMAIN,mz.itunes.apple.com,
+DOMAIN,buy.itunes.apple.com,
+DOMAIN,buy.itunes.apple.com.akadns.net,
+DOMAIN,search.itunes.apple.com,
+DOMAIN,init.itunes.apple.com,
+DOMAIN,ax.itunes.apple.com,
+DOMAIN-SUFFIX,apps.apple.com,
+DOMAIN,appstore.com,
 
-# App Store 页面浏览
-DOMAIN-SUFFIX,apps.apple.com,PROXY
-DOMAIN,appstore.com,PROXY
+# 订阅与权益验证
+DOMAIN,entitlements.itunes.apple.com,
+DOMAIN,entitlements-edge.itunes.apple.com,
+DOMAIN,bookkeeper.itunes.apple.com,
+DOMAIN,bag.itunes.apple.com,
+DOMAIN,fpinit.itunes.apple.com,
+DOMAIN,vpp.itunes.apple.com,
+DOMAIN,vpp.itunes.apple.com.akadns.net,
 
-# --- 订阅与权益验证（关键）---
-# 订阅权益验证（告诉设备有哪些订阅权限）
-DOMAIN,entitlements.itunes.apple.com,PROXY
-DOMAIN,entitlements-edge.itunes.apple.com,PROXY
-# 订阅记账/账单验证
-DOMAIN,bookkeeper.itunes.apple.com,PROXY
-# iTunes/App Store 购买容器（包含订阅信息）
-DOMAIN,bag.itunes.apple.com,PROXY
-# iTunes 服务初始化（验证订阅状态）
-DOMAIN,fpinit.itunes.apple.com,PROXY
-# VPP 批量购买/企业应用验证
-DOMAIN,vpp.itunes.apple.com,PROXY
-DOMAIN,vpp.itunes.apple.com.akadns.net,PROXY
+# 内容播放
+DOMAIN,play.itunes.apple.com,
+DOMAIN,play-edge.itunes.apple.com,
 
-# --- 内容播放（权益鉴定）---
-DOMAIN,play.itunes.apple.com,PROXY
-DOMAIN,play-edge.itunes.apple.com,PROXY
+# App Store CDN
+DOMAIN-SUFFIX,mzstatic.com,
+DOMAIN,p.mzstatic.com,
+DOMAIN,s.mzstatic.com,
 
-# --- App Store 资源 CDN ---
-DOMAIN-SUFFIX,mzstatic.com,PROXY
-DOMAIN,p.mzstatic.com,PROXY
-DOMAIN,s.mzstatic.com,PROXY
+# Apple Music
+DOMAIN-SUFFIX,music.apple.com,
+DOMAIN,myip.apple.com,
+DOMAIN,amp-api.music.apple.com,
+DOMAIN,amp-api-edge.music.apple.com,
 
-# --- Apple Music（订阅音乐服务）---
-DOMAIN-SUFFIX,music.apple.com,PROXY
-DOMAIN,myip.apple.com,PROXY
-DOMAIN,amp-api.music.apple.com,PROXY
-DOMAIN,amp-api-edge.music.apple.com,PROXY
+# Apple TV+
+DOMAIN-SUFFIX,tv.apple.com,
+DOMAIN-SUFFIX,tv.apple.com.akadns.net,
+DOMAIN,sylvan.apple.com,
+DOMAIN,sylvan.apple.com.edgekey.net,
+DOMAIN,hls-amt.itunes.apple.com,
+DOMAIN,hls.itunes.apple.com,
+DOMAIN,hls-svod.itunes.apple.com,
+DOMAIN,np-edge.itunes.apple.com,
+DOMAIN,linear.tv.apple.com,
 
-# --- Apple TV+ / 电影（订阅视频服务）---
-DOMAIN-SUFFIX,tv.apple.com,PROXY
-DOMAIN-SUFFIX,tv.apple.com.akadns.net,PROXY
-DOMAIN,sylvan.apple.com,PROXY
-DOMAIN,sylvan.apple.com.edgekey.net,PROXY
-DOMAIN,hls-amt.itunes.apple.com,PROXY
-DOMAIN,hls.itunes.apple.com,PROXY
-DOMAIN,hls-svod.itunes.apple.com,PROXY
-DOMAIN,np-edge.itunes.apple.com,PROXY
-DOMAIN,linear.tv.apple.com,PROXY
+# Apple Podcasts
+DOMAIN-SUFFIX,podcasts.apple.com,
+DOMAIN,amp-api.podcasts.apple.com,
+DOMAIN,podcast.apple.com,
+DOMAIN,delivery-cdn.podcasts.apple.com,
 
-# --- Apple Podcasts（播客订阅）---
-DOMAIN-SUFFIX,podcasts.apple.com,PROXY
-DOMAIN,amp-api.podcasts.apple.com,PROXY
-DOMAIN,amp-api.podcast.apple.com,PROXY
-DOMAIN,podcast.apple.com,PROXY
-DOMAIN,delivery-cdn.podcasts.apple.com,PROXY
+# Apple Books
+DOMAIN-SUFFIX,books.apple.com,
+DOMAIN-SUFFIX,audiobooks.apple.com,
 
-# --- Apple Books / 有声书（购买/订阅）---
-DOMAIN-SUFFIX,books.apple.com,PROXY
-DOMAIN-SUFFIX,audiobooks.apple.com,PROXY
+# Apple One
+DOMAIN,one.apple.com,
 
-# --- Apple One 订阅捆绑包 ---
-DOMAIN,one.apple.com,PROXY
+# iCloud+ 权益验证
+DOMAIN,setup.icloud.com,
+DOMAIN,setup.icloud.com.cn,
 
-# --- iCloud+ 权益验证（注意：与基础 iCloud 数据同步区分）---
-# iCloud+ 存储升级、Private Relay、Hide My Email 的权益验证通过 itunes 域名
-# 但 iCloud+ 功能开关设置可能涉及 setup.icloud.com
-# 如果副账号购买了 iCloud+，以下域名需要代理以确保权益验证走副账号区域
-DOMAIN,setup.icloud.com,PROXY
-DOMAIN,setup.icloud.com.cn,PROXY
+# Apple Arcade
+DOMAIN-SUFFIX,arcade.apple.com,
 
-# --- Apple Arcade（游戏订阅）---
-DOMAIN-SUFFIX,arcade.apple.com,PROXY
+# Apple News+
+DOMAIN-SUFFIX,apple.news,
+DOMAIN-SUFFIX,news.apple.com,
+DOMAIN,news-events.apple.com,
+DOMAIN,news-edge.apple.com,
 
-# --- Apple News+（新闻订阅）---
-DOMAIN-SUFFIX,apple.news,PROXY
-DOMAIN-SUFFIX,news.apple.com,PROXY
-DOMAIN,news-events.apple.com,PROXY
-DOMAIN,news-edge.apple.com,PROXY
+# Apple Fitness+
+DOMAIN-SUFFIX,fitness.apple.com,
 
-# --- Apple Fitness+（健身订阅）---
-DOMAIN-SUFFIX,fitness.apple.com,PROXY
+# TestFlight
+DOMAIN-SUFFIX,testflight.apple.com,
+DOMAIN,beta.apple.com,
+DOMAIN,smp-device.content.apple.com,
 
-# --- TestFlight（Beta 测试，与购买账号区域绑定）---
-DOMAIN-SUFFIX,testflight.apple.com,PROXY
-DOMAIN,beta.apple.com,PROXY
-DOMAIN,smp-device.content.apple.com,PROXY
+# Apple Pay
+DOMAIN,humb.apple.com,
+DOMAIN,pos-device.apple.com,
 
-# --- Apple Pay / 钱包订阅凭证验证（如果副账号是支付账号）---
-DOMAIN,humb.apple.com,PROXY
-DOMAIN,pos-device.apple.com,PROXY
+# Shazam
+DOMAIN-SUFFIX,shazam.com,
 
-# --- Shazam（与 Apple Music 订阅联动）---
-DOMAIN-SUFFIX,shazam.com,PROXY
+# 开发者账号
+DOMAIN,appstoreconnect.apple.com,
+DOMAIN,itunesconnect.apple.com,
 
-# --- 开发者账号相关（如果副账号是开发者账号）---
-DOMAIN,appstoreconnect.apple.com,PROXY
-DOMAIN,itunesconnect.apple.com,PROXY
+# 激活锁
+DOMAIN,albert.apple.com,
+DOMAIN,quest.apple.com,
 
-# --- 激活锁/设备解除（与购买记录相关）---
-DOMAIN,albert.apple.com,PROXY
-DOMAIN,quest.apple.com,PROXY
-
-# --- 通用链接/App Clips（可能涉及订阅内容跳转）---
-DOMAIN,app-site-association.cdn-apple.com,PROXY
-DOMAIN,app-site-association.networking.apple,PROXY
-
-# --- 应用分析/推广（与 App Store 账号绑定）---
-DOMAIN-SUFFIX,app-analytics-services.com,PROXY
-DOMAIN,iadcontent.itunes.apple.com,PROXY
+# 应用分析
+DOMAIN-SUFFIX,app-analytics-services.com,
+DOMAIN,iadcontent.itunes.apple.com,
