@@ -1,24 +1,28 @@
 # ==========================================
-# Rule Set: Gemini Text & Voice API Only (Taiwan)
+# Rule Set: Gemini App Core (Taiwan)
 # Position: BEFORE Google rules
-# Design: Stateless API endpoints only (no session maintenance)
+# Scope: Text chat & Live Mode only (interactive traffic)
+# Excludes: Authentication, device registration, background sync
 # ==========================================
 
-# --- 核心文字与多模态生成 (REST API) ---
-# 用途：Gemini 1.5 Pro/Flash/Ultra 文本、图片、文件解析
-# 特征：短连接，HTTP/2 POST，使用 API Key 或 OAuth Token
+# --- 1. 核心生成 API（文字/图片提问）---
+# 用途：常规对话、文件解析、图片生成
+# 协议：HTTPS/HTTP/2 POST
 DOMAIN,generativelanguage.googleapis.com,
 
-# --- Vertex AI 企业端点 (如使用 Vertex SDK) ---
-# 注意：v1beta 版本同样走此域名
-DOMAIN,aiplatform.googleapis.com,
+# --- 2. Live Mode 实时通信（WebSocket/WebChannel）---
+# 用途：实时语音对话双向流（BidiGenerateContent）
+# 注意：长连接会显示"设备在台湾活动"，但仅限应用层
+DOMAIN-SUFFIX,alkalicore-pa.clients6.google.com,
+DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com,
+DOMAIN-SUFFIX,webchannel-alkalimakersuite-pa.clients6.google.com,
 
-# --- 语音输入 (STT - Speech-to-Text) ---
-# 用途：App 内语音转文字查询
-# 特征：分段上传音频流，无长期会话维持
+# --- 3. 语音处理（Live Mode 音频编解码）---
+# 用途：语音转文字输入、语音合成输出（Live 模式内）
+# 注意：与后台 TTS 服务区分，这是实时流内的音频处理
 DOMAIN,speech.googleapis.com,
-
-# --- 语音输出 (TTS - Text-to-Speech) ---
-# 用途：Gemini 朗读回复（点击喇叭图标）
-# 特征：短连接下载音频文件
 DOMAIN,texttospeech.googleapis.com,
+
+# --- 4. 实时信令（Live 模式控制消息）---
+# 用途：开始/结束对话、打断检测、状态同步
+DOMAIN,instantmessaging-pa.googleapis.com,
