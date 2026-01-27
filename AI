@@ -1,44 +1,43 @@
 # =========================================
 # 🧠 Rule Set 3: AI Services (All-in-One)
-# Updated: 2026-01-27
+# Updated: 2026-01-27 (Patch 1)
 # Services: ChatGPT, Grok, Claude, Perplexity
 # =========================================
 
 # --- OpenAI (ChatGPT, Sora & DALL-E) ---
-DOMAIN-SUFFIX,chatgpt.com
-DOMAIN-SUFFIX,openai.com
-DOMAIN-SUFFIX,oaistatic.com
-DOMAIN-SUFFIX,oaiusercontent.com
-DOMAIN-SUFFIX,chat.com
-DOMAIN-SUFFIX,sora.com
-DOMAIN-SUFFIX,openaiapi-site.azureedge.net
-DOMAIN-SUFFIX,openaicom.imgix.net
-# 鉴权、验证与安全 (Auth & Security)
-DOMAIN-SUFFIX,auth0.com
-DOMAIN-SUFFIX,identrust.com
-DOMAIN-SUFFIX,arkoselabs.com
-DOMAIN-SUFFIX,sentinelone.net
-DOMAIN-SUFFIX,persona.org
-# Stripe 支付 (可选，若无法订阅 Plus 请开启)
-# DOMAIN-SUFFIX,stripe.com
+DOMAIN-SUFFIX,chatgpt.com,PROXY
+DOMAIN-SUFFIX,openai.com,PROXY
+DOMAIN-SUFFIX,oaistatic.com,PROXY
+DOMAIN-SUFFIX,oaiusercontent.com,PROXY
+DOMAIN-SUFFIX,chat.com,PROXY
+DOMAIN-SUFFIX,sora.com,PROXY
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net,PROXY
+DOMAIN-SUFFIX,openaicom.imgix.net,PROXY
+# 鉴权、验证与安全
+DOMAIN-SUFFIX,auth0.com,PROXY
+DOMAIN-SUFFIX,identrust.com,PROXY
+DOMAIN-SUFFIX,arkoselabs.com,PROXY
+DOMAIN-SUFFIX,sentinelone.net,PROXY
+DOMAIN-SUFFIX,persona.org,PROXY
+# 新增: 功能灰度测试 (Feature Flags)
+DOMAIN-SUFFIX,featuregates.org,PROXY
 
 # --- Anthropic (Claude) ---
-DOMAIN-SUFFIX,claude.ai
-DOMAIN-SUFFIX,anthropic.com
-DOMAIN-SUFFIX,platform.claude.com
-DOMAIN-SUFFIX,servd.host
-DOMAIN-SUFFIX,cdn.usefathom.com
+DOMAIN-SUFFIX,claude.ai,PROXY
+DOMAIN-SUFFIX,anthropic.com,PROXY
+DOMAIN-SUFFIX,platform.claude.com,PROXY
+DOMAIN-SUFFIX,servd.host,PROXY
+DOMAIN-SUFFIX,cdn.usefathom.com,PROXY
 
 # --- xAI (Grok) ---
-# 修正: 已移除误入的 ByteDance 域名
-DOMAIN-SUFFIX,grok.com
-DOMAIN-SUFFIX,x.ai
-DOMAIN-SUFFIX,grok.x.ai
-DOMAIN-SUFFIX,api.x.ai
-DOMAIN-SUFFIX,assets.grok.x.ai
+DOMAIN-SUFFIX,grok.com,PROXY
+DOMAIN-SUFFIX,x.ai,PROXY
+DOMAIN-SUFFIX,grok.x.ai,PROXY
+DOMAIN-SUFFIX,api.x.ai,PROXY
+DOMAIN-SUFFIX,assets.grok.x.ai,PROXY
 
 # --- Perplexity AI ---
-DOMAIN-SUFFIX,perplexity.ai
-DOMAIN-SUFFIX,pplx.ai
-DOMAIN-SUFFIX,api.perplexity.ai
-DOMAIN-SUFFIX,labs.perplexity.ai
+DOMAIN-SUFFIX,perplexity.ai,PROXY
+DOMAIN-SUFFIX,pplx.ai,PROXY
+DOMAIN-SUFFIX,api.perplexity.ai,PROXY
+DOMAIN-SUFFIX,labs.perplexity.ai,PROXY
