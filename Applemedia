@@ -16,6 +16,12 @@ DOMAIN,ax.itunes.apple.com,
 DOMAIN-SUFFIX,apps.apple.com,
 DOMAIN,appstore.com,
 
+# App Store 应用下载
+DOMAIN,iosapps-ssl.itunes.apple.com,
+DOMAIN,iosapps.itunes.apple.com,
+DOMAIN,osxapps-ssl.itunes.apple.com,
+DOMAIN,osxapps.itunes.apple.com,
+
 # 订阅与权益验证
 DOMAIN,entitlements.itunes.apple.com,
 DOMAIN,entitlements-edge.itunes.apple.com,
@@ -95,6 +101,10 @@ DOMAIN-SUFFIX,shazam.com,
 # 开发者账号
 DOMAIN,appstoreconnect.apple.com,
 DOMAIN,itunesconnect.apple.com,
+
+# 软件更新 CDN（含应用更新）
+DOMAIN,updates.cdn-apple.com,
+DOMAIN,updates-http.cdn-apple.com,
 
 # 激活锁
 DOMAIN,albert.apple.com,
