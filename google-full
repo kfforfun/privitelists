@@ -1,43 +1,44 @@
 # ==========================================
 # Rule Set: Google Services (US)
 # Position: AFTER Gemini-Client-All
+# Strategy: PROXY (US Node)
 # ==========================================
 
-# --- 1. 账号与认证（美国，统一环境）---
-DOMAIN,accounts.google.com,
-DOMAIN,accounts.google.cn,
-DOMAIN,myaccount.google.com,
-DOMAIN,admin.google.com,
-DOMAIN,oauth2.googleapis.com,
-DOMAIN,openidconnect.googleapis.com,
-DOMAIN,securetoken.googleapis.com,
+# --- 1. 账号与认证 (必须走代理以防地区跳变) ---
+DOMAIN,accounts.google.com
+DOMAIN,myaccount.google.com
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,googletagmanager.com
+DOMAIN-SUFFIX,recaptcha.net
 
-# --- 2. Web 版 AI Studio（明确走美国，因为你用客户端）---
-DOMAIN,aistudio.google.com,
-DOMAIN,makersuite.google.com,
-DOMAIN,bard.google.com,
-DOMAIN,gemini.google.com,  # 网页版 Gemini（与 App 区分）
+# --- 2. Web 版 AI Studio & Gemini ---
+DOMAIN,aistudio.google.com
+DOMAIN,makersuite.google.com
+DOMAIN,bard.google.com
+DOMAIN,gemini.google.com
 
-# --- 3. 相册、云盘、Gmail（美国）---
-DOMAIN,photos.google.com,
-DOMAIN-SUFFIX,photos.googleapis.com,
-DOMAIN-SUFFIX,drive.google.com,
-DOMAIN-SUFFIX,docs.google.com,
-DOMAIN-SUFFIX,gmail.com,
-DOMAIN-SUFFIX,mail.google.com,
+# --- 3. 相册、云盘、Gmail ---
+# 修复了之前的 URL 错误，并补充了图片服务器
+DOMAIN,photos.google.com
+DOMAIN,mail.google.com
+DOMAIN,maps.google.com
+DOMAIN-SUFFIX,drive.google.com
+DOMAIN-SUFFIX,docs.google.com
+DOMAIN-SUFFIX,ggpht.com  # 关键：Google Photos 的图片资源
+DOMAIN-SUFFIX,gmail.com
 
-# --- 4. YouTube & Media（美国）---
-DOMAIN-SUFFIX,youtube.com,
-DOMAIN-SUFFIX,googlevideo.com,
-DOMAIN-SUFFIX,ytimg.com,
-DOMAIN-SUFFIX,widevine.com,
+# --- 4. YouTube & Media ---
+DOMAIN-SUFFIX,youtube.com
+DOMAIN-SUFFIX,googlevideo.com
+DOMAIN-SUFFIX,ytimg.com
+DOMAIN-SUFFIX,youtu.be
+DOMAIN-SUFFIX,widevine.com # DRM 验证
 
-# --- 5. 地图、搜索（美国）---
-DOMAIN-SUFFIX,maps.google.com,
-DOMAIN-SUFFIX,www.google.com,
-
-# --- 6. 兜底（剩余所有 Google）---
-DOMAIN-SUFFIX,google.com,
-DOMAIN-SUFFIX,googleapis.com,
-DOMAIN-SUFFIX,gstatic.com,
-DOMAIN-SUFFIX,googleusercontent.com,
+# --- 5. 基础架构与兜底 (覆盖所有 Google 服务) ---
+# gvt1.com 常用于 Chrome 组件下载和 Android Play 商店下载
+DOMAIN-SUFFIX,gvt1.com
+DOMAIN-SUFFIX,1e100.net
+DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,google.cn
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,googleusercontent.com
