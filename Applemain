@@ -1,0 +1,69 @@
+# =============================================
+# Apple ID / iCloud 主账号直连规则
+# 作用：设备认证、基础 iCloud 数据同步、系统服务
+# 注意：不含任何订阅/购买相关域名
+# =============================================
+
+# --- Apple ID 身份认证（仅基础登录）---
+DOMAIN-SUFFIX,account.apple.com,DIRECT
+DOMAIN-SUFFIX,appleid.apple.com,DIRECT
+DOMAIN,gsa.apple.com,DIRECT
+DOMAIN,gsa.idms-apple.com.akadns.net,DIRECT
+DOMAIN,idmsa.apple.com,DIRECT
+
+# --- 证书安全验证（必须直连）---
+DOMAIN,ocsp.apple.com,DIRECT
+DOMAIN,ocsp2.apple.com,DIRECT
+DOMAIN,ocsp-lb.apple.com.akadns.net,DIRECT
+DOMAIN,valid.apple.com,DIRECT
+DOMAIN,crl.apple.com,DIRECT
+DOMAIN,certs.apple.com,DIRECT
+
+# --- iCloud 基础数据同步（不含付费权益验证）---
+DOMAIN-SUFFIX,icloud.com,DIRECT
+DOMAIN-SUFFIX,icloud.com.cn,DIRECT
+DOMAIN-SUFFIX,icloud-content.com,DIRECT
+DOMAIN,api.icloud.com,DIRECT
+DOMAIN,api.icloud.com.cn,DIRECT
+DOMAIN,gateway.icloud.com,DIRECT
+DOMAIN,gateway.icloud.com.cn,DIRECT
+
+# iCloud 基础功能（照片、通讯录、日历、备忘录、文件）
+DOMAIN,contacts.icloud.com,DIRECT
+DOMAIN,calendar.icloud.com,DIRECT
+DOMAIN,reminders.icloud.com,DIRECT
+DOMAIN,notes.icloud.com,DIRECT
+DOMAIN,photos.icloud.com,DIRECT
+DOMAIN,mail.icloud.com,DIRECT
+DOMAIN,mail.icloud.com.cn,DIRECT
+DOMAIN,fmip.icloud.com,DIRECT
+DOMAIN,fmip.icloud.com.cn,DIRECT
+
+# iCloud Drive（纯数据）
+DOMAIN,metrics.icloud.com,DIRECT
+
+# CloudKit（开发者后端）
+DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
+DOMAIN-SUFFIX,cloudkit.com,DIRECT
+
+# 旧版邮箱
+DOMAIN-SUFFIX,me.com,DIRECT
+DOMAIN-SUFFIX,mac.com,DIRECT
+
+# --- 系统级基础服务 ---
+DOMAIN,time.apple.com,DIRECT
+DOMAIN,time-ios.apple.com,DIRECT
+DOMAIN,time-macos.apple.com,DIRECT
+DOMAIN,captive.apple.com,DIRECT
+DOMAIN-SUFFIX,push.apple.com,DIRECT
+
+# 查找网络（Find My）
+DOMAIN-SUFFIX,findmy.network,DIRECT
+DOMAIN,gateway.fe2.apple-dns.net,DIRECT
+
+# FaceTime / iMessage 激活
+DOMAIN-SUFFIX,gc.apple.com,DIRECT
+DOMAIN,init.ess.apple.com,DIRECT
+
+# 设备管理（DMF）
+DOMAIN,gdmf.apple.com,DIRECT
