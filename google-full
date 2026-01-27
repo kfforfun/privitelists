@@ -1,52 +1,58 @@
-# =========================================
-# 🌍 Rule Set 2: Google General & Media
-# Strategies: 必须放在 Gemini 规则之后
-# =========================================
+# ==========================================
+# Rule Set: Google All Services (USA)
+# Position: AFTER Gemini-Text-Voice-Only
+# Design: Account session, device registration, and all other services
+# ==========================================
 
-# --- 1. YouTube & Media & DRM ---
-DOMAIN-SUFFIX,youtube.com
-DOMAIN-SUFFIX,googlevideo.com
-DOMAIN-SUFFIX,ytimg.com
-DOMAIN-SUFFIX,youtu.be
-DOMAIN-SUFFIX,ggpht.com
-DOMAIN-SUFFIX,youtube-nocookie.com
-DOMAIN-SUFFIX,youtubeeducation.com
-DOMAIN-SUFFIX,widevine.com
+# --- 1. 账号与认证（强制美国，维持"美国登录"状态）---
+DOMAIN,accounts.google.com,
+DOMAIN,accounts.google.cn,
+DOMAIN,myaccount.google.com,
+DOMAIN,admin.google.com,
+DOMAIN,oauth2.googleapis.com,
+DOMAIN,openidconnect.googleapis.com,
+DOMAIN,securetoken.googleapis.com,
 
-# --- 2. Photos & Drive ---
-DOMAIN-SUFFIX,photos.googleapis.com
-DOMAIN-SUFFIX,photoslibrary.googleapis.com
-DOMAIN-SUFFIX,picasa.google.com
-DOMAIN-SUFFIX,googlephotos.com
-DOMAIN-SUFFIX,photos.app.goo.gl
-DOMAIN-SUFFIX,drive.google.com
-DOMAIN-SUFFIX,docs.google.com
+# --- 2. 设备注册与初始化（关键！防止 iOS/Android 客户端暴露台湾 IP）---
+# Firebase 安装 ID（设备唯一标识注册）
+DOMAIN,firebaseinstallations.googleapis.com,
+# Android 设备认证（iOS 也可能调用）
+DOMAIN,android.googleapis.com,
+DOMAIN,android.clients.google.com,
+# Google Play 服务（App 依赖）
+DOMAIN,play.googleapis.com,
+DOMAIN,device-provisioning.googleapis.com,
 
-# --- 3. Android & Play Store ---
-DOMAIN-SUFFIX,android.com
-DOMAIN-SUFFIX,androidify.com
-DOMAIN-SUFFIX,gvt1.com
-DOMAIN-SUFFIX,gvt2.com
-DOMAIN-SUFFIX,gvt3.com
+# --- 3. 实时助手与会话维持（强制美国，避免台湾 IP 保持长连接）---
+# Proactive Backend（实时推送/后台建议）
+DOMAIN,proactivebackend-pa.googleapis.com,
+# Assistant 内部 API（维持助手状态）
+DOMAIN,assistant-pa.clients6.google.com,
+DOMAIN,robinfrontend-pa.googleapis.com,
+DOMAIN,people-pa.clients6.google.com,
+# 实时上下文（位置、日历）
+DOMAIN,contextaware-pa.googleapis.com,
+DOMAIN,mobilemaps-pa.googleapis.com,
+DOMAIN,semanticlocation-pa.googleapis.com,
 
-# --- 4. 核心基础设施 (兜底) ---
-# ⚠️ 这里包含了根域名，必须放在最后匹配
-DOMAIN-SUFFIX,google.com
-DOMAIN-SUFFIX,google.com.hk
-DOMAIN-SUFFIX,googleapis.com
-DOMAIN-SUFFIX,gstatic.com
-DOMAIN-SUFFIX,googleusercontent.com
-DOMAIN-SUFFIX,g.co
-DOMAIN-SUFFIX,goo.gl
-DOMAIN-SUFFIX,gmail.com
-DOMAIN-SUFFIX,googlemail.com
-DOMAIN-SUFFIX,1e100.net
-DOMAIN-SUFFIX,recaptcha.net
+# --- 4. Web 版 AI Studio（明确走美国）---
+DOMAIN,aistudio.google.com,
+DOMAIN,makersuite.google.com,
+DOMAIN,gemini.google.com,
 
-# --- 5. 其他商业与广告 ---
-DOMAIN-SUFFIX,google-analytics.com
-DOMAIN-SUFFIX,googleadservices.com
-DOMAIN-SUFFIX,googletagmanager.com
-DOMAIN-SUFFIX,doubleclick.net
-DOMAIN-SUFFIX,2mdn.net
-DOMAIN-SUFFIX,abc.xyz
+# --- 5. 相册、云盘、Gmail、YouTube（美国）---
+DOMAIN,photos.google.com,
+DOMAIN-SUFFIX,photos.googleapis.com,
+DOMAIN-SUFFIX,drive.google.com,
+DOMAIN-SUFFIX,docs.google.com,
+DOMAIN-SUFFIX,gmail.com,
+DOMAIN-SUFFIX,youtube.com,
+DOMAIN-SUFFIX,googlevideo.com,
+
+# --- 6. 兜底（剩余所有 Google 服务）---
+DOMAIN-SUFFIX,google.com,
+DOMAIN-SUFFIX,googleapis.com,
+DOMAIN-SUFFIX,gstatic.com,
+DOMAIN-SUFFIX,googleusercontent.com,
+DOMAIN-SUFFIX,gvt1.com,
+DOMAIN-SUFFIX,gvt2.com,
