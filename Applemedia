@@ -1,115 +1,33 @@
 # =============================================
-# Apple 订阅/购买/媒体服务
-# 适用：副账号 App Store、所有订阅内容、权益验证
+# Apple Store / Media / Services (Proxy)
+# 策略：PROXY
 # =============================================
 
-# App Store 核心
-DOMAIN-SUFFIX,itunes.apple.com,
-DOMAIN,itunes.apple.com,
-DOMAIN,s.itunes.apple.com,
-DOMAIN,mz.itunes.apple.com,
-DOMAIN,buy.itunes.apple.com,
-DOMAIN,buy.itunes.apple.com.akadns.net,
-DOMAIN,search.itunes.apple.com,
-DOMAIN,init.itunes.apple.com,
-DOMAIN,ax.itunes.apple.com,
-DOMAIN-SUFFIX,apps.apple.com,
-DOMAIN,appstore.com,
+# --- App Store 商店浏览与购买 ---
+# DOMAIN-SUFFIX 涵盖了 buy, search, bag 等所有子域名
+DOMAIN-SUFFIX,itunes.apple.com
+DOMAIN-SUFFIX,apps.apple.com
+DOMAIN-SUFFIX,mzstatic.com
 
-# App Store 应用下载
-DOMAIN,iosapps-ssl.itunes.apple.com,
-DOMAIN,iosapps.itunes.apple.com,
-DOMAIN,osxapps-ssl.itunes.apple.com,
-DOMAIN,osxapps.itunes.apple.com,
+# --- Apple 媒体服务 (Music, TV, Books) ---
+DOMAIN-SUFFIX,music.apple.com
+DOMAIN-SUFFIX,tv.apple.com
+DOMAIN-SUFFIX,books.apple.com
+DOMAIN-SUFFIX,podcasts.apple.com
+DOMAIN-SUFFIX,audiobooks.apple.com
 
-# 订阅与权益验证
-DOMAIN,entitlements.itunes.apple.com,
-DOMAIN,entitlements-edge.itunes.apple.com,
-DOMAIN,bookkeeper.itunes.apple.com,
-DOMAIN,bag.itunes.apple.com,
-DOMAIN,fpinit.itunes.apple.com,
-DOMAIN,vpp.itunes.apple.com,
-DOMAIN,vpp.itunes.apple.com.akadns.net,
+# --- 增值服务 ---
+DOMAIN-SUFFIX,arcade.apple.com
+DOMAIN-SUFFIX,fitness.apple.com
+DOMAIN-SUFFIX,news.apple.com
+DOMAIN-SUFFIX,apple.news
 
-# 内容播放
-DOMAIN,play.itunes.apple.com,
-DOMAIN,play-edge.itunes.apple.com,
+# --- 开发者与测试 ---
+DOMAIN-SUFFIX,testflight.apple.com
+DOMAIN-SUFFIX,appstoreconnect.apple.com
+DOMAIN-SUFFIX,itunesconnect.apple.com
 
-# App Store CDN
-DOMAIN-SUFFIX,mzstatic.com,
-DOMAIN,p.mzstatic.com,
-DOMAIN,s.mzstatic.com,
-
-# Apple Music
-DOMAIN-SUFFIX,music.apple.com,
-DOMAIN,myip.apple.com,
-DOMAIN,amp-api.music.apple.com,
-DOMAIN,amp-api-edge.music.apple.com,
-
-# Apple TV+
-DOMAIN-SUFFIX,tv.apple.com,
-DOMAIN-SUFFIX,tv.apple.com.akadns.net,
-DOMAIN,sylvan.apple.com,
-DOMAIN,sylvan.apple.com.edgekey.net,
-DOMAIN,hls-amt.itunes.apple.com,
-DOMAIN,hls.itunes.apple.com,
-DOMAIN,hls-svod.itunes.apple.com,
-DOMAIN,np-edge.itunes.apple.com,
-DOMAIN,linear.tv.apple.com,
-
-# Apple Podcasts
-DOMAIN-SUFFIX,podcasts.apple.com,
-DOMAIN,amp-api.podcasts.apple.com,
-DOMAIN,podcast.apple.com,
-DOMAIN,delivery-cdn.podcasts.apple.com,
-
-# Apple Books
-DOMAIN-SUFFIX,books.apple.com,
-DOMAIN-SUFFIX,audiobooks.apple.com,
-
-# Apple One
-DOMAIN,one.apple.com,
-
-# iCloud+ 权益验证
-DOMAIN,setup.icloud.com,
-DOMAIN,setup.icloud.com.cn,
-
-# Apple Arcade
-DOMAIN-SUFFIX,arcade.apple.com,
-
-# Apple News+
-DOMAIN-SUFFIX,apple.news,
-DOMAIN-SUFFIX,news.apple.com,
-DOMAIN,news-events.apple.com,
-DOMAIN,news-edge.apple.com,
-
-# Apple Fitness+
-DOMAIN-SUFFIX,fitness.apple.com,
-
-# TestFlight
-DOMAIN-SUFFIX,testflight.apple.com,
-DOMAIN,beta.apple.com,
-DOMAIN,smp-device.content.apple.com,
-
-# Apple Pay
-DOMAIN,humb.apple.com,
-DOMAIN,pos-device.apple.com,
-
-# Shazam
-DOMAIN-SUFFIX,shazam.com,
-
-# 开发者账号
-DOMAIN,appstoreconnect.apple.com,
-DOMAIN,itunesconnect.apple.com,
-
-# 软件更新 CDN（含应用更新）
-DOMAIN,updates.cdn-apple.com,
-DOMAIN,updates-http.cdn-apple.com,
-
-# 激活锁
-DOMAIN,albert.apple.com,
-DOMAIN,quest.apple.com,
-
-# 应用分析
-DOMAIN-SUFFIX,app-analytics-services.com,
-DOMAIN,iadcontent.itunes.apple.com,
+# --- 其他 ---
+DOMAIN-SUFFIX,shazam.com
+# 某些 iCloud+ 权益验证可能走这里，视情况而定
+DOMAIN,setup.icloud.com
