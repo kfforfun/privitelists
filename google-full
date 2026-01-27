@@ -1,48 +1,42 @@
 # ==========================================
-# Rule Set: Google Identity & All Services (USA)
-# Position: AFTER Gemini-App-Core
-# Strategy: All identity, device, and non-interactive traffic
+# Rule Set: Google Services (US)
+# Position: AFTER Gemini-Client-All
 # ==========================================
 
-# --- 1. 账号认证（绝对美国）---
+# --- 1. 账号与认证（美国，统一环境）---
 DOMAIN,accounts.google.com,
 DOMAIN,accounts.google.cn,
 DOMAIN,myaccount.google.com,
+DOMAIN,admin.google.com,
 DOMAIN,oauth2.googleapis.com,
 DOMAIN,openidconnect.googleapis.com,
 DOMAIN,securetoken.googleapis.com,
 
-# --- 2. 设备注册与户籍（防止"设备在台湾激活"记录）---
-# 关键：这些域名会在 App 安装/首次打开时上报设备位置
-DOMAIN,firebaseinstallations.googleapis.com,
-DOMAIN,android.googleapis.com,
-DOMAIN,play.googleapis.com,
-DOMAIN,device-provisioning.googleapis.com,
-DOMAIN,ios.googleapis.com,
-
-# --- 3. 助手后台服务（非 Live 状态）---
-# 用途：配置同步、建议卡片、后台刷新
-# 注意：这些长连接若走台湾会暴露常驻台湾，必须回美国
-DOMAIN,proactivebackend-pa.googleapis.com,
-DOMAIN,assistant-pa.clients6.google.com,
-DOMAIN,robinfrontend-pa.googleapis.com,
-
-# --- 4. 用户数据（联系人/日历/位置上下文）---
-# 用途："帮我给张三打电话"时的通讯录查询（非实时语音流）
-DOMAIN,people-pa.googleapis.com,
-DOMAIN,contextaware-pa.googleapis.com,
-DOMAIN,mobilemaps-pa.googleapis.com,
-
-# --- 5. Web 版 Gemini/AI Studio（明确美国）---
+# --- 2. Web 版 AI Studio（明确走美国，因为你用客户端）---
 DOMAIN,aistudio.google.com,
-DOMAIN,gemini.google.com,
 DOMAIN,makersuite.google.com,
+DOMAIN,bard.google.com,
+DOMAIN,gemini.google.com,  # 网页版 Gemini（与 App 区分）
 
-# --- 6. 其他所有 Google 服务（兜底）---
+# --- 3. 相册、云盘、Gmail（美国）---
 DOMAIN,photos.google.com,
+DOMAIN-SUFFIX,photos.googleapis.com,
 DOMAIN-SUFFIX,drive.google.com,
+DOMAIN-SUFFIX,docs.google.com,
 DOMAIN-SUFFIX,gmail.com,
+DOMAIN-SUFFIX,mail.google.com,
+
+# --- 4. YouTube & Media（美国）---
 DOMAIN-SUFFIX,youtube.com,
+DOMAIN-SUFFIX,googlevideo.com,
+DOMAIN-SUFFIX,ytimg.com,
+DOMAIN-SUFFIX,widevine.com,
+
+# --- 5. 地图、搜索（美国）---
+DOMAIN-SUFFIX,maps.google.com,
+DOMAIN-SUFFIX,www.google.com,
+
+# --- 6. 兜底（剩余所有 Google）---
 DOMAIN-SUFFIX,google.com,
 DOMAIN-SUFFIX,googleapis.com,
 DOMAIN-SUFFIX,gstatic.com,
