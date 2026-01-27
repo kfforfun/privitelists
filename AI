@@ -4,34 +4,38 @@
 # Services: ChatGPT, Grok, Claude, Perplexity
 # =========================================
 
-# --- OpenAI (ChatGPT & Sora) ---
+# --- OpenAI (ChatGPT, Sora & DALL-E) ---
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,chat.com
 DOMAIN-SUFFIX,sora.com
-# 鉴权与验证
-DOMAIN-SUFFIX,persona.org
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+DOMAIN-SUFFIX,openaicom.imgix.net
+# 鉴权、验证与安全 (Auth & Security)
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,identrust.com
 DOMAIN-SUFFIX,arkoselabs.com
 DOMAIN-SUFFIX,sentinelone.net
+DOMAIN-SUFFIX,persona.org
+# Stripe 支付 (可选，若无法订阅 Plus 请开启)
+# DOMAIN-SUFFIX,stripe.com
 
 # --- Anthropic (Claude) ---
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,platform.claude.com
 DOMAIN-SUFFIX,servd.host
+DOMAIN-SUFFIX,cdn.usefathom.com
 
 # --- xAI (Grok) ---
+# 修正: 已移除误入的 ByteDance 域名
 DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,grok.x.ai
 DOMAIN-SUFFIX,api.x.ai
 DOMAIN-SUFFIX,assets.grok.x.ai
-DOMAIN-SUFFIX,ibyteimg.com
-DOMAIN-SUFFIX,ipstatp.com
 
 # --- Perplexity AI ---
 DOMAIN-SUFFIX,perplexity.ai
