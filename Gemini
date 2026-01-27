@@ -17,6 +17,8 @@ DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepmind.google
 DOMAIN-SUFFIX,labs.google
 DOMAIN-SUFFIX,antigravity.google
+DOMAIN-SUFFIX,ai.google.dev
+DOMAIN-SUFFIX,vertexai.google
 
 # 2. AI 核心 API (含 2026 Personal Intelligence)
 DOMAIN-SUFFIX,generativelanguage.googleapis.com
