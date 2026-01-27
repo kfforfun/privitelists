@@ -1,75 +1,50 @@
-# ==========================================
-# Rule Set: Gemini Client All (Taiwan)
-# Position: BEFORE Google rules
-# Coverage: iOS/Android Gemini App 全功能
-# ==========================================
+# =========================================
+# 🤖 Rule Set 1: Gemini & AI Dedicated (Mobile Enhanced)
+# Updated: 2026-01-28
+# Highlights: Web + Live Mode + Mobile Context
+# =========================================
 
-# --- 1. 核心推理 API（文字/图片生成）---
-DOMAIN,generativelanguage.googleapis.com,
-DOMAIN,aiplatform.googleapis.com,
-DOMAIN,firebaseai.googleapis.com,
+# --- 1. 核心 Live Mode 与 实时流 (App 关键增强) ---
+# [新增] 实时语音/视频流通道，解决 Live 模式连接中断问题
+DOMAIN-SUFFIX,webchannel-alkalimakersuite-pa.clients6.google.com,PROXY
+DOMAIN-SUFFIX,alkalicore-pa.clients6.google.com,PROXY
+DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com,PROXY
+DOMAIN-SUFFIX,instantmessaging-pa.googleapis.com,PROXY
 
-# --- 2. 实时助手后端（Proactive Assistant）---
-DOMAIN,proactivebackend-pa.googleapis.com,
-DOMAIN,assistant-pa.clients6.google.com,
-DOMAIN,robinfrontend-pa.googleapis.com,
+# --- 2. 移动端感知与端侧 AI (App 智能增强) ---
+# [新增] 位置感知、屏幕上下文、端侧模型下载
+DOMAIN-SUFFIX,mobilemaps-pa.googleapis.com,PROXY
+DOMAIN-SUFFIX,semanticlocation-pa.googleapis.com,PROXY
+DOMAIN-SUFFIX,contextaware-pa.googleapis.com,PROXY
+DOMAIN-SUFFIX,jnn-pa.googleapis.com,PROXY
+DOMAIN-SUFFIX,optimizationguide-pa.googleapis.com,PROXY
+DOMAIN-SUFFIX,ondeviceoptimization-pa.googleapis.com,PROXY
+DOMAIN-SUFFIX,people-pa.googleapis.com,PROXY
 
-# --- 3. 移动端语音与多媒体（关键补充）---
-# 语音输入（STT）
-DOMAIN,speech.googleapis.com,
-# 语音输出（TTS，Gemini 朗读回复）
-DOMAIN,texttospeech.googleapis.com,
-# 实时语音流（Live API）
-DOMAIN,generativelanguage.googleapis.com,  # 复用，但注明支持 streaming
-# 音频处理
-DOMAIN-SUFFIX,mediapipe.googleapis.com,
+# --- 3. 语音与多媒体服务 ---
+# [新增] 语音转文字、TTS 朗读
+DOMAIN-SUFFIX,speech.googleapis.com,PROXY
+DOMAIN-SUFFIX,texttospeech.googleapis.com,PROXY
+DOMAIN-SUFFIX,mediapipe.googleapis.com,PROXY
 
-# --- 4. 设备端 AI（Gemini Nano）---
-DOMAIN,jnn-pa.googleapis.com,
-DOMAIN,optimizationguide-pa.googleapis.com,
-DOMAIN,ondeviceoptimization-pa.googleapis.com,
+# --- 4. 核心推理与 Web 前端 (保留原有优势) ---
+DOMAIN-SUFFIX,gemini.google.com,PROXY
+DOMAIN-SUFFIX,bard.google.com,PROXY
+DOMAIN-SUFFIX,aistudio.google.com,PROXY
+DOMAIN-SUFFIX,makersuite.google.com,PROXY
+DOMAIN-SUFFIX,generativeai.google,PROXY
+DOMAIN-SUFFIX,notebooklm.google,PROXY
+DOMAIN-SUFFIX,deepmind.com,PROXY
+DOMAIN-SUFFIX,deepmind.google,PROXY
+DOMAIN-SUFFIX,ai.google.dev,PROXY
+DOMAIN-SUFFIX,vertexai.google,PROXY
+DOMAIN-SUFFIX,generativelanguage.googleapis.com,PROXY
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com,PROXY
+DOMAIN-SUFFIX,personal-intelligence.googleapis.com,PROXY
+DOMAIN-SUFFIX,assistant-pa.clients6.google.com,PROXY
+DOMAIN-SUFFIX,firebaseai.googleapis.com,PROXY
 
-# --- 5. App 初始化与设备注册（关键！防止首开走美国）---
-# Android 设备认证与注册
-DOMAIN,android.googleapis.com,
-DOMAIN,android.clients.google.com,
-# Firebase 安装 ID（设备唯一标识）
-DOMAIN,firebaseinstallations.googleapis.com,
-# Google Play 服务认证（部分 Gemini 功能依赖）
-DOMAIN,play.googleapis.com,
-# Device Provisioning
-DOMAIN,device-provisioning.googleapis.com,
-
-# --- 6. 位置与上下文（Gemini 实时感知）---
-# 位置信息用于"附近"类查询
-DOMAIN,mobilemaps-pa.googleapis.com,
-DOMAIN,semanticlocation-pa.googleapis.com,
-DOMAIN,geolocation.googleapis.com,
-# 天气/时间上下文
-DOMAIN,contextaware-pa.googleapis.com,
-
-# --- 7. 用户数据与个性化（App 内）---
-# 联系人/日历上下文（"帮我给张三发邮件"）
-DOMAIN,people-pa.googleapis.com,
-DOMAIN,contacts-pa.googleapis.com,
-DOMAIN,calendar-pa.googleapis.com,
-# 个性化记忆同步
-DOMAIN,personal-intelligence.googleapis.com,
-
-# --- 8. 文件上传与存储（App 内拍照/选图）---
-# 上传后端（与网页版不同，App 使用独立端点）
-DOMAIN,alkalimakersuite-pa.clients6.google.com,
-DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com,
-DOMAIN,upload.youtube.com,  # 可能复用 YouTube 上传通道处理大文件
-DOMAIN,storage.mtls.cloud.google.com,  # 临时存储桶
-
-# --- 9. 实验性功能与插件（如已开通）---
-DOMAIN,actionssdk.googleapis.com,  # 智能家居控制
-DOMAIN,searchconsoleinsights.googleapis.com,  # 搜索增强
-DOMAIN,aisandbox-pa.googleapis.com,
-
-# --- 10. Vertex AI 区域端点（如使用）---
-DOMAIN-SUFFIX,us-central1-aiplatform.googleapis.com,
-DOMAIN-SUFFIX,us-east1-aiplatform.googleapis.com,
-DOMAIN-SUFFIX,us-west1-aiplatform.googleapis.com,
-DOMAIN-SUFFIX,asia-east1-aiplatform.googleapis.com,
+# --- 5. 机器学习与开发平台 ---
+DOMAIN-SUFFIX,colab.research.google.com,PROXY
+DOMAIN-SUFFIX,kaggle.com,PROXY
+DOMAIN-SUFFIX,tensorflow.org,PROXY
