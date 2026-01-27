@@ -1,71 +1,40 @@
 # =============================================
-# Apple ID / iCloud 主账号服务
-# 适用：设备认证、基础 iCloud 数据同步、系统服务
+# Apple ID / iCloud / System (Direct)
+# 策略：DIRECT
 # =============================================
 
-# Apple ID 身份认证
-DOMAIN-SUFFIX,account.apple.com,
-DOMAIN-SUFFIX,appleid.apple.com,
-DOMAIN,gsa.apple.com,
-DOMAIN,gsa.idms-apple.com.akadns.net,
-DOMAIN,idmsa.apple.com,
-DOMAIN,idmsa-urm-new.apple.com,
+# --- 核心身份与安全 ---
+DOMAIN-SUFFIX,account.apple.com
+DOMAIN-SUFFIX,appleid.apple.com
+DOMAIN-SUFFIX,idmsa.apple.com
+DOMAIN-SUFFIX,auth.apple.com
+DOMAIN-SUFFIX,verify.apple.com
 
-# 证书安全验证
-DOMAIN,ocsp.apple.com,
-DOMAIN,ocsp2.apple.com,
-DOMAIN,ocsp-lb.apple.com.akadns.net,
-DOMAIN,valid.apple.com,
-DOMAIN,crl.apple.com,
-DOMAIN,certs.apple.com,
+# --- iCloud 核心数据 (流量大户) ---
+DOMAIN-SUFFIX,icloud.com
+DOMAIN-SUFFIX,icloud.com.cn
+DOMAIN-SUFFIX,icloud-content.com
+DOMAIN-SUFFIX,apple-cloudkit.com
+DOMAIN-SUFFIX,me.com
 
-# iCloud 基础数据同步
-DOMAIN-SUFFIX,icloud.com,
-DOMAIN-SUFFIX,icloud.com.cn,
-DOMAIN-SUFFIX,icloud-content.com,
-DOMAIN,api.icloud.com,
-DOMAIN,api.icloud.com.cn,
-DOMAIN,gateway.icloud.com,
-DOMAIN,gateway.icloud.com.cn,
-DOMAIN,containers.icloud.com,
-DOMAIN,query.icloud.com,
+# --- 软件更新与下载 CDN (节省代理流量) ---
+# 放在直连区，确保 iOS 系统更新和 App 下载不跑代理
+DOMAIN,updates.cdn-apple.com
+DOMAIN,updates-http.cdn-apple.com
+# 如果你想让 App 下载也走直连（省流量），取消下面两行的注释：
+# DOMAIN,iosapps.itunes.apple.com
+# DOMAIN,osxapps.itunes.apple.com
 
-# iCloud 基础功能
-DOMAIN,contacts.icloud.com,
-DOMAIN,calendar.icloud.com,
-DOMAIN,reminders.icloud.com,
-DOMAIN,notes.icloud.com,
-DOMAIN,photos.icloud.com,
-DOMAIN,mail.icloud.com,
-DOMAIN,mail.icloud.com.cn,
-DOMAIN,fmip.icloud.com,
-DOMAIN,fmip.icloud.com.cn,
-DOMAIN,metrics.icloud.com,
+# --- Apple Pay & Wallet ---
+DOMAIN-SUFFIX,apple-pay.com
+DOMAIN,humb.apple.com
+DOMAIN,pos-device.apple.com
 
-# CloudKit
-DOMAIN-SUFFIX,apple-cloudkit.com,
-DOMAIN-SUFFIX,cloudkit.com,
+# --- 系统基础服务 ---
+DOMAIN-SUFFIX,push.apple.com
+DOMAIN-SUFFIX,findmy.network
+DOMAIN,time.apple.com
 
-# 旧版邮箱
-DOMAIN-SUFFIX,me.com,
-DOMAIN-SUFFIX,mac.com,
-
-# 系统级基础服务
-DOMAIN,time.apple.com,
-DOMAIN,time-ios.apple.com,
-DOMAIN,time-macos.apple.com,
-DOMAIN,captive.apple.com,
-DOMAIN-SUFFIX,push.apple.com,
-
-# 查找网络
-DOMAIN-SUFFIX,findmy.network,
-DOMAIN,gateway.fe2.apple-dns.net,
-DOMAIN,gateway-carry.icloud.com,
-
-# FaceTime / iMessage 激活
-DOMAIN-SUFFIX,gc.apple.com,
-DOMAIN,init.ess.apple.com,
-
-# 设备管理
-DOMAIN,gdmf.apple.com,
-DOMAIN,mdmenrollment.apple.com,
+# --- 兜底规则 (防止遗漏的 Apple 服务误走代理) ---
+DOMAIN-SUFFIX,apple.com
+DOMAIN-SUFFIX,apple.com.cn
