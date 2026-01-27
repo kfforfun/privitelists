@@ -1,9 +1,11 @@
 # =========================================
 # 🌍 Rule Set 2: Google General & Media
 # (建议策略：香港/新加坡/自动选择 - 追求速度)
+# Updated: 2026-01-27
 # =========================================
 
 # 1. Google Photos (相册备份与图片加载)
+# 已修复: 删除了错误的 URL 规则
 DOMAIN-SUFFIX,photos.google.com
 DOMAIN-SUFFIX,photos.googleapis.com
 DOMAIN-SUFFIX,photoslibrary.googleapis.com
@@ -11,7 +13,7 @@ DOMAIN-SUFFIX,picasa.google.com
 DOMAIN-SUFFIX,picasaweb.google.com
 DOMAIN-SUFFIX,googlephotos.com
 DOMAIN-SUFFIX,photos.app.goo.gl
-# 相册缩略图节点
+# 相册缩略图节点 (保留以提高优先级)
 DOMAIN-SUFFIX,lh1.googleusercontent.com
 DOMAIN-SUFFIX,lh2.googleusercontent.com
 DOMAIN-SUFFIX,lh3.googleusercontent.com
@@ -19,7 +21,7 @@ DOMAIN-SUFFIX,lh4.googleusercontent.com
 DOMAIN-SUFFIX,lh5.googleusercontent.com
 DOMAIN-SUFFIX,lh6.googleusercontent.com
 
-# 2. YouTube & Media (视频流)
+# 2. YouTube & Media (视频流与 DRM)
 DOMAIN-SUFFIX,youtube.com
 DOMAIN-SUFFIX,googlevideo.com
 DOMAIN-SUFFIX,ytimg.com
@@ -27,6 +29,7 @@ DOMAIN-SUFFIX,youtu.be
 DOMAIN-SUFFIX,ggpht.com
 DOMAIN-SUFFIX,youtube-nocookie.com
 DOMAIN-SUFFIX,youtubeeducation.com
+DOMAIN-SUFFIX,widevine.com
 
 # 3. Translate & Lens (翻译与视觉)
 DOMAIN-SUFFIX,translate.google.com
@@ -38,9 +41,10 @@ DOMAIN-SUFFIX,visual-search.google.com
 DOMAIN-SUFFIX,scs.mathcontent.google.com
 DOMAIN-SUFFIX,speech-network.googleapis.com
 
-# 4. Android & Play Store (下载)
+# 4. Android & Play Store (下载与更新)
 DOMAIN-SUFFIX,android.com
 DOMAIN-SUFFIX,androidify.com
+DOMAIN-SUFFIX,xn--ngstr-lra8j.com
 DOMAIN-SUFFIX,gvt0.com
 DOMAIN-SUFFIX,gvt1.com
 DOMAIN-SUFFIX,gvt2.com
@@ -64,11 +68,13 @@ DOMAIN-SUFFIX,fitbit.com
 DOMAIN-SUFFIX,chromecast.com
 DOMAIN-SUFFIX,waymo.com
 
-# 6. Cloud & Dev (普通云服务)
+# 6. Cloud & Dev (云服务、分析与加速)
 DOMAIN-SUFFIX,appspot.com
 DOMAIN-SUFFIX,firebaseio.com
 DOMAIN-SUFFIX,firebase.com
 DOMAIN-SUFFIX,firestore.googleapis.com
+DOMAIN-SUFFIX,crashlytics.com
+DOMAIN-SUFFIX,app-measurement.com
 DOMAIN-SUFFIX,cloudfunctions.net
 DOMAIN-SUFFIX,pkg.dev
 DOMAIN-SUFFIX,golang.org
@@ -76,28 +82,33 @@ DOMAIN-SUFFIX,flutter.dev
 DOMAIN-SUFFIX,dart.dev
 DOMAIN-SUFFIX,angular.io
 DOMAIN-SUFFIX,chromium.org
+DOMAIN-SUFFIX,ampproject.org
 
 # 7. Google Core (核心兜底 - 必须放在最后)
-# 注意：这里包含了 google.com 和 googleapis.com 的根域名
 DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,google.com.hk
 DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,googlesource.com
+DOMAIN-SUFFIX,googlecommerce.com
+DOMAIN-SUFFIX,googletraveladservices.com
 DOMAIN-SUFFIX,google-analytics.com
 DOMAIN-SUFFIX,googletagmanager.com
 DOMAIN-SUFFIX,googleadservices.com
+DOMAIN-SUFFIX,googlesyndication.com
+DOMAIN-SUFFIX,2mdn.net
 DOMAIN-SUFFIX,doubleclick.net
 DOMAIN-SUFFIX,abc.xyz
 DOMAIN-SUFFIX,goo.gl
 DOMAIN-SUFFIX,g.co
 DOMAIN-SUFFIX,1e100.net
 DOMAIN-SUFFIX,recaptcha.net
+
+# 8. 关键词兜底
 DOMAIN-KEYWORD,google
 
-# 内部接口兜底 (除了 Rule 1 中明确指定的 AI 接口外，其余走这里)
+# 内部接口兜底 (排除 AI 专用接口)
 DOMAIN-SUFFIX,clients6.google.com
 DOMAIN-SUFFIX,clients4.google.com
 DOMAIN-SUFFIX,clients2.google.com
-
-
