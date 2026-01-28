@@ -1,18 +1,18 @@
 # =========================================
-# 🇺🇸 Rule Set 2: Google General & Identity (US)
+# 🇺🇸 Rule Set: Google General & Identity (US)
 # 策略：PROXY (美国节点)
-# 作用：账号、逻辑、定位、媒体库、人机验证
+# 作用：账号、逻辑、防定位、相册、验证码
 # =========================================
 
 # --- 1. Gemini "大脑"与防定位 (关键) ---
-# 强制主域名和位置感知服务走美国，防止被判定为台湾
+# 强制主域名和位置感知 API 走美国，防止 Gemini 认为你在台湾
 DOMAIN,gemini.google.com
 DOMAIN,bard.google.com
 DOMAIN,aistudio.google.com
 DOMAIN,makersuite.google.com
 DOMAIN-SUFFIX,notebooklm.google
 DOMAIN-SUFFIX,notebooklm.google.com
-# 位置与环境感知 API (防泄露)
+# 位置与环境感知 (防泄露)
 DOMAIN-SUFFIX,mobilemaps-pa.googleapis.com
 DOMAIN-SUFFIX,semanticlocation-pa.googleapis.com
 DOMAIN-SUFFIX,contextaware-pa.googleapis.com
@@ -24,11 +24,21 @@ DOMAIN-SUFFIX,generativeai.google
 DOMAIN-SUFFIX,ai.google
 DOMAIN-SUFFIX,labs.google
 
-# --- 2. 账号与邮箱 ---
+# --- 2. 账号、认证与安全 (增强版) ---
+# 登录页面与账户管理
 DOMAIN,accounts.google.com
-DOMAIN,mail.google.com
 DOMAIN,myaccount.google.com
+DOMAIN,admin.google.com
+DOMAIN,families.google.com
+DOMAIN,passwords.google.com
+# 关键认证 API (第三方登录/Token刷新)
+DOMAIN,oauth2.googleapis.com
+DOMAIN,openidconnect.googleapis.com
+DOMAIN,securetoken.googleapis.com
+DOMAIN,identitytoolkit.googleapis.com
+# 邮箱
 DOMAIN-SUFFIX,gmail.com
+DOMAIN,mail.google.com
 
 # --- 3. YouTube & Google Photos (完整版) ---
 DOMAIN-SUFFIX,googlevideo.com
@@ -36,7 +46,7 @@ DOMAIN-SUFFIX,youtube.com
 DOMAIN-SUFFIX,ytimg.com
 DOMAIN-SUFFIX,youtu.be
 DOMAIN-SUFFIX,widevine.com
-# 相册核心组件 (已补全)
+# 相册核心组件
 DOMAIN-SUFFIX,photos.googleapis.com
 DOMAIN-SUFFIX,photoslibrary.googleapis.com
 DOMAIN-SUFFIX,googlephotos.com
@@ -58,7 +68,6 @@ DOMAIN-SUFFIX,blogspot.com
 DOMAIN-SUFFIX,android.com
 DOMAIN-SUFFIX,gvt1.com  # Chrome组件/Android下载
 DOMAIN-SUFFIX,gvt2.com
-DOMAIN-SUFFIX,gvt3.com
 
 # --- 6. 基础设施兜底 (Catch-all) ---
 # 包含 recaptcha 验证和通配符
