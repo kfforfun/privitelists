@@ -1,45 +1,74 @@
 # =========================================
-# 🇺🇸 Rule Set: Google & Gemini Core (US)
-# 作用：所有的网页加载、逻辑推理、账号认证、位置服务
+# 🇺🇸 Rule Set 2: Google General & Identity (US)
+# 策略：PROXY (美国节点)
+# 作用：账号、逻辑、定位、媒体库、人机验证
 # =========================================
 
-# --- [新增] 从 Gemini 规则中剥离出的“大脑与定位” ---
-# 强制这些走美国，Gemini 就会认为你人（逻辑上）在美国
+# --- 1. Gemini "大脑"与防定位 (关键) ---
+# 强制主域名和位置感知服务走美国，防止被判定为台湾
 DOMAIN,gemini.google.com
 DOMAIN,bard.google.com
 DOMAIN,aistudio.google.com
+DOMAIN,makersuite.google.com
+DOMAIN-SUFFIX,notebooklm.google
+DOMAIN-SUFFIX,notebooklm.google.com
+# 位置与环境感知 API (防泄露)
 DOMAIN-SUFFIX,mobilemaps-pa.googleapis.com
 DOMAIN-SUFFIX,semanticlocation-pa.googleapis.com
 DOMAIN-SUFFIX,contextaware-pa.googleapis.com
 DOMAIN-SUFFIX,people-pa.googleapis.com
 DOMAIN-SUFFIX,jnn-pa.googleapis.com
+# AI 品牌域名
 DOMAIN-SUFFIX,deepmind.google
 DOMAIN-SUFFIX,generativeai.google
-DOMAIN-SUFFIX,notebooklm.google.com
+DOMAIN-SUFFIX,ai.google
+DOMAIN-SUFFIX,labs.google
 
-# --- 下面是你原本的 Google General (保持美国) ---
-
-# 1. 账号与核心
+# --- 2. 账号与邮箱 ---
 DOMAIN,accounts.google.com
 DOMAIN,mail.google.com
 DOMAIN,myaccount.google.com
+DOMAIN-SUFFIX,gmail.com
 
-# 2. YouTube & Media
+# --- 3. YouTube & Google Photos (完整版) ---
 DOMAIN-SUFFIX,googlevideo.com
 DOMAIN-SUFFIX,youtube.com
 DOMAIN-SUFFIX,ytimg.com
+DOMAIN-SUFFIX,youtu.be
 DOMAIN-SUFFIX,widevine.com
+# 相册核心组件 (已补全)
 DOMAIN-SUFFIX,photos.googleapis.com
+DOMAIN-SUFFIX,photoslibrary.googleapis.com
+DOMAIN-SUFFIX,googlephotos.com
+DOMAIN-SUFFIX,ggpht.com  # ⚠️ 图片加载关键域名
 
-# 3. 办公与云
+# --- 4. 办公、云端与开发 ---
 DOMAIN-SUFFIX,drive.google.com
 DOMAIN-SUFFIX,docs.google.com
 DOMAIN-SUFFIX,calendar.google.com
+DOMAIN-SUFFIX,meet.google.com
 DOMAIN-SUFFIX,firebaseio.com
+DOMAIN-SUFFIX,colab.research.google.com
+DOMAIN-SUFFIX,kaggle.com
+DOMAIN-SUFFIX,tensorflow.org
+DOMAIN-SUFFIX,appspot.com
+DOMAIN-SUFFIX,blogspot.com
+
+# --- 5. Android 生态与更新 ---
+DOMAIN-SUFFIX,android.com
+DOMAIN-SUFFIX,gvt1.com  # Chrome组件/Android下载
+DOMAIN-SUFFIX,gvt2.com
+DOMAIN-SUFFIX,gvt3.com
+
+# --- 6. 基础设施兜底 (Catch-all) ---
+# 包含 recaptcha 验证和通配符
+DOMAIN-SUFFIX,recaptcha.net  # ⚠️ 人机验证关键域名
+DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,google.com.hk
 DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,googleusercontent.com
-
-# 4. 兜底
-DOMAIN-SUFFIX,google.com
 DOMAIN-SUFFIX,1e100.net
+DOMAIN-SUFFIX,2mdn.net
+DOMAIN-SUFFIX,abc.xyz
+DOMAIN-KEYWORD,google
