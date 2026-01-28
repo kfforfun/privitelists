@@ -1,32 +1,39 @@
 # =========================================
-# Rule Set: Apple Store & Media (Proxy)
-# Strategy: PROXY
+# Rule Set 4: Apple Store & Media (Proxy)
+# 策略：PROXY (美国节点)
+# 作用：商店浏览、媒体播放、内容加载、DRM验证
 # =========================================
 
-# --- App Store 浏览 ---
+# --- 1. App Store 商店浏览 ---
 DOMAIN-SUFFIX,itunes.apple.com
 DOMAIN-SUFFIX,apps.apple.com
 DOMAIN-SUFFIX,mzstatic.com
 
-# --- 媒体服务 ---
+# --- 2. Apple Media 核心服务 ---
 DOMAIN-SUFFIX,music.apple.com
 DOMAIN-SUFFIX,tv.apple.com
 DOMAIN-SUFFIX,books.apple.com
 DOMAIN-SUFFIX,podcasts.apple.com
 DOMAIN-SUFFIX,audiobooks.apple.com
 
-# --- Apple News ---
-# News 核心
+# --- 3. [补漏] 体验增强与内容加载 ---
+DOMAIN-SUFFIX,fairplay.apple.com
+DOMAIN-SUFFIX,smoot.apple.com
+DOMAIN-SUFFIX,api.bls.apple.com
+DOMAIN-SUFFIX,blobstore.apple.com
+DOMAIN-SUFFIX,apple-mapkit.com
+
+# --- 4. Apple News 基础域名 ---
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
+DOMAIN-SUFFIX,apple.com.co
 DOMAIN-SUFFIX,news-assets.apple.com
-DOMAIN-SUFFIX,news-edge.apple.com
-DOMAIN-SUFFIX,news-events.apple.com
-DOMAIN-SUFFIX,blobstore.apple.com
 
-# --- 增值与开发 ---
+# --- 5. 增值服务 ---
 DOMAIN-SUFFIX,arcade.apple.com
 DOMAIN-SUFFIX,fitness.apple.com
+
+# --- 6. 开发者、测试与工具 ---
 DOMAIN-SUFFIX,testflight.apple.com
 DOMAIN-SUFFIX,appstoreconnect.apple.com
 DOMAIN-SUFFIX,itunesconnect.apple.com
