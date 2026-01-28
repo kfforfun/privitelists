@@ -1,43 +1,74 @@
 # =========================================
-# 🧠 Rule Set 3: AI Services (All-in-One)
-# Updated: 2026-01-27 (Patch 1)
-# Services: ChatGPT, Grok, Claude, Perplexity
+# 6. AI Global Others (Master Baseline v2.1)
+# Strategy: PROXY (US)
+# Updated: Integrated Security, Sora, & Grok API
 # =========================================
 
-# --- OpenAI (ChatGPT, Sora & DALL-E) ---
-DOMAIN-SUFFIX,chatgpt.com,PROXY
-DOMAIN-SUFFIX,openai.com,PROXY
-DOMAIN-SUFFIX,oaistatic.com,PROXY
-DOMAIN-SUFFIX,oaiusercontent.com,PROXY
-DOMAIN-SUFFIX,chat.com,PROXY
-DOMAIN-SUFFIX,sora.com,PROXY
-DOMAIN-SUFFIX,openaiapi-site.azureedge.net,PROXY
-DOMAIN-SUFFIX,openaicom.imgix.net,PROXY
-# 鉴权、验证与安全
-DOMAIN-SUFFIX,auth0.com,PROXY
-DOMAIN-SUFFIX,identrust.com,PROXY
-DOMAIN-SUFFIX,arkoselabs.com,PROXY
-DOMAIN-SUFFIX,sentinelone.net,PROXY
-DOMAIN-SUFFIX,persona.org,PROXY
-# 新增: 功能灰度测试 (Feature Flags)
-DOMAIN-SUFFIX,featuregates.org,PROXY
+# --- 1. OpenAI (ChatGPT, Sora & DALL-E) ---
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,chat.com                  # [新增] 官方短域名
+DOMAIN-SUFFIX,sora.com                  # [新增] 视频模型官网
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+DOMAIN-SUFFIX,openaicom.imgix.net
 
-# --- Anthropic (Claude) ---
-DOMAIN-SUFFIX,claude.ai,PROXY
-DOMAIN-SUFFIX,anthropic.com,PROXY
-DOMAIN-SUFFIX,platform.claude.com,PROXY
-DOMAIN-SUFFIX,servd.host,PROXY
-DOMAIN-SUFFIX,cdn.usefathom.com,PROXY
+# --- OpenAI Advanced (Voice & Security) ---
+DOMAIN-SUFFIX,chatgpt.livekit.cloud     # 语音模式实时流
+DOMAIN-SUFFIX,host.livekit.cloud
+# [关键] 验证码与风控 (防止登录转圈/Access Denied)
+DOMAIN-SUFFIX,arkoselabs.com
+DOMAIN-SUFFIX,persona.org
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,sentinelone.net
 
-# --- xAI (Grok) ---
-DOMAIN-SUFFIX,grok.com,PROXY
-DOMAIN-SUFFIX,x.ai,PROXY
-DOMAIN-SUFFIX,grok.x.ai,PROXY
-DOMAIN-SUFFIX,api.x.ai,PROXY
-DOMAIN-SUFFIX,assets.grok.x.ai,PROXY
+# --- 2. Anthropic (Claude) ---
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claudeusercontent.com
+DOMAIN-SUFFIX,anthropic.cdn.cloudflare.net
+DOMAIN-SUFFIX,servd.host                # [新增] 静态资源
 
-# --- Perplexity AI ---
-DOMAIN-SUFFIX,perplexity.ai,PROXY
-DOMAIN-SUFFIX,pplx.ai,PROXY
-DOMAIN-SUFFIX,api.perplexity.ai,PROXY
-DOMAIN-SUFFIX,labs.perplexity.ai,PROXY
+# --- 3. Perplexity AI ---
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,pplx.ai
+DOMAIN-SUFFIX,r2cdn.perplexity.ai       # [关键] 搜索图片存储
+DOMAIN-SUFFIX,labs.perplexity.ai
+DOMAIN-SUFFIX,api.perplexity.ai
+
+# --- 4. xAI (Grok) ---
+DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,grok.x.ai
+DOMAIN-SUFFIX,grok.com
+DOMAIN-SUFFIX,api.x.ai                  # [新增] API 端点
+DOMAIN-SUFFIX,assets.grok.x.ai          # [新增] 资源端点
+
+# --- 5. Microsoft & GitHub ---
+DOMAIN-SUFFIX,bing.com
+DOMAIN-SUFFIX,copilot.microsoft.com
+DOMAIN-SUFFIX,edgeservices.bing.com
+DOMAIN-SUFFIX,sydney.bing.com
+DOMAIN-SUFFIX,bingapis.com
+DOMAIN-SUFFIX,githubcopilot.com
+DOMAIN-SUFFIX,cocopilot.org
+DOMAIN-SUFFIX,individual.githubcopilot.com
+
+# --- 6. Midjourney & Discord ---
+DOMAIN-SUFFIX,midjourney.com
+DOMAIN-SUFFIX,discord.com
+DOMAIN-SUFFIX,discordapp.com
+DOMAIN-SUFFIX,discordapp.net
+DOMAIN-SUFFIX,discord-attachments-uploads-prd.storage.googleapis.com
+
+# --- 7. Other Mainstream AI ---
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,stability.ai
+DOMAIN-SUFFIX,huggingface.co
+DOMAIN-SUFFIX,hf.co
+DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,quora.com
+DOMAIN-SUFFIX,jasper.ai
+DOMAIN-SUFFIX,civitai.com
