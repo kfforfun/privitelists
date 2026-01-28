@@ -1,56 +1,45 @@
 # =========================================
-# 🌍 Rule Set 2: Google General (Final)
-# Strategy: 必须放在 Gemini 规则之后
+# 🇺🇸 Rule Set: Google & Gemini Core (US)
+# 作用：所有的网页加载、逻辑推理、账号认证、位置服务
 # =========================================
 
-# --- 1. 账号与核心服务 ---
+# --- [新增] 从 Gemini 规则中剥离出的“大脑与定位” ---
+# 强制这些走美国，Gemini 就会认为你人（逻辑上）在美国
+DOMAIN,gemini.google.com
+DOMAIN,bard.google.com
+DOMAIN,aistudio.google.com
+DOMAIN-SUFFIX,mobilemaps-pa.googleapis.com
+DOMAIN-SUFFIX,semanticlocation-pa.googleapis.com
+DOMAIN-SUFFIX,contextaware-pa.googleapis.com
+DOMAIN-SUFFIX,people-pa.googleapis.com
+DOMAIN-SUFFIX,jnn-pa.googleapis.com
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,notebooklm.google.com
+
+# --- 下面是你原本的 Google General (保持美国) ---
+
+# 1. 账号与核心
 DOMAIN,accounts.google.com
 DOMAIN,mail.google.com
 DOMAIN,myaccount.google.com
 
-# --- 2. YouTube & Media ---
+# 2. YouTube & Media
 DOMAIN-SUFFIX,googlevideo.com
 DOMAIN-SUFFIX,youtube.com
 DOMAIN-SUFFIX,ytimg.com
-DOMAIN-SUFFIX,youtu.be
-DOMAIN-SUFFIX,ggpht.com
 DOMAIN-SUFFIX,widevine.com
 DOMAIN-SUFFIX,photos.googleapis.com
-DOMAIN-SUFFIX,photoslibrary.googleapis.com
-DOMAIN-SUFFIX,googlephotos.com
 
-# --- 3. 办公、云端与开发 ---
+# 3. 办公与云
 DOMAIN-SUFFIX,drive.google.com
 DOMAIN-SUFFIX,docs.google.com
 DOMAIN-SUFFIX,calendar.google.com
-DOMAIN-SUFFIX,meet.google.com
-# 关键补充：非 google.com 结尾的服务
 DOMAIN-SUFFIX,firebaseio.com
-DOMAIN-SUFFIX,firebase.com
-DOMAIN-SUFFIX,appspot.com
-DOMAIN-SUFFIX,blogspot.com
-DOMAIN-SUFFIX,blogger.com
-DOMAIN-SUFFIX,picasa.google.com
-DOMAIN-SUFFIX,chromium.org
-
-# --- 4. Android 生态 ---
-DOMAIN-SUFFIX,android.com
-DOMAIN-SUFFIX,gvt1.com
-DOMAIN-SUFFIX,gvt2.com
-DOMAIN-SUFFIX,gvt3.com
-DOMAIN-SUFFIX,xn--ngstr-lra8j.com
-
-# --- 5. 基础设施兜底 ---
-DOMAIN-SUFFIX,google.com
-DOMAIN-SUFFIX,google.com.hk
 DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,googleusercontent.com
-DOMAIN-SUFFIX,1e100.net
-DOMAIN-SUFFIX,recaptcha.net
-DOMAIN-SUFFIX,2mdn.net
-DOMAIN-SUFFIX,app-measurement.com
-DOMAIN-SUFFIX,abc.xyz
 
-# --- 6. 关键词 ---
-DOMAIN-KEYWORD,google
+# 4. 兜底
+DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,1e100.net
