@@ -3,25 +3,6 @@
 # Strategy: PROXY
 # =========================================
 
-# --- [关键新增] 区域判定与功能开关 ---
-# 解决 Apple News/Podcast 音频无法播放的核心
-# 强制这些底层询问走代理，让 Apple 认为你在美国
-DOMAIN-SUFFIX,ls.apple.com             # 位置服务 (Location Services)
-DOMAIN-SUFFIX,pep.apple.com            # 隐私工程平台 (可能涉及权益判断)
-DOMAIN,configuration.apple.com         # 设备功能配置下发
-DOMAIN,features.apple.com              # 区域功能特性开关
-DOMAIN-SUFFIX,apple-mapkit.com         # 地图相关组件 (News有时调用)
-
-# --- Apple News (完整修复版) ---
-# 核心服务
-DOMAIN-SUFFIX,news.apple.com
-DOMAIN-SUFFIX,apple.news
-DOMAIN-SUFFIX,apple.com.co
-# 音频流/Podcast 资源
-DOMAIN-SUFFIX,news-edge.apple.com
-DOMAIN-SUFFIX,news-events.apple.com
-DOMAIN-SUFFIX,blobstore.apple.com
-
 # --- App Store 浏览 ---
 DOMAIN-SUFFIX,itunes.apple.com
 DOMAIN-SUFFIX,apps.apple.com
@@ -33,6 +14,16 @@ DOMAIN-SUFFIX,tv.apple.com
 DOMAIN-SUFFIX,books.apple.com
 DOMAIN-SUFFIX,podcasts.apple.com
 DOMAIN-SUFFIX,audiobooks.apple.com
+
+# --- Apple News (修复版) ---
+# News 核心
+DOMAIN-SUFFIX,news.apple.com
+DOMAIN-SUFFIX,apple.news
+DOMAIN-SUFFIX,apple.com.co
+# News 音频流/Podcast (修复下载失败)
+DOMAIN-SUFFIX,news-edge.apple.com
+DOMAIN-SUFFIX,news-events.apple.com
+DOMAIN-SUFFIX,blobstore.apple.com
 
 # --- 增值与开发 ---
 DOMAIN-SUFFIX,arcade.apple.com
