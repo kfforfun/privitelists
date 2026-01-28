@@ -1,10 +1,14 @@
 # =========================================
-# Rule Set 2: Gemini & AI (Taiwan Full)
-# 策略：PROXY (台湾节点)
-# 作用：Gemini 网页、逻辑、语音、实时流全量加速
+# 2. Gemini & AI Live (Baseline)
+# Strategy: PROXY (Taiwan)
 # =========================================
+# Live Mode & Realtime
+DOMAIN-SUFFIX,webchannel-alkalimakersuite-pa.clients6.google.com
+DOMAIN-SUFFIX,alkalicore-pa.clients6.google.com
+DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com
+DOMAIN-SUFFIX,instantmessaging-pa.googleapis.com
 
-# --- 1. Gemini 网页与核心逻辑 (原在 US，现移回 Taiwan) ---
+# Web & Core Logic
 DOMAIN,gemini.google.com
 DOMAIN,bard.google.com
 DOMAIN,aistudio.google.com
@@ -12,19 +16,13 @@ DOMAIN,makersuite.google.com
 DOMAIN-SUFFIX,notebooklm.google
 DOMAIN-SUFFIX,notebooklm.google.com
 
-# --- 2. AI 品牌与底层架构 ---
+# AI Brand
 DOMAIN-SUFFIX,deepmind.google
 DOMAIN-SUFFIX,generativeai.google
 DOMAIN-SUFFIX,ai.google
 DOMAIN-SUFFIX,labs.google
 
-# --- 3. 实时流与通信管道 (保持不变) ---
-DOMAIN-SUFFIX,webchannel-alkalimakersuite-pa.clients6.google.com
-DOMAIN-SUFFIX,alkalicore-pa.clients6.google.com
-DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com
-DOMAIN-SUFFIX,instantmessaging-pa.googleapis.com
-
-# --- 4. 语音与多媒体 (保持不变) ---
+# Voice & Media
 DOMAIN-SUFFIX,speech.googleapis.com
 DOMAIN-SUFFIX,texttospeech.googleapis.com
 DOMAIN-SUFFIX,mediapipe.googleapis.com
