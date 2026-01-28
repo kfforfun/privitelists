@@ -1,18 +1,15 @@
 # =========================================
-# 🤖 Rule Set 1: Gemini & AI Dedicated (Mobile Enhanced)
-# Updated: 2026-01-28
-# Highlights: Web + Live Mode + Mobile Context
+# 🤖 Rule Set 1: Gemini & AI Dedicated (Final)
+# Strategy: 必须放在 Google 规则之前
 # =========================================
 
-# --- 1. 核心 Live Mode 与 实时流 (App 关键增强) ---
-# [新增] 实时语音/视频流通道，解决 Live 模式连接中断问题
+# --- 1. 核心 Live Mode 与 实时流 ---
 DOMAIN-SUFFIX,webchannel-alkalimakersuite-pa.clients6.google.com,PROXY
 DOMAIN-SUFFIX,alkalicore-pa.clients6.google.com,PROXY
 DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com,PROXY
 DOMAIN-SUFFIX,instantmessaging-pa.googleapis.com,PROXY
 
-# --- 2. 移动端感知与端侧 AI (App 智能增强) ---
-# [新增] 位置感知、屏幕上下文、端侧模型下载
+# --- 2. 移动端感知与端侧 AI ---
 DOMAIN-SUFFIX,mobilemaps-pa.googleapis.com,PROXY
 DOMAIN-SUFFIX,semanticlocation-pa.googleapis.com,PROXY
 DOMAIN-SUFFIX,contextaware-pa.googleapis.com,PROXY
@@ -22,20 +19,26 @@ DOMAIN-SUFFIX,ondeviceoptimization-pa.googleapis.com,PROXY
 DOMAIN-SUFFIX,people-pa.googleapis.com,PROXY
 
 # --- 3. 语音与多媒体服务 ---
-# [新增] 语音转文字、TTS 朗读
 DOMAIN-SUFFIX,speech.googleapis.com,PROXY
 DOMAIN-SUFFIX,texttospeech.googleapis.com,PROXY
 DOMAIN-SUFFIX,mediapipe.googleapis.com,PROXY
 
-# --- 4. 核心推理与 Web 前端 (保留原有优势) ---
+# --- 4. 核心推理与 Web 前端 ---
 DOMAIN-SUFFIX,gemini.google.com,PROXY
 DOMAIN-SUFFIX,bard.google.com,PROXY
 DOMAIN-SUFFIX,aistudio.google.com,PROXY
 DOMAIN-SUFFIX,makersuite.google.com,PROXY
-DOMAIN-SUFFIX,generativeai.google,PROXY
 DOMAIN-SUFFIX,notebooklm.google,PROXY
-DOMAIN-SUFFIX,deepmind.com,PROXY
+DOMAIN-SUFFIX,notebooklm.google.com,PROXY
+# 覆盖 Google 顶级域名 (Brand TLD)
 DOMAIN-SUFFIX,deepmind.google,PROXY
+DOMAIN-SUFFIX,generativeai.google,PROXY
+DOMAIN-SUFFIX,ai.google,PROXY
+DOMAIN-SUFFIX,labs.google,PROXY
+DOMAIN-SUFFIX,antigravity.google,PROXY
+DOMAIN-SUFFIX,jules.google,PROXY
+# 其他域名
+DOMAIN-SUFFIX,deepmind.com,PROXY
 DOMAIN-SUFFIX,ai.google.dev,PROXY
 DOMAIN-SUFFIX,vertexai.google,PROXY
 DOMAIN-SUFFIX,generativelanguage.googleapis.com,PROXY
