@@ -4,53 +4,53 @@
 # =========================================
 
 # --- 1. 账号与核心服务 ---
-DOMAIN,accounts.google.com,PROXY
-DOMAIN,mail.google.com,PROXY
-DOMAIN,myaccount.google.com,PROXY
+DOMAIN,accounts.google.com
+DOMAIN,mail.google.com
+DOMAIN,myaccount.google.com
 
 # --- 2. YouTube & Media ---
-DOMAIN-SUFFIX,googlevideo.com,PROXY
-DOMAIN-SUFFIX,youtube.com,PROXY
-DOMAIN-SUFFIX,ytimg.com,PROXY
-DOMAIN-SUFFIX,youtu.be,PROXY
-DOMAIN-SUFFIX,ggpht.com,PROXY
-DOMAIN-SUFFIX,widevine.com,PROXY
-DOMAIN-SUFFIX,photos.googleapis.com,PROXY
-DOMAIN-SUFFIX,photoslibrary.googleapis.com,PROXY
-DOMAIN-SUFFIX,googlephotos.com,PROXY
+DOMAIN-SUFFIX,googlevideo.com
+DOMAIN-SUFFIX,youtube.com
+DOMAIN-SUFFIX,ytimg.com
+DOMAIN-SUFFIX,youtu.be
+DOMAIN-SUFFIX,ggpht.com
+DOMAIN-SUFFIX,widevine.com
+DOMAIN-SUFFIX,photos.googleapis.com
+DOMAIN-SUFFIX,photoslibrary.googleapis.com
+DOMAIN-SUFFIX,googlephotos.com
 
-# --- 3. 办公、云端与开发 (补回了 Firebase/Appspot) ---
-DOMAIN-SUFFIX,drive.google.com,PROXY
-DOMAIN-SUFFIX,docs.google.com,PROXY
-DOMAIN-SUFFIX,calendar.google.com,PROXY
-DOMAIN-SUFFIX,meet.google.com,PROXY
+# --- 3. 办公、云端与开发 ---
+DOMAIN-SUFFIX,drive.google.com
+DOMAIN-SUFFIX,docs.google.com
+DOMAIN-SUFFIX,calendar.google.com
+DOMAIN-SUFFIX,meet.google.com
 # 关键补充：非 google.com 结尾的服务
-DOMAIN-SUFFIX,firebaseio.com,PROXY
-DOMAIN-SUFFIX,firebase.com,PROXY
-DOMAIN-SUFFIX,appspot.com,PROXY
-DOMAIN-SUFFIX,blogspot.com,PROXY
-DOMAIN-SUFFIX,blogger.com,PROXY
-DOMAIN-SUFFIX,picasa.google.com,PROXY
-DOMAIN-SUFFIX,chromium.org,PROXY
+DOMAIN-SUFFIX,firebaseio.com
+DOMAIN-SUFFIX,firebase.com
+DOMAIN-SUFFIX,appspot.com
+DOMAIN-SUFFIX,blogspot.com
+DOMAIN-SUFFIX,blogger.com
+DOMAIN-SUFFIX,picasa.google.com
+DOMAIN-SUFFIX,chromium.org
 
 # --- 4. Android 生态 ---
-DOMAIN-SUFFIX,android.com,PROXY
-DOMAIN-SUFFIX,gvt1.com,PROXY
-DOMAIN-SUFFIX,gvt2.com,PROXY
-DOMAIN-SUFFIX,gvt3.com,PROXY
-DOMAIN-SUFFIX,xn--ngstr-lra8j.com,PROXY
+DOMAIN-SUFFIX,android.com
+DOMAIN-SUFFIX,gvt1.com
+DOMAIN-SUFFIX,gvt2.com
+DOMAIN-SUFFIX,gvt3.com
+DOMAIN-SUFFIX,xn--ngstr-lra8j.com
 
 # --- 5. 基础设施兜底 ---
-DOMAIN-SUFFIX,google.com,PROXY
-DOMAIN-SUFFIX,google.com.hk,PROXY
-DOMAIN-SUFFIX,googleapis.com,PROXY
-DOMAIN-SUFFIX,gstatic.com,PROXY
-DOMAIN-SUFFIX,googleusercontent.com,PROXY
-DOMAIN-SUFFIX,1e100.net,PROXY
-DOMAIN-SUFFIX,recaptcha.net,PROXY
-DOMAIN-SUFFIX,2mdn.net,PROXY
-DOMAIN-SUFFIX,app-measurement.com,PROXY
-DOMAIN-SUFFIX,abc.xyz,PROXY
+DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,google.com.hk
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,1e100.net
+DOMAIN-SUFFIX,recaptcha.net
+DOMAIN-SUFFIX,2mdn.net
+DOMAIN-SUFFIX,app-measurement.com
+DOMAIN-SUFFIX,abc.xyz
 
 # --- 6. 关键词 ---
-DOMAIN-KEYWORD,google,PROXY
+DOMAIN-KEYWORD,google
