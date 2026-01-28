@@ -1,20 +1,30 @@
 # =========================================
-# 🚀 Rule Set: Gemini Low Latency (Taiwan)
-# 作用：只接管实时流和语音，不负责身份判定
+# Rule Set 2: Gemini & AI (Taiwan Full)
+# 策略：PROXY (台湾节点)
+# 作用：Gemini 网页、逻辑、语音、实时流全量加速
 # =========================================
 
-# --- 1. 核心 Live Mode 实时流 (WebChannel/WebSocket) ---
-# 这是 Live Mode 不卡顿的关键，它们是数据管道，不涉及账号归属判定
+# --- 1. Gemini 网页与核心逻辑 (原在 US，现移回 Taiwan) ---
+DOMAIN,gemini.google.com
+DOMAIN,bard.google.com
+DOMAIN,aistudio.google.com
+DOMAIN,makersuite.google.com
+DOMAIN-SUFFIX,notebooklm.google
+DOMAIN-SUFFIX,notebooklm.google.com
+
+# --- 2. AI 品牌与底层架构 ---
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,ai.google
+DOMAIN-SUFFIX,labs.google
+
+# --- 3. 实时流与通信管道 (保持不变) ---
 DOMAIN-SUFFIX,webchannel-alkalimakersuite-pa.clients6.google.com
 DOMAIN-SUFFIX,alkalicore-pa.clients6.google.com
 DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com
 DOMAIN-SUFFIX,instantmessaging-pa.googleapis.com
 
-# --- 2. 语音识别与合成 (STT/TTS) ---
-# 这一块对延迟要求极高，建议走台湾
+# --- 4. 语音与多媒体 (保持不变) ---
 DOMAIN-SUFFIX,speech.googleapis.com
 DOMAIN-SUFFIX,texttospeech.googleapis.com
-# 如果发现语音回复有口音变化或功能缺失，可尝试将其移回美国，但通常没问题
-
-# --- 3. 媒体管道 ---
 DOMAIN-SUFFIX,mediapipe.googleapis.com
