@@ -15,11 +15,11 @@ DOMAIN-SUFFIX,books.apple.com
 DOMAIN-SUFFIX,podcasts.apple.com
 DOMAIN-SUFFIX,audiobooks.apple.com
 
-# --- Apple News (修复版) ---
+# --- Apple News ---
 # News 核心
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
-DOMAIN-SUFFIX,apple.com.co
+DOMAIN-SUFFIX,news-assets.apple.com
 # News 音频流/Podcast (修复下载失败)
 DOMAIN-SUFFIX,news-edge.apple.com
 DOMAIN-SUFFIX,news-events.apple.com
