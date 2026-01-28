@@ -1,53 +1,20 @@
 # =========================================
-# 🤖 Rule Set 1: Gemini & AI Dedicated (Final)
-# Strategy: 必须放在 Google 规则之前
+# 🚀 Rule Set: Gemini Low Latency (Taiwan)
+# 作用：只接管实时流和语音，不负责身份判定
 # =========================================
 
-# --- 1. 核心 Live Mode 与 实时流 ---
+# --- 1. 核心 Live Mode 实时流 (WebChannel/WebSocket) ---
+# 这是 Live Mode 不卡顿的关键，它们是数据管道，不涉及账号归属判定
 DOMAIN-SUFFIX,webchannel-alkalimakersuite-pa.clients6.google.com
 DOMAIN-SUFFIX,alkalicore-pa.clients6.google.com
 DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com
 DOMAIN-SUFFIX,instantmessaging-pa.googleapis.com
 
-# --- 2. 移动端感知与端侧 AI ---
-DOMAIN-SUFFIX,mobilemaps-pa.googleapis.com
-DOMAIN-SUFFIX,semanticlocation-pa.googleapis.com
-DOMAIN-SUFFIX,contextaware-pa.googleapis.com
-DOMAIN-SUFFIX,jnn-pa.googleapis.com
-DOMAIN-SUFFIX,optimizationguide-pa.googleapis.com
-DOMAIN-SUFFIX,ondeviceoptimization-pa.googleapis.com
-DOMAIN-SUFFIX,people-pa.googleapis.com
-
-# --- 3. 语音与多媒体服务 ---
+# --- 2. 语音识别与合成 (STT/TTS) ---
+# 这一块对延迟要求极高，建议走台湾
 DOMAIN-SUFFIX,speech.googleapis.com
 DOMAIN-SUFFIX,texttospeech.googleapis.com
+# 如果发现语音回复有口音变化或功能缺失，可尝试将其移回美国，但通常没问题
+
+# --- 3. 媒体管道 ---
 DOMAIN-SUFFIX,mediapipe.googleapis.com
-
-# --- 4. 核心推理与 Web 前端 ---
-DOMAIN-SUFFIX,gemini.google.com
-DOMAIN-SUFFIX,bard.google.com
-DOMAIN-SUFFIX,aistudio.google.com
-DOMAIN-SUFFIX,makersuite.google.com
-DOMAIN-SUFFIX,notebooklm.google
-DOMAIN-SUFFIX,notebooklm.google.com
-# 覆盖 Google 顶级域名 (Brand TLD)
-DOMAIN-SUFFIX,deepmind.google
-DOMAIN-SUFFIX,generativeai.google
-DOMAIN-SUFFIX,ai.google
-DOMAIN-SUFFIX,labs.google
-DOMAIN-SUFFIX,antigravity.google
-DOMAIN-SUFFIX,jules.google
-# 其他域名
-DOMAIN-SUFFIX,deepmind.com
-DOMAIN-SUFFIX,ai.google.dev
-DOMAIN-SUFFIX,vertexai.google
-DOMAIN-SUFFIX,generativelanguage.googleapis.com
-DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
-DOMAIN-SUFFIX,personal-intelligence.googleapis.com
-DOMAIN-SUFFIX,assistant-pa.clients6.google.com
-DOMAIN-SUFFIX,firebaseai.googleapis.com
-
-# --- 5. 机器学习与开发平台 ---
-DOMAIN-SUFFIX,colab.research.google.com
-DOMAIN-SUFFIX,kaggle.com
-DOMAIN-SUFFIX,tensorflow.org
