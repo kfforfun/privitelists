@@ -3,7 +3,7 @@
 # Strategy: DIRECT
 # =========================================
 
-# --- iCloud 核心 (流量大户) ---
+# --- iCloud 核心 ---
 DOMAIN-SUFFIX,icloud.com
 DOMAIN-SUFFIX,icloud.com.cn
 DOMAIN-SUFFIX,icloud-content.com
@@ -15,15 +15,14 @@ DOMAIN-SUFFIX,apple-pay.com
 DOMAIN,humb.apple.com
 DOMAIN,pos-device.apple.com
 
-# --- 系统基础服务 ---
+# --- 系统基础 ---
 DOMAIN-SUFFIX,push.apple.com
 DOMAIN-SUFFIX,findmy.network
 DOMAIN,time.apple.com
 DOMAIN-SUFFIX,siri.apple.com
-DOMAIN-SUFFIX,smoot.apple.com  # Spotlight 搜索
+DOMAIN-SUFFIX,smoot.apple.com  # Spotlight搜索
 
 # --- 兜底规则 ---
-# 处理所有未被上方 Proxy 捕获的 Apple 流量
 DOMAIN-SUFFIX,apple.com
 DOMAIN-SUFFIX,apple.com.cn
 DOMAIN-SUFFIX,cdn-apple.com
