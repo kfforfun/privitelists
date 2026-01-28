@@ -1,27 +1,26 @@
 # =========================================
-# Rule Set: Apple Main & System
+# 7. Apple Main & System (Baseline)
 # Strategy: DIRECT
 # =========================================
-
-# --- iCloud 核心 ---
+# iCloud
 DOMAIN-SUFFIX,icloud.com
 DOMAIN-SUFFIX,icloud.com.cn
 DOMAIN-SUFFIX,icloud-content.com
 DOMAIN-SUFFIX,apple-cloudkit.com
 DOMAIN-SUFFIX,me.com
 
-# --- Apple Pay & Wallet ---
+# Wallet
 DOMAIN-SUFFIX,apple-pay.com
 DOMAIN,humb.apple.com
 DOMAIN,pos-device.apple.com
 
-# --- 系统基础 ---
+# System
 DOMAIN-SUFFIX,push.apple.com
 DOMAIN-SUFFIX,findmy.network
 DOMAIN,time.apple.com
 DOMAIN-SUFFIX,siri.apple.com
 
-# --- 兜底规则 ---
+# Catch-all (Handles ls.apple.com)
 DOMAIN-SUFFIX,apple.com
 DOMAIN-SUFFIX,apple.com.cn
 DOMAIN-SUFFIX,cdn-apple.com
