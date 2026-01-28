@@ -1,33 +1,34 @@
-# =============================================
-# Apple Store / Media / Services (Proxy)
-# 策略：PROXY
-# =============================================
+# =========================================
+# Rule Set: Apple Store & Media (Proxy)
+# Strategy: PROXY
+# =========================================
 
-# --- App Store 商店浏览与购买 ---
-# DOMAIN-SUFFIX 涵盖了 buy, search, bag 等所有子域名
+# --- App Store 浏览 ---
 DOMAIN-SUFFIX,itunes.apple.com
 DOMAIN-SUFFIX,apps.apple.com
 DOMAIN-SUFFIX,mzstatic.com
 
-# --- Apple 媒体服务 (Music, TV, Books) ---
+# --- 媒体服务 ---
 DOMAIN-SUFFIX,music.apple.com
 DOMAIN-SUFFIX,tv.apple.com
 DOMAIN-SUFFIX,books.apple.com
 DOMAIN-SUFFIX,podcasts.apple.com
 DOMAIN-SUFFIX,audiobooks.apple.com
 
-# --- 增值服务 ---
-DOMAIN-SUFFIX,arcade.apple.com
-DOMAIN-SUFFIX,fitness.apple.com
+# --- Apple News (修复版) ---
+# News 核心
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
+DOMAIN-SUFFIX,apple.com.co
+# News 音频流/Podcast (修复下载失败)
+DOMAIN-SUFFIX,news-edge.apple.com
+DOMAIN-SUFFIX,news-events.apple.com
+DOMAIN-SUFFIX,blobstore.apple.com
 
-# --- 开发者与测试 ---
+# --- 增值与开发 ---
+DOMAIN-SUFFIX,arcade.apple.com
+DOMAIN-SUFFIX,fitness.apple.com
 DOMAIN-SUFFIX,testflight.apple.com
 DOMAIN-SUFFIX,appstoreconnect.apple.com
 DOMAIN-SUFFIX,itunesconnect.apple.com
-
-# --- 其他 ---
 DOMAIN-SUFFIX,shazam.com
-# 某些 iCloud+ 权益验证可能走这里，视情况而定
-DOMAIN,setup.icloud.com
