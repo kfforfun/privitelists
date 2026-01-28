@@ -30,7 +30,7 @@ DOMAIN-SUFFIX,apple-mapkit.com         # News Maps
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
 DOMAIN-SUFFIX,apple.com.co
-DOMAIN-SUFFIX,news-assets.apple.com    # Assets CDN
+DOMAIN-SUFFIX,news-assets.apple.com
 
 # --- Services & Dev ---
 DOMAIN-SUFFIX,arcade.apple.com
