@@ -1,16 +1,9 @@
-# =============================================
-# Apple ID / iCloud / System (Direct)
-# 策略：DIRECT
-# =============================================
+# =========================================
+# Rule Set: Apple Main & System
+# Strategy: DIRECT
+# =========================================
 
-# --- 核心身份与安全 ---
-DOMAIN-SUFFIX,account.apple.com
-DOMAIN-SUFFIX,appleid.apple.com
-DOMAIN-SUFFIX,idmsa.apple.com
-DOMAIN-SUFFIX,auth.apple.com
-DOMAIN-SUFFIX,verify.apple.com
-
-# --- iCloud 核心数据 (流量大户) ---
+# --- iCloud 核心 (流量大户) ---
 DOMAIN-SUFFIX,icloud.com
 DOMAIN-SUFFIX,icloud.com.cn
 DOMAIN-SUFFIX,icloud-content.com
@@ -26,7 +19,11 @@ DOMAIN,pos-device.apple.com
 DOMAIN-SUFFIX,push.apple.com
 DOMAIN-SUFFIX,findmy.network
 DOMAIN,time.apple.com
+DOMAIN-SUFFIX,siri.apple.com
+DOMAIN-SUFFIX,smoot.apple.com  # Spotlight 搜索
 
-# --- 兜底规则 (防止遗漏的 Apple 服务误走代理) ---
+# --- 兜底规则 ---
+# 处理所有未被上方 Proxy 捕获的 Apple 流量
 DOMAIN-SUFFIX,apple.com
 DOMAIN-SUFFIX,apple.com.cn
+DOMAIN-SUFFIX,cdn-apple.com
