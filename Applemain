@@ -20,7 +20,6 @@ DOMAIN-SUFFIX,push.apple.com
 DOMAIN-SUFFIX,findmy.network
 DOMAIN,time.apple.com
 DOMAIN-SUFFIX,siri.apple.com
-DOMAIN-SUFFIX,smoot.apple.com  # Spotlight搜索
 
 # --- 兜底规则 ---
 DOMAIN-SUFFIX,apple.com
