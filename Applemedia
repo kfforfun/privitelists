@@ -20,11 +20,11 @@ DOMAIN-SUFFIX,podcasts.apple.com
 DOMAIN-SUFFIX,audiobooks.apple.com
 
 # --- Experience & Content Fixes ---
-DOMAIN-SUFFIX,fairplay.apple.com       # DRM
-DOMAIN-SUFFIX,smoot.apple.com          # Spotlight
-DOMAIN-SUFFIX,api.bls.apple.com        # Siri API
-DOMAIN-SUFFIX,blobstore.apple.com      # News Audio Blob
-DOMAIN-SUFFIX,apple-mapkit.com         # News Maps
+DOMAIN-SUFFIX,fairplay.apple.com
+DOMAIN-SUFFIX,smoot.apple.com
+DOMAIN-SUFFIX,api.bls.apple.com
+DOMAIN-SUFFIX,blobstore.apple.com
+DOMAIN-SUFFIX,apple-mapkit.com
 
 # --- Apple News ---
 DOMAIN-SUFFIX,news.apple.com
