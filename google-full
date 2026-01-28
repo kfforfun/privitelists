@@ -1,44 +1,56 @@
-# ==========================================
-# Rule Set: Google Services (US)
-# Position: AFTER Gemini-Client-All
-# Strategy: PROXY (US Node)
-# ==========================================
+# =========================================
+# 🌍 Rule Set 2: Google General (Final)
+# Strategy: 必须放在 Gemini 规则之后
+# =========================================
 
-# --- 1. 账号与认证 (必须走代理以防地区跳变) ---
-DOMAIN,accounts.google.com
-DOMAIN,myaccount.google.com
-DOMAIN-SUFFIX,googleapis.com
-DOMAIN-SUFFIX,googletagmanager.com
-DOMAIN-SUFFIX,recaptcha.net
+# --- 1. 账号与核心服务 ---
+DOMAIN,accounts.google.com,PROXY
+DOMAIN,mail.google.com,PROXY
+DOMAIN,myaccount.google.com,PROXY
 
-# --- 2. Web 版 AI Studio & Gemini ---
-DOMAIN,aistudio.google.com
-DOMAIN,makersuite.google.com
-DOMAIN,bard.google.com
-DOMAIN,gemini.google.com
+# --- 2. YouTube & Media ---
+DOMAIN-SUFFIX,googlevideo.com,PROXY
+DOMAIN-SUFFIX,youtube.com,PROXY
+DOMAIN-SUFFIX,ytimg.com,PROXY
+DOMAIN-SUFFIX,youtu.be,PROXY
+DOMAIN-SUFFIX,ggpht.com,PROXY
+DOMAIN-SUFFIX,widevine.com,PROXY
+DOMAIN-SUFFIX,photos.googleapis.com,PROXY
+DOMAIN-SUFFIX,photoslibrary.googleapis.com,PROXY
+DOMAIN-SUFFIX,googlephotos.com,PROXY
 
-# --- 3. 相册、云盘、Gmail ---
-# 修复了之前的 URL 错误，并补充了图片服务器
-DOMAIN,photos.google.com
-DOMAIN,mail.google.com
-DOMAIN,maps.google.com
-DOMAIN-SUFFIX,drive.google.com
-DOMAIN-SUFFIX,docs.google.com
-DOMAIN-SUFFIX,ggpht.com  # 关键：Google Photos 的图片资源
-DOMAIN-SUFFIX,gmail.com
+# --- 3. 办公、云端与开发 (补回了 Firebase/Appspot) ---
+DOMAIN-SUFFIX,drive.google.com,PROXY
+DOMAIN-SUFFIX,docs.google.com,PROXY
+DOMAIN-SUFFIX,calendar.google.com,PROXY
+DOMAIN-SUFFIX,meet.google.com,PROXY
+# 关键补充：非 google.com 结尾的服务
+DOMAIN-SUFFIX,firebaseio.com,PROXY
+DOMAIN-SUFFIX,firebase.com,PROXY
+DOMAIN-SUFFIX,appspot.com,PROXY
+DOMAIN-SUFFIX,blogspot.com,PROXY
+DOMAIN-SUFFIX,blogger.com,PROXY
+DOMAIN-SUFFIX,picasa.google.com,PROXY
+DOMAIN-SUFFIX,chromium.org,PROXY
 
-# --- 4. YouTube & Media ---
-DOMAIN-SUFFIX,youtube.com
-DOMAIN-SUFFIX,googlevideo.com
-DOMAIN-SUFFIX,ytimg.com
-DOMAIN-SUFFIX,youtu.be
-DOMAIN-SUFFIX,widevine.com # DRM 验证
+# --- 4. Android 生态 ---
+DOMAIN-SUFFIX,android.com,PROXY
+DOMAIN-SUFFIX,gvt1.com,PROXY
+DOMAIN-SUFFIX,gvt2.com,PROXY
+DOMAIN-SUFFIX,gvt3.com,PROXY
+DOMAIN-SUFFIX,xn--ngstr-lra8j.com,PROXY
 
-# --- 5. 基础架构与兜底 (覆盖所有 Google 服务) ---
-# gvt1.com 常用于 Chrome 组件下载和 Android Play 商店下载
-DOMAIN-SUFFIX,gvt1.com
-DOMAIN-SUFFIX,1e100.net
-DOMAIN-SUFFIX,google.com
-DOMAIN-SUFFIX,google.cn
-DOMAIN-SUFFIX,gstatic.com
-DOMAIN-SUFFIX,googleusercontent.com
+# --- 5. 基础设施兜底 ---
+DOMAIN-SUFFIX,google.com,PROXY
+DOMAIN-SUFFIX,google.com.hk,PROXY
+DOMAIN-SUFFIX,googleapis.com,PROXY
+DOMAIN-SUFFIX,gstatic.com,PROXY
+DOMAIN-SUFFIX,googleusercontent.com,PROXY
+DOMAIN-SUFFIX,1e100.net,PROXY
+DOMAIN-SUFFIX,recaptcha.net,PROXY
+DOMAIN-SUFFIX,2mdn.net,PROXY
+DOMAIN-SUFFIX,app-measurement.com,PROXY
+DOMAIN-SUFFIX,abc.xyz,PROXY
+
+# --- 6. 关键词 ---
+DOMAIN-KEYWORD,google,PROXY
