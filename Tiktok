@@ -1,44 +1,29 @@
 # =========================================
-# 🎵 Rule Set 4: TikTok (2026 Ultimate)
-# Updated: 2026-01-27 (Merged)
-# Note: Integrated USDS/Oracle & Global CDN
+# 5. TikTok Global (Enhanced)
+# Strategy: PROXY (Unlock Region)
 # =========================================
-
-# --- 2026 新增：USDS 合资公司与 Oracle 基础设施 ---
-DOMAIN-SUFFIX,tiktokusds.com
-DOMAIN-SUFFIX,tiktokv.us
-DOMAIN-SUFFIX,ttdns2.com
-
-# --- 核心业务域名 ---
 DOMAIN-SUFFIX,tiktok.com
 DOMAIN-SUFFIX,tiktokv.com
-DOMAIN-SUFFIX,tiktok.net
 DOMAIN-SUFFIX,tiktokcdn.com
-DOMAIN-SUFFIX,tiktokcdn-us.com
-DOMAIN-SUFFIX,tiktokd.org
+DOMAIN-SUFFIX,tiktok-d.com
 DOMAIN-SUFFIX,tik-tokapi.com
-DOMAIN-SUFFIX,tiktokmusic.app
-DOMAIN-SUFFIX,ttwstatic.com
-
-# --- 基础设施、API 与 性能监控 ---
 DOMAIN-SUFFIX,byteoversea.com
-DOMAIN-SUFFIX,bytegecko-i18n.com
-DOMAIN-SUFFIX,byteintlapi.com
-DOMAIN-SUFFIX,bytedapm.com
 DOMAIN-SUFFIX,ibytedtos.com
 DOMAIN-SUFFIX,ibyteimg.com
 DOMAIN-SUFFIX,ipstatp.com
-DOMAIN-SUFFIX,sgpstatp.com
-DOMAIN-SUFFIX,isnssdk.com
 DOMAIN-SUFFIX,muscdn.com
 DOMAIN-SUFFIX,musical.ly
-
-# --- 直播流媒体 ---
-DOMAIN-SUFFIX,tlivecdn.com
-DOMAIN-SUFFIX,ttlivecdn.com
+DOMAIN-SUFFIX,pitaya-clientai.com
+DOMAIN-SUFFIX,bytegecko-i18n.com
+DOMAIN-SUFFIX,byteintlapi.com
+DOMAIN-SUFFIX,isnssdk.com
+DOMAIN-SUFFIX,sgpstatp.com
+DOMAIN-SUFFIX,mcsbc.com
+DOMAIN-SUFFIX,capcut.com
+DOMAIN-SUFFIX,lv-overseas.com
 DOMAIN,p16-tiktokcdn-com.akamaized.net
-
-# --- 匹配符 ---
-DOMAIN-KEYWORD,tiktokcdn
-DOMAIN-KEYWORD,-tiktok-
-USER-AGENT,TikTok*
+DOMAIN,p19-tiktokcdn-com.akamaized.net
+DOMAIN,lf16-pkgcdn.pitaya-clientai.com
+DOMAIN,lf16-effectcdn.byteeffecttos-g.com
+DOMAIN-KEYWORD,tiktok
+DOMAIN-KEYWORD,musical.ly
