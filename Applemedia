@@ -20,7 +20,6 @@ DOMAIN-SUFFIX,audiobooks.apple.com
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
 DOMAIN-SUFFIX,news-assets.apple.com
-# News 音频流/Podcast (修复下载失败)
 DOMAIN-SUFFIX,news-edge.apple.com
 DOMAIN-SUFFIX,news-events.apple.com
 DOMAIN-SUFFIX,blobstore.apple.com
