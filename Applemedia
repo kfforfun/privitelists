@@ -1,8 +1,19 @@
 # =========================================
 # Rule Set 4: Apple Store & Media (Proxy)
 # 策略：PROXY (美国节点)
-# 作用：商店浏览、媒体播放、内容加载、DRM验证
+# 作用：商店、媒体、News、播客优化、DRM
 # =========================================
+
+# --- [新增] 播客与流媒体增强 (User-Agent) ---
+# 🌟 核心：强制 Podcasts 应用发出的所有请求走代理
+# 解决托管在第三方服务器(非Apple)的播客音频下载失败/慢的问题
+USER-AGENT,Podcasts*
+USER-AGENT,AppleCoreMedia*
+
+# --- [新增] 播客同步与API ---
+# 解决多设备播放进度不一致的问题
+DOMAIN,bookkeeper.itunes.apple.com
+DOMAIN,amp-api.podcasts.apple.com
 
 # --- 1. App Store 商店浏览 ---
 DOMAIN-SUFFIX,itunes.apple.com
@@ -16,24 +27,24 @@ DOMAIN-SUFFIX,books.apple.com
 DOMAIN-SUFFIX,podcasts.apple.com
 DOMAIN-SUFFIX,audiobooks.apple.com
 
-# --- 3. [补漏] 体验增强与内容加载 ---
-DOMAIN-SUFFIX,fairplay.apple.com
-DOMAIN-SUFFIX,smoot.apple.com
-DOMAIN-SUFFIX,api.bls.apple.com
-DOMAIN-SUFFIX,blobstore.apple.com
-DOMAIN-SUFFIX,apple-mapkit.com
+# --- 3. 体验增强与内容加载 ---
+DOMAIN-SUFFIX,fairplay.apple.com       # DRM 版权验证
+DOMAIN-SUFFIX,smoot.apple.com          # Spotlight 搜索建议
+DOMAIN-SUFFIX,api.bls.apple.com        # Siri 建议 API
+DOMAIN-SUFFIX,blobstore.apple.com      # News 音频/数据块
+DOMAIN-SUFFIX,apple-mapkit.com         # 地图组件
 
 # --- 4. Apple News 基础域名 ---
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
 DOMAIN-SUFFIX,apple.com.co
-DOMAIN-SUFFIX,news-assets.apple.com
+DOMAIN-SUFFIX,news-assets.apple.com    # 文章图片 CDN
 
 # --- 5. 增值服务 ---
 DOMAIN-SUFFIX,arcade.apple.com
 DOMAIN-SUFFIX,fitness.apple.com
 
-# --- 6. 开发者、测试与工具 ---
+# --- 6. 开发者与工具 ---
 DOMAIN-SUFFIX,testflight.apple.com
 DOMAIN-SUFFIX,appstoreconnect.apple.com
 DOMAIN-SUFFIX,itunesconnect.apple.com
