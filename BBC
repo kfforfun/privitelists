@@ -11,6 +11,9 @@ DOMAIN-SUFFIX,bbcpersian.com
 DOMAIN-SUFFIX,bbc.in
 DOMAIN-SUFFIX,bbcfmt.com
 DOMAIN-SUFFIX,bbctvapps.co.uk
+DOMAIN-SUFFIX,bbcps.pdn.tritondigital.com
+DOMAIN-SUFFIX,open.live.bbc.co.uk
+DOMAIN-SUFFIX,aod-pod-uk-live.akamaized.net
 
 # --- Content Delivery & Third-Party Integrations ---
 # BBC 使用 Limelight 和 Akamai 的特定子域名
