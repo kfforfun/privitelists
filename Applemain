@@ -1,26 +1,28 @@
 # =========================================
-# 7. Apple Main & System (Baseline)
+# 7. Apple Main & System
 # Strategy: DIRECT
 # =========================================
-# iCloud
+
+# --- iCloud ---
 DOMAIN-SUFFIX,icloud.com
 DOMAIN-SUFFIX,icloud.com.cn
 DOMAIN-SUFFIX,icloud-content.com
 DOMAIN-SUFFIX,apple-cloudkit.com
 DOMAIN-SUFFIX,me.com
 
-# Wallet
+# --- Wallet ---
 DOMAIN-SUFFIX,apple-pay.com
-DOMAIN-SUFFIX,humb.apple.com
-DOMAIN-SUFFIX,pos-device.apple.com
+DOMAIN,humb.apple.com
+DOMAIN,pos-device.apple.com
 
-# System
+# --- System ---
 DOMAIN-SUFFIX,push.apple.com
 DOMAIN-SUFFIX,findmy.network
-DOMAIN-SUFFIX,time.apple.com
+DOMAIN,time.apple.com
 DOMAIN-SUFFIX,siri.apple.com
 
-# Catch-all (Handles ls.apple.com)
+# --- Catch-all ---
 DOMAIN-SUFFIX,apple.com
 DOMAIN-SUFFIX,apple.com.cn
 DOMAIN-SUFFIX,cdn-apple.com
+
