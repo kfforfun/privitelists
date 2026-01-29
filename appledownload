@@ -1,0 +1,4 @@
+DOMAIN-SUFFIX,iosapps.itunes.apple.com,DIRECT
+DOMAIN-SUFFIX,osxapps.itunes.apple.com,DIRECT
+DOMAIN-SUFFIX,updates.cdn-apple.com,DIRECT
+DOMAIN-SUFFIX,updates-http.cdn-apple.com,DIRECT
