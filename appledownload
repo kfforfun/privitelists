@@ -1,3 +1,8 @@
+# =========================================
+# 1. Apple Downloads
+# Strategy: DIRECT
+# =========================================
+
 DOMAIN,iosapps.itunes.apple.com
 DOMAIN,osxapps.itunes.apple.com
 DOMAIN-SUFFIX,updates.cdn-apple.com
