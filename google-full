@@ -1,27 +1,29 @@
 # =========================================
-# 3. Google Core & Identity (Baseline)
+# 3. Google Core & Identity
 # Strategy: PROXY (US)
 # =========================================
-# Account & Auth
-DOMAIN-SUFFIX,accounts.google.com
-DOMAIN-SUFFIX,myaccount.google.com
-DOMAIN-SUFFIX,admin.google.com
-DOMAIN-SUFFIX,families.google.com
-DOMAIN-SUFFIX,passwords.google.com
-DOMAIN-SUFFIX,oauth2.googleapis.com
-DOMAIN-SUFFIX,openidconnect.googleapis.com
-DOMAIN-SUFFIX,securetoken.googleapis.com
-DOMAIN-SUFFIX,identitytoolkit.googleapis.com
-DOMAIN-SUFFIX,gmail.com
-DOMAIN-SUFFIX,mail.google.com
 
-# Location Services (Keep in US)
+# --- Account & Auth ---
+DOMAIN,accounts.google.com
+DOMAIN,myaccount.google.com
+DOMAIN,admin.google.com
+DOMAIN,families.google.com
+DOMAIN,passwords.google.com
+# 第三方登录关键
+DOMAIN,oauth2.googleapis.com
+DOMAIN,openidconnect.googleapis.com
+DOMAIN,securetoken.googleapis.com
+DOMAIN,identitytoolkit.googleapis.com
+DOMAIN-SUFFIX,gmail.com
+DOMAIN,mail.google.com
+
+# --- Location Services (Keep in US) ---
 DOMAIN-SUFFIX,mobilemaps-pa.googleapis.com
 DOMAIN-SUFFIX,semanticlocation-pa.googleapis.com
 DOMAIN-SUFFIX,contextaware-pa.googleapis.com
 DOMAIN-SUFFIX,people-pa.googleapis.com
 
-# Media & Photos
+# --- Media & Photos ---
 DOMAIN-SUFFIX,googlevideo.com
 DOMAIN-SUFFIX,youtube.com
 DOMAIN-SUFFIX,ytimg.com
@@ -32,7 +34,7 @@ DOMAIN-SUFFIX,photoslibrary.googleapis.com
 DOMAIN-SUFFIX,googlephotos.com
 DOMAIN-SUFFIX,ggpht.com
 
-# Dev & Cloud (Colab stays here)
+# --- Dev & Cloud ---
 DOMAIN-SUFFIX,drive.google.com
 DOMAIN-SUFFIX,docs.google.com
 DOMAIN-SUFFIX,calendar.google.com
@@ -44,7 +46,7 @@ DOMAIN-SUFFIX,tensorflow.org
 DOMAIN-SUFFIX,appspot.com
 DOMAIN-SUFFIX,blogspot.com
 
-# Catch-all
+# --- Catch-all ---
 DOMAIN-SUFFIX,recaptcha.net
 DOMAIN-SUFFIX,android.com
 DOMAIN-SUFFIX,gvt1.com
@@ -55,3 +57,4 @@ DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,1e100.net
 DOMAIN-KEYWORD,google
+
