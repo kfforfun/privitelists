@@ -1,13 +1,13 @@
 # =========================================
-# 4. Apple Store & Media (Baseline Enhanced)
+# 4. Apple Store & Media
 # Strategy: PROXY (US)
 # =========================================
 
-# --- Podcast Optimization (Key) ---
+# --- Podcast Optimization ---
 USER-AGENT,Podcasts*
 USER-AGENT,AppleCoreMedia*
-DOMAIN-SUFFIX,bookkeeper.itunes.apple.com
-DOMAIN-SUFFIX,amp-api.podcasts.apple.com
+DOMAIN,bookkeeper.itunes.apple.com
+DOMAIN,amp-api.podcasts.apple.com
 
 # --- Store & Media Core ---
 DOMAIN-SUFFIX,itunes.apple.com
@@ -20,16 +20,22 @@ DOMAIN-SUFFIX,podcasts.apple.com
 DOMAIN-SUFFIX,audiobooks.apple.com
 
 # --- Experience & Content Fixes ---
+# DRM 版权验证
 DOMAIN-SUFFIX,fairplay.apple.com
+# Spotlight 搜索建议
 DOMAIN-SUFFIX,smoot.apple.com
+# Siri 建议 API
 DOMAIN-SUFFIX,api.bls.apple.com
+# News 音频数据块
 DOMAIN-SUFFIX,blobstore.apple.com
+# 地图组件
 DOMAIN-SUFFIX,apple-mapkit.com
 
 # --- Apple News ---
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
 DOMAIN-SUFFIX,apple.com.co
+# 文章图片 CDN
 DOMAIN-SUFFIX,news-assets.apple.com
 
 # --- Services & Dev ---
