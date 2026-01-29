@@ -9,10 +9,10 @@ DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com
 DOMAIN-SUFFIX,instantmessaging-pa.googleapis.com
 
 # Web & Core Logic
-DOMAIN,gemini.google.com
-DOMAIN,bard.google.com
-DOMAIN,aistudio.google.com
-DOMAIN,makersuite.google.com
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,bard.google.com
+DOMAIN-SUFFIX,aistudio.google.com
+DOMAIN-SUFFIX,makersuite.google.com
 DOMAIN-SUFFIX,notebooklm.google
 DOMAIN-SUFFIX,notebooklm.google.com
 
