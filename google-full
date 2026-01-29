@@ -58,3 +58,52 @@ DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,1e100.net
 DOMAIN-KEYWORD,google
 
+# X / Twitter Optimized Ruleset
+
+# --- Core Domains ---
+DOMAIN-SUFFIX,x.com
+DOMAIN-SUFFIX,twitter.com
+DOMAIN-SUFFIX,t.co
+DOMAIN-SUFFIX,twimg.com
+DOMAIN-SUFFIX,twimg.co
+DOMAIN-SUFFIX,twimg.org
+DOMAIN-SUFFIX,twttr.com
+DOMAIN-SUFFIX,twttr.net
+DOMAIN-SUFFIX,twtrdns.net
+
+# --- Services & Legacy ---
+DOMAIN-SUFFIX,tweetdeck.com
+DOMAIN-SUFFIX,twitpic.com
+DOMAIN-SUFFIX,twitterstat.us
+DOMAIN-SUFFIX,twitter.jp
+DOMAIN-SUFFIX,twittercommunity.com
+DOMAIN-SUFFIX,twitterflightschool.com
+DOMAIN-SUFFIX,twitterinc.com
+DOMAIN-SUFFIX,twitteroauth.com
+DOMAIN-SUFFIX,twitter.biz
+
+# --- Ads & Tracking ---
+DOMAIN-SUFFIX,ads-twitter.com
+DOMAIN-SUFFIX,tellapart.com
+DOMAIN-SUFFIX,cms-twdigitalassets.com
+
+# --- Video / Streaming (Legacy included) ---
+DOMAIN-SUFFIX,periscope.tv
+DOMAIN-SUFFIX,pscp.tv
+DOMAIN-SUFFIX,vine.co
+DOMAIN-SUFFIX,twvid.com
+
+# --- Keyword ---
+DOMAIN-KEYWORD,twitter
+
+# --- IP CIDR (Standard & Expanded) ---
+IP-CIDR,104.244.40.0/21,no-resolve  # (NEW) Critical for Mobile/Media
+IP-CIDR,64.63.0.0/18,no-resolve     # (NEW) Major Server Block
+IP-CIDR,69.195.160.0/19,no-resolve
+IP-CIDR,199.96.56.0/21,no-resolve
+IP-CIDR,209.237.192.0/19,no-resolve
+IP-CIDR,192.133.76.0/22,no-resolve
+IP-CIDR,199.16.156.0/22,no-resolve
+IP-CIDR,199.59.148.0/22,no-resolve
+IP-CIDR,202.160.128.0/22,no-resolve # Asia Pacific Nodes
+
