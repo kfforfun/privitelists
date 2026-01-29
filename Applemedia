@@ -6,8 +6,8 @@
 # --- Podcast Optimization (Key) ---
 USER-AGENT,Podcasts*
 USER-AGENT,AppleCoreMedia*
-DOMAIN,bookkeeper.itunes.apple.com
-DOMAIN,amp-api.podcasts.apple.com
+DOMAIN-SUFFIX,bookkeeper.itunes.apple.com
+DOMAIN-SUFFIX,amp-api.podcasts.apple.com
 
 # --- Store & Media Core ---
 DOMAIN-SUFFIX,itunes.apple.com
