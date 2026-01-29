@@ -11,13 +11,13 @@ DOMAIN-SUFFIX,me.com
 
 # Wallet
 DOMAIN-SUFFIX,apple-pay.com
-DOMAIN,humb.apple.com
-DOMAIN,pos-device.apple.com
+DOMAIN-SUFFIX,humb.apple.com
+DOMAIN-SUFFIX,pos-device.apple.com
 
 # System
 DOMAIN-SUFFIX,push.apple.com
 DOMAIN-SUFFIX,findmy.network
-DOMAIN,time.apple.com
+DOMAIN-SUFFIX,time.apple.com
 DOMAIN-SUFFIX,siri.apple.com
 
 # Catch-all (Handles ls.apple.com)
