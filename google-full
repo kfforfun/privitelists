@@ -1,9 +1,14 @@
 # =========================================
-# 3. Google Core & Identity
-# Strategy: PROXY (US)
+# 9. Google Core & Identity
+# Strategy: 建议 PROXY（US 节点）
+#
+# 变更说明 2026-01-30：
+# - 删除原有 DOMAIN-KEYWORD,google 以避免误伤含 google 关键字的
+#   第三方域名，保留更精确的 DOMAIN / DOMAIN-SUFFIX 匹配。
+# - 其余条目保持不变，继续作为 Google 生态在 US 节点的主路由。
 # =========================================
 
-# --- Account & Auth ---
+# ---- Account & Auth ----
 DOMAIN,accounts.google.com
 DOMAIN,myaccount.google.com
 DOMAIN,admin.google.com
@@ -17,13 +22,13 @@ DOMAIN,identitytoolkit.googleapis.com
 DOMAIN-SUFFIX,gmail.com
 DOMAIN,mail.google.com
 
-# --- Location Services (Keep in US) ---
+# ---- Location Services (Keep in US) ----
 DOMAIN-SUFFIX,mobilemaps-pa.googleapis.com
 DOMAIN-SUFFIX,semanticlocation-pa.googleapis.com
 DOMAIN-SUFFIX,contextaware-pa.googleapis.com
 DOMAIN-SUFFIX,people-pa.googleapis.com
 
-# --- Media & Photos ---
+# ---- Media & Photos ----
 DOMAIN-SUFFIX,googlevideo.com
 DOMAIN-SUFFIX,youtube.com
 DOMAIN-SUFFIX,ytimg.com
@@ -34,7 +39,7 @@ DOMAIN-SUFFIX,photoslibrary.googleapis.com
 DOMAIN-SUFFIX,googlephotos.com
 DOMAIN-SUFFIX,ggpht.com
 
-# --- Dev & Cloud ---
+# ---- Dev & Cloud ----
 DOMAIN-SUFFIX,drive.google.com
 DOMAIN-SUFFIX,docs.google.com
 DOMAIN-SUFFIX,calendar.google.com
@@ -46,7 +51,7 @@ DOMAIN-SUFFIX,tensorflow.org
 DOMAIN-SUFFIX,appspot.com
 DOMAIN-SUFFIX,blogspot.com
 
-# --- Catch-all ---
+# ---- Catch-all ----
 DOMAIN-SUFFIX,recaptcha.net
 DOMAIN-SUFFIX,android.com
 DOMAIN-SUFFIX,gvt1.com
@@ -56,4 +61,3 @@ DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,1e100.net
-DOMAIN-KEYWORD,google
