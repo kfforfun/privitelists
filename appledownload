@@ -1,9 +1,26 @@
 # =========================================
 # 1. Apple Downloads
-# Strategy: DIRECT
+# Strategy: 建议 DIRECT（直连）
+#
+# 变更说明 2026-01-30：
+# - 新增多组 Apple 系统 / App 更新相关域名（mesu、appldnld、swscan、swcdn、swdist、gdmf、xp）
+#   方便统一直连或统一策略，减少更新失败的情况。
+# - 原有 iosapps / osxapps / updates.cdn-apple.com 保留不变。
 # =========================================
 
+# App 下载主域
 DOMAIN,iosapps.itunes.apple.com
 DOMAIN,osxapps.itunes.apple.com
+
+# 更新 CDN
 DOMAIN-SUFFIX,updates.cdn-apple.com
 DOMAIN-SUFFIX,updates-http.cdn-apple.com
+
+# 系统更新检测与镜像分发
+DOMAIN-SUFFIX,mesu.apple.com
+DOMAIN-SUFFIX,appldnld.apple.com
+DOMAIN-SUFFIX,swscan.apple.com
+DOMAIN-SUFFIX,swcdn.apple.com
+DOMAIN-SUFFIX,swdist.apple.com
+DOMAIN-SUFFIX,gdmf.apple.com
+DOMAIN-SUFFIX,xp.apple.com
