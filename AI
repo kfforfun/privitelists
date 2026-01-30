@@ -1,23 +1,37 @@
 # =========================================
-# 6. AI Global Others (Master Baseline v2.1)
-# Strategy: PROXY (US)
-# Updated: Integrated Security, Sora, & Grok API
+# 8. AI Global Others
+# Strategy: 建议 PROXY（US 节点）
+#
+# 变更说明 2026-01-30：
+# - 新增 Azure OpenAI 相关域名：
+#   * openai.azure.com / services.ai.azure.com / cognitiveservices.azure.com
+#   以覆盖 Azure OpenAI / Foundry 等部署场景。
+# - 其余 OpenAI / Anthropic / Perplexity / xAI / Copilot / Midjourney /
+#   HuggingFace 等域名保持不变。
 # =========================================
 
-# --- 1. OpenAI (ChatGPT, Sora & DALL-E) ---
+# ---- OpenAI (ChatGPT, Sora & DALL-E) ----
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,chatgpt.com
+# 官方短域名
 DOMAIN-SUFFIX,chat.com
+# 视频模型官网
 DOMAIN-SUFFIX,sora.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,openaiapi-site.azureedge.net
 DOMAIN-SUFFIX,openaicom.imgix.net
 
-# --- OpenAI Advanced (Voice & Security) ---
+# Azure OpenAI / Foundry 端点
+DOMAIN-SUFFIX,openai.azure.com
+DOMAIN-SUFFIX,services.ai.azure.com
+DOMAIN-SUFFIX,cognitiveservices.azure.com
+
+# ---- OpenAI Advanced (Voice & Security) ----
+# 语音模式实时流
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
 DOMAIN-SUFFIX,host.livekit.cloud
-# [关键] 验证码与风控 (防止登录转圈/Access Denied)
+# 验证码与风控
 DOMAIN-SUFFIX,arkoselabs.com
 DOMAIN-SUFFIX,persona.org
 DOMAIN-SUFFIX,featuregates.org
@@ -25,28 +39,32 @@ DOMAIN-SUFFIX,identrust.com
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,sentinelone.net
 
-# --- 2. Anthropic (Claude) ---
+# ---- Anthropic (Claude) ----
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,anthropic.cdn.cloudflare.net
+# 静态资源
 DOMAIN-SUFFIX,servd.host
 
-# --- 3. Perplexity AI ---
+# ---- Perplexity AI ----
 DOMAIN-SUFFIX,perplexity.ai
 DOMAIN-SUFFIX,pplx.ai
+# 搜索图片存储 / Labs / API
 DOMAIN-SUFFIX,r2cdn.perplexity.ai
 DOMAIN-SUFFIX,labs.perplexity.ai
 DOMAIN-SUFFIX,api.perplexity.ai
 
-# --- 4. xAI (Grok) ---
+# ---- xAI (Grok) ----
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,grok.x.ai
 DOMAIN-SUFFIX,grok.com
+# API 端点
 DOMAIN-SUFFIX,api.x.ai
+# 资源端点
 DOMAIN-SUFFIX,assets.grok.x.ai
 
-# --- 5. Microsoft & GitHub ---
+# ---- Microsoft & GitHub ----
 DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,copilot.microsoft.com
 DOMAIN-SUFFIX,edgeservices.bing.com
@@ -56,14 +74,14 @@ DOMAIN-SUFFIX,githubcopilot.com
 DOMAIN-SUFFIX,cocopilot.org
 DOMAIN-SUFFIX,individual.githubcopilot.com
 
-# --- 6. Midjourney & Discord ---
+# ---- Midjourney & Discord ----
 DOMAIN-SUFFIX,midjourney.com
 DOMAIN-SUFFIX,discord.com
 DOMAIN-SUFFIX,discordapp.com
 DOMAIN-SUFFIX,discordapp.net
 DOMAIN-SUFFIX,discord-attachments-uploads-prd.storage.googleapis.com
 
-# --- 7. Other Mainstream AI ---
+# ---- Other Mainstream AI ----
 DOMAIN-SUFFIX,meta.ai
 DOMAIN-SUFFIX,stability.ai
 DOMAIN-SUFFIX,huggingface.co
