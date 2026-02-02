@@ -1,46 +1,35 @@
 # =========================================
-# Apple US Primary Account (美区主力版)
-# 适用：iCloud + AppStore 均为美区，人在国内
-# 策略：指向 -> 美国节点 (Proxy)
+# Apple Find My Ultimate Fix (查找功能强制修复)
+# 作用：修复美区账号在直连环境下无法定位人/设备的问题
+# 策略：必须指向 -> 美国节点 (Proxy/Appleus)
 # =========================================
 
+# --- [1] 核心服务域名 (最精准) ---
+# 查找朋友 (Find My Friends)
+DOMAIN-SUFFIX,fmf.icloud.com
+# 查找设备 (Find My iPhone)
+DOMAIN-SUFFIX,fmip.icloud.com
+# 离线查找网络 (AirTag 等)
+DOMAIN-SUFFIX,findmy.network
+# 查找配置与静态资源
+DOMAIN-SUFFIX,static.ips.apple.com
 
-# [1] iCloud 同步与服务 (核心体验)
-# 确保照片、云盘、备忘录同步到美国服务器，不被重定向到云上贵州
-DOMAIN-SUFFIX,icloud.com
-DOMAIN-SUFFIX,icloud-content.com
-DOMAIN-SUFFIX,me.com
-DOMAIN-SUFFIX,apple-cloudkit.com
-DOMAIN-SUFFIX,apple-livephotoskit.com
-DOMAIN-SUFFIX,apzones.com
+# --- [2] 进程 User-Agent (暴力兜底) ---
+# 只要是查找相关的系统进程发出的请求，全部拦截
+# 1. 查找朋友守护进程
+USER-AGENT,FMFD*
+USER-AGENT,FMF*
+# 2. 查找 iPhone 守护进程
+USER-AGENT,fmipd*
+USER-AGENT,findmy*
+USER-AGENT,FindMy*
+# 3. 离线搜索网络 (Search Party)
+USER-AGENT,searchparty*
+USER-AGENT,searchpartyd*
+# 4. 辅助定位进程 (可选，视情况而定)
+USER-AGENT,coamd*
 
-# [2] App Store & 媒体服务 (美区商店)
-# 浏览商店、Apple Music/TV/News、书
-DOMAIN-SUFFIX,itunes.apple.com
-DOMAIN-SUFFIX,apps.apple.com
-DOMAIN-SUFFIX,mzstatic.com
-DOMAIN-SUFFIX,music.apple.com
-DOMAIN-SUFFIX,tv.apple.com
-DOMAIN-SUFFIX,books.apple.com
-DOMAIN-SUFFIX,podcasts.apple.com
-DOMAIN-SUFFIX,audiobooks.apple.com
-DOMAIN-SUFFIX,arcade.apple.com
-DOMAIN-SUFFIX,fitness.apple.com
-DOMAIN-SUFFIX,news.apple.com
-DOMAIN-SUFFIX,apple.news
-DOMAIN-SUFFIX,apple.com.co
-
-# [3] 增强功能 (Siri/AI/地图/隐私)
-# 想要用美区 Siri 或未来的 Apple Intelligence，这里必须走代理
-DOMAIN-SUFFIX,siri.apple.com
-DOMAIN-SUFFIX,siri.com
-DOMAIN-SUFFIX,apple-mapkit.com
-DOMAIN-SUFFIX,smoot.apple.com
-DOMAIN-SUFFIX,api.bls.apple.com
-DOMAIN-SUFFIX,mask.icloud.com
-DOMAIN-SUFFIX,mask-h2.icloud.com
-
-# [4] 开发者与测试 (可选)
-DOMAIN-SUFFIX,testflight.apple.com
-DOMAIN-SUFFIX,appstoreconnect.apple.com
-
+# --- [3] 地理位置服务 (可选增强) ---
+# 如果依然定位失败，取消下面两行的注释
+# DOMAIN,gspe1-ssl.ls.apple.com
+# DOMAIN,gsp-ssl.ls.apple.com
