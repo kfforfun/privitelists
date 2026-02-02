@@ -19,9 +19,6 @@ DOMAIN,humb.apple.com
 DOMAIN,pos-device.apple.com
 
 # --- System ---
-DOMAIN-SUFFIX,push.apple.com
-DOMAIN-SUFFIX,findmy.network
-DOMAIN,time.apple.com
 DOMAIN-SUFFIX,siri.apple.com
 
 # --- Catch-all ---
