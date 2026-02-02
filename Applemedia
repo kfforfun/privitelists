@@ -25,7 +25,6 @@ DOMAIN-SUFFIX,fitness.apple.com
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
 DOMAIN-SUFFIX,apple.com.co
-DOMAIN-SUFFIX,findmy.network
 
 # [5] 开发者与测试 (可选)
 DOMAIN-SUFFIX,testflight.apple.com
