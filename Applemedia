@@ -9,7 +9,8 @@ USER-AGENT,AppleCoreMedia*
 DOMAIN,bookkeeper.itunes.apple.com
 DOMAIN,amp-api.podcasts.apple.com
 
-# --- Store & Media Core ---
+#  App Store & 媒体服务 (美区商店)
+# 浏览商店、Apple Music/TV/News、书
 DOMAIN-SUFFIX,itunes.apple.com
 DOMAIN-SUFFIX,apps.apple.com
 DOMAIN-SUFFIX,mzstatic.com
@@ -18,6 +19,26 @@ DOMAIN-SUFFIX,tv.apple.com
 DOMAIN-SUFFIX,books.apple.com
 DOMAIN-SUFFIX,podcasts.apple.com
 DOMAIN-SUFFIX,audiobooks.apple.com
+DOMAIN-SUFFIX,arcade.apple.com
+DOMAIN-SUFFIX,fitness.apple.com
+DOMAIN-SUFFIX,news.apple.com
+DOMAIN-SUFFIX,apple.news
+DOMAIN-SUFFIX,apple.com.co
+
+#  增强功能 (Siri/AI/地图/隐私)
+# 想要用美区 Siri 或未来的 Apple Intelligence，这里必须走代理
+DOMAIN-SUFFIX,siri.apple.com
+DOMAIN-SUFFIX,siri.com
+DOMAIN-SUFFIX,apple-mapkit.com
+DOMAIN-SUFFIX,smoot.apple.com
+DOMAIN-SUFFIX,api.bls.apple.com
+DOMAIN-SUFFIX,mask.icloud.com
+DOMAIN-SUFFIX,mask-h2.icloud.com
+
+
+# [5] 开发者与测试 (可选)
+DOMAIN-SUFFIX,testflight.apple.com
+DOMAIN-SUFFIX,appstoreconnect.apple.com
 
 # --- Experience & Content Fixes ---
 # DRM 版权验证
