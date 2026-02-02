@@ -8,6 +8,7 @@ USER-AGENT,Podcasts*
 USER-AGENT,AppleCoreMedia*
 DOMAIN,bookkeeper.itunes.apple.com
 DOMAIN,amp-api.podcasts.apple.com
+DOMAIN-SUFFIX,news-assets.apple.com
 
 #  App Store & 媒体服务 (美区商店)
 # 浏览商店、Apple Music/TV/News、书
@@ -24,7 +25,7 @@ DOMAIN-SUFFIX,fitness.apple.com
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
 DOMAIN-SUFFIX,apple.com.co
-
+DOMAIN-SUFFIX,findmy.network
 
 # [5] 开发者与测试 (可选)
 DOMAIN-SUFFIX,testflight.apple.com
@@ -42,10 +43,5 @@ DOMAIN-SUFFIX,blobstore.apple.com
 # 地图组件
 DOMAIN-SUFFIX,apple-mapkit.com
 
-# --- Apple News ---
-DOMAIN-SUFFIX,news.apple.com
-DOMAIN-SUFFIX,apple.news
-DOMAIN-SUFFIX,apple.com.co
-# 文章图片 CDN
-DOMAIN-SUFFIX,news-assets.apple.com
+
 
