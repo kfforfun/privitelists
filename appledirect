@@ -28,5 +28,4 @@ DOMAIN-SUFFIX,xp.apple.com
 # 系统底层通知：必须直连 (省电、消息及时)
 DOMAIN-SUFFIX,push.apple.com,DIRECT
 DOMAIN-SUFFIX,push-apple.com.akadns.net,DIRECT
-DOMAIN-SUFFIX,findmy.network,DIRECT
 DOMAIN,time.apple.com,DIRECT
