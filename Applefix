@@ -1,18 +1,27 @@
 # =========================================
-# Apple US Account Unified Fix
-# 作用：修复美区账号登录报警、头像丢失、商店访问
-# 策略：务必指向 -> 美国节点 (Proxy/US)
+# Apple US Primary Account (美区主力版)
+# 适用：iCloud + AppStore 均为美区，人在国内
+# 策略：指向 -> 美国节点 (Proxy)
 # =========================================
 
-# [1] 身份验证 (解决"中国大陆登录"弹窗) - 优先级最高
+# [1] 核心身份验证 (红线)
+# 必须走美国，否则出现"异地登录"弹窗或无法验证
 DOMAIN,appleid.apple.com
 DOMAIN,idmsa.apple.com
 DOMAIN,gsa.apple.com
 DOMAIN,auth.apple.com
 
-# [2] 商店与媒体 (原 Applemedia 内容)
-DOMAIN,bookkeeper.itunes.apple.com
-DOMAIN,amp-api.podcasts.apple.com
+# [2] iCloud 同步与服务 (核心体验)
+# 确保照片、云盘、备忘录同步到美国服务器，不被重定向到云上贵州
+DOMAIN-SUFFIX,icloud.com
+DOMAIN-SUFFIX,icloud-content.com
+DOMAIN-SUFFIX,me.com
+DOMAIN-SUFFIX,apple-cloudkit.com
+DOMAIN-SUFFIX,apple-livephotoskit.com
+DOMAIN-SUFFIX,apzones.com
+
+# [3] App Store & 媒体服务 (美区商店)
+# 浏览商店、Apple Music/TV/News、书
 DOMAIN-SUFFIX,itunes.apple.com
 DOMAIN-SUFFIX,apps.apple.com
 DOMAIN-SUFFIX,mzstatic.com
@@ -23,29 +32,29 @@ DOMAIN-SUFFIX,podcasts.apple.com
 DOMAIN-SUFFIX,audiobooks.apple.com
 DOMAIN-SUFFIX,arcade.apple.com
 DOMAIN-SUFFIX,fitness.apple.com
-DOMAIN-SUFFIX,testflight.apple.com
-DOMAIN-SUFFIX,appstoreconnect.apple.com
-DOMAIN-SUFFIX,itunesconnect.apple.com
-DOMAIN-SUFFIX,shazam.com
-
-# [3] iCloud 内容与头像 (从 Applemain 提取并强制代理)
-# 解决 App Store 头像不显示、网页版 iCloud 登录跳转问题
-DOMAIN-SUFFIX,icloud-content.com
-DOMAIN-SUFFIX,me.com
-DOMAIN-SUFFIX,apple-cloudkit.com
-DOMAIN-SUFFIX,cdn-apple.com
-
-# [4] Apple News & 特殊服务
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
 DOMAIN-SUFFIX,apple.com.co
-DOMAIN-SUFFIX,news-assets.apple.com
+
+# [4] 增强功能 (Siri/AI/地图/隐私)
+# 想要用美区 Siri 或未来的 Apple Intelligence，这里必须走代理
+DOMAIN-SUFFIX,siri.apple.com
+DOMAIN-SUFFIX,siri.com
+DOMAIN-SUFFIX,apple-mapkit.com
 DOMAIN-SUFFIX,smoot.apple.com
 DOMAIN-SUFFIX,api.bls.apple.com
-DOMAIN-SUFFIX,blobstore.apple.com
-DOMAIN-SUFFIX,fairplay.apple.com
+DOMAIN-SUFFIX,mask.icloud.com
+DOMAIN-SUFFIX,mask-h2.icloud.com
 
-# [5] 兜底 (可选，解决某些不常见的 apple.com 子域)
-# 注意：不建议直接放 apple.com，以免误伤系统推送
-# 如果仍然有问题，可以取消下面这行的注释
-DOMAIN-SUFFIX,apple.com
+# [5] 开发者与测试 (可选)
+DOMAIN-SUFFIX,testflight.apple.com
+DOMAIN-SUFFIX,appstoreconnect.apple.com
+
+# =========================================
+# 下面这些建议在 conf 的 [Rule] 中单独设置为 DIRECT
+# 不要放在这个走代理的 list 里，除非你想浪费流量
+# =========================================
+# DOMAIN-SUFFIX,push.apple.com (推送)
+# DOMAIN-SUFFIX,findmy.network (查找)
+# DOMAIN,time.apple.com (时间)
+# DOMAIN-SUFFIX,cdn-apple.com (通用CDN)
