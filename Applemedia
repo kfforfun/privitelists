@@ -12,9 +12,9 @@ DOMAIN-SUFFIX,news-assets.apple.com
 
 #  App Store & 媒体服务 (美区商店)
 # 浏览商店、Apple Music/TV/News、书
-DOMAIN-SUFFIX,itunes.apple.com
-DOMAIN-SUFFIX,apps.apple.com
-DOMAIN-SUFFIX,mzstatic.com
+# DOMAIN-SUFFIX,itunes.apple.com
+# DOMAIN-SUFFIX,apps.apple.com
+# DOMAIN-SUFFIX,mzstatic.com
 DOMAIN-SUFFIX,music.apple.com
 DOMAIN-SUFFIX,tv.apple.com
 DOMAIN-SUFFIX,books.apple.com
