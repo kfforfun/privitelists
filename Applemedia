@@ -26,21 +26,8 @@ DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
 DOMAIN-SUFFIX,apple.com.co
 
-# [5] 开发者与测试 (可选)
-DOMAIN-SUFFIX,testflight.apple.com
-DOMAIN-SUFFIX,appstoreconnect.apple.com
-
-# --- Experience & Content Fixes ---
-# DRM 版权验证
-DOMAIN-SUFFIX,fairplay.apple.com
-# Spotlight 搜索建议
-DOMAIN-SUFFIX,smoot.apple.com
-# Siri 建议 API
-DOMAIN-SUFFIX,api.bls.apple.com
-# News 音频数据块
-DOMAIN-SUFFIX,blobstore.apple.com
-# 地图组件
-DOMAIN-SUFFIX,apple-mapkit.com
+# --- Catch-all ---
+DOMAIN-SUFFIX,apple.com
 
 
 
