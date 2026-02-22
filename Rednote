@@ -1,0 +1,34 @@
+# > 小红书 (Xiaohongshu / RedNote) 终极分流规则集
+
+# 主站与核心 API 域名
+DOMAIN-SUFFIX,xiaohongshu.com
+DOMAIN-SUFFIX,xiaohongshu.cn
+DOMAIN-SUFFIX,xiaohongshu.net
+DOMAIN-SUFFIX,xiaohongshu.com.cn
+DOMAIN-SUFFIX,xiaohongshu.net.cn
+
+# 国际版域名 (独立品牌)
+DOMAIN-SUFFIX,rednote.com
+
+# 静态资源与图片视频分发 (CDN)
+DOMAIN-SUFFIX,xhscdn.com
+DOMAIN-SUFFIX,xhscdn.net
+DOMAIN-SUFFIX,xhscdn.cn
+
+# 短链接与分享跳转域名
+DOMAIN-SUFFIX,xhslink.com
+DOMAIN-SUFFIX,xhslink.cn
+DOMAIN-SUFFIX,xhs.link
+DOMAIN-SUFFIX,xhsurl.com
+DOMAIN-SUFFIX,xhsurl.cn
+
+# 内部 DNS、防劫持与底层系统域名
+DOMAIN-SUFFIX,xhsdns.com
+DOMAIN-SUFFIX,xhsdns.net
+DOMAIN-SUFFIX,xhssys.com
+DOMAIN-SUFFIX,xhssys.cn
+DOMAIN-SUFFIX,xhssys.net
+DOMAIN-SUFFIX,xhsos.com
+
+# 兜底关键字匹配 (强制拦截所有URL中包含 xiaohongshu 字符的长尾请求)
+DOMAIN-KEYWORD,xiaohongshu
