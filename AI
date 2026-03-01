@@ -55,14 +55,6 @@ DOMAIN-SUFFIX,r2cdn.perplexity.ai
 DOMAIN-SUFFIX,labs.perplexity.ai
 DOMAIN-SUFFIX,api.perplexity.ai
 
-# ---- xAI (Grok) ----
-DOMAIN-SUFFIX,x.ai
-DOMAIN-SUFFIX,grok.x.ai
-DOMAIN-SUFFIX,grok.com
-# API 端点
-DOMAIN-SUFFIX,api.x.ai
-# 资源端点
-DOMAIN-SUFFIX,assets.grok.x.ai
 
 # ---- Microsoft & GitHub ----
 DOMAIN-SUFFIX,bing.com
