@@ -1,8 +1,0 @@
-# ---- xAI (Grok) ----
-DOMAIN-SUFFIX,x.ai
-DOMAIN-SUFFIX,grok.x.ai
-DOMAIN-SUFFIX,grok.com
-# API 端点
-DOMAIN-SUFFIX,api.x.ai
-# 资源端点
-DOMAIN-SUFFIX,assets.grok.x.ai
