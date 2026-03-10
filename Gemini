@@ -29,3 +29,8 @@ DOMAIN-SUFFIX,labs.google
 DOMAIN-SUFFIX,speech.googleapis.com
 DOMAIN-SUFFIX,texttospeech.googleapis.com
 DOMAIN-SUFFIX,mediapipe.googleapis.com
+# --- Live API & WSS Extensions ---
+DOMAIN-SUFFIX,generativelanguage.googleapis.com
+DOMAIN-SUFFIX,firebasevertexai.googleapis.com
+DOMAIN-SUFFIX,aiplatform.googleapis.com
+
