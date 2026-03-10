@@ -39,7 +39,6 @@ DOMAIN-SUFFIX,photoslibrary.googleapis.com
 DOMAIN-SUFFIX,googlephotos.com
 DOMAIN-SUFFIX,ggpht.com
 DOMAIN-SUFFIX,photos.google.com
-
 # ---- Dev & Cloud ----
 DOMAIN-SUFFIX,drive.google.com
 DOMAIN-SUFFIX,docs.google.com
