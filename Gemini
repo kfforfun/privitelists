@@ -3,33 +3,8 @@
 # Strategy: PROXY (Taiwan)
 # =========================================
 
-# --- Live Mode & Realtime ---
-DOMAIN-SUFFIX,webchannel-alkalimakersuite-pa.clients6.google.com
-DOMAIN-SUFFIX,alkalicore-pa.clients6.google.com
-DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com
-DOMAIN-SUFFIX,instantmessaging-pa.googleapis.com
-# 助手通道
-DOMAIN-SUFFIX,assistant-pa.clients6.google.com
-
-# --- Web & Core Logic ---
-DOMAIN,gemini.google.com
-DOMAIN,bard.google.com
-DOMAIN,aistudio.google.com
-DOMAIN,makersuite.google.com
-DOMAIN-SUFFIX,notebooklm.google
-DOMAIN-SUFFIX,notebooklm.google.com
-
-# --- AI Brand ---
-DOMAIN-SUFFIX,deepmind.google
-DOMAIN-SUFFIX,generativeai.google
-DOMAIN-SUFFIX,ai.google
-DOMAIN-SUFFIX,labs.google
-
-# --- Voice & Media ---
-DOMAIN-SUFFIX,speech.googleapis.com
-DOMAIN-SUFFIX,texttospeech.googleapis.com
-DOMAIN-SUFFIX,mediapipe.googleapis.com
-# --- Live API & WSS Extensions ---
+# --- Live API & Assistant Backend (新增) ---
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
 DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,firebasevertexai.googleapis.com
 DOMAIN-SUFFIX,aiplatform.googleapis.com
