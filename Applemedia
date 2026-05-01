@@ -26,6 +26,14 @@ DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
 DOMAIN-SUFFIX,apple.com.co
 
+# --- Apple Intelligence & Siri ChatGPT Integration (2026最新) ---
+# 必须走美国节点以绕过苹果的地理围栏限制
+DOMAIN,apple-relay.apple.com
+DOMAIN,apple-relay.fastly-edge.com
+DOMAIN,apple-relay.cloudflare.com
+DOMAIN,cp4.cloudflare.com
+DOMAIN,guzzoni.apple.com
+
 # --- Catch-all ---
 DOMAIN-SUFFIX,apple.com
 
