@@ -11,26 +11,18 @@
 #DOMAIN-SUFFIX,mzstatic.com
 
 # === Apple 媒体服务 ===
-#DOMAIN-SUFFIX,music.apple.com
-#DOMAIN-SUFFIX,tv.apple.com
-#DOMAIN-SUFFIX,books.apple.com
+DOMAIN-SUFFIX,music.apple.com
+DOMAIN-SUFFIX,tv.apple.com
+DOMAIN-SUFFIX,books.apple.com
 DOMAIN-SUFFIX,podcasts.apple.com
-#DOMAIN-SUFFIX,audiobooks.apple.com
-#DOMAIN-SUFFIX,arcade.apple.com
-#DOMAIN-SUFFIX,fitness.apple.com
+DOMAIN-SUFFIX,audiobooks.apple.com
+DOMAIN-SUFFIX,arcade.apple.com
+DOMAIN-SUFFIX,fitness.apple.com
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
 DOMAIN-SUFFIX,news-assets.apple.com
-DOMAIN,sylvan.apple.com
+DOMAIN-SUFFIX,support.apple.com
 
-# === Apple Intelligence / Private Cloud Compute ===
-# 必须走美国节点以访问 AI 功能
-DOMAIN,guzzoni.apple.com
-DOMAIN-SUFFIX,smoot.apple.com
-DOMAIN,apple-relay.apple.com
-DOMAIN,apple-relay.cloudflare.com
-DOMAIN,apple-relay.fastly-edge.com
-DOMAIN,cp4.cloudflare.com
 
 # === USER-AGENT（覆盖 App 级别媒体流）===
 USER-AGENT,Podcasts*
