@@ -1,20 +1,16 @@
 # =========================================
-# 4. Apple Store & Media
-# Strategy: PROXY (US)
+# Apple Media & Store 代理规则
+# Strategy: PROXY (US Node)
+# 数据来源: Apple 官方企业网络文档 (apple.com/en-us/101555)
+# 最后更新: 2026-06-15
 # =========================================
 
-# --- Podcast Optimization ---
-#USER-AGENT,Podcasts*
-#USER-AGENT,AppleCoreMedia*
-DOMAIN,bookkeeper.itunes.apple.com
-DOMAIN,amp-api.podcasts.apple.com
-DOMAIN-SUFFIX,news-assets.apple.com
-
-#  App Store & 媒体服务 (美区商店)
-# 浏览商店、Apple Music/TV/News、书
+# === App Store / iTunes Store ===
+DOMAIN-SUFFIX,apps.apple.com
 DOMAIN-SUFFIX,itunes.apple.com
-#DOMAIN-SUFFIX,apps.apple.com
-#DOMAIN-SUFFIX,mzstatic.com
+DOMAIN-SUFFIX,mzstatic.com
+
+# === Apple 媒体服务 ===
 DOMAIN-SUFFIX,music.apple.com
 DOMAIN-SUFFIX,tv.apple.com
 DOMAIN-SUFFIX,books.apple.com
@@ -24,18 +20,18 @@ DOMAIN-SUFFIX,arcade.apple.com
 DOMAIN-SUFFIX,fitness.apple.com
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
-#DOMAIN-SUFFIX,apple.com.co
+DOMAIN,news-assets.apple.com
+DOMAIN,sylvan.apple.com
 
-# --- Apple Intelligence & Siri ChatGPT Integration (2026最新) ---
-# 必须走美国节点以绕过苹果的地理围栏限制
-#DOMAIN,apple-relay.apple.com
-#DOMAIN,apple-relay.fastly-edge.com
-#DOMAIN,apple-relay.cloudflare.com
-#DOMAIN,cp4.cloudflare.com
-#DOMAIN,guzzoni.apple.com
+# === Apple Intelligence / Private Cloud Compute ===
+# 必须走美国节点以访问 AI 功能
+DOMAIN,guzzoni.apple.com
+DOMAIN-SUFFIX,smoot.apple.com
+DOMAIN,apple-relay.apple.com
+DOMAIN,apple-relay.cloudflare.com
+DOMAIN,apple-relay.fastly-edge.com
+DOMAIN,cp4.cloudflare.com
 
-# --- Catch-all ---
-#DOMAIN-SUFFIX,apple.com
-
-
-
+# === USER-AGENT（覆盖 App 级别媒体流）===
+USER-AGENT,Podcasts*
+USER-AGENT,AppleCoreMedia*
