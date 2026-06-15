@@ -11,17 +11,16 @@
 #DOMAIN-SUFFIX,mzstatic.com
 
 # === Apple 媒体服务 ===
-DOMAIN-SUFFIX,music.apple.com
-DOMAIN-SUFFIX,tv.apple.com
+#DOMAIN-SUFFIX,music.apple.com
+#DOMAIN-SUFFIX,tv.apple.com
 DOMAIN-SUFFIX,books.apple.com
 DOMAIN-SUFFIX,podcasts.apple.com
 DOMAIN-SUFFIX,audiobooks.apple.com
-DOMAIN-SUFFIX,arcade.apple.com
+#DOMAIN-SUFFIX,arcade.apple.com
 DOMAIN-SUFFIX,fitness.apple.com
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
 DOMAIN-SUFFIX,news-assets.apple.com
-DOMAIN-SUFFIX,support.apple.com
 
 
 # === USER-AGENT（覆盖 App 级别媒体流）===
