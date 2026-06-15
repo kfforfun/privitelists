@@ -6,17 +6,17 @@
 # =========================================
 
 # === App Store / iTunes Store ===
-#DOMAIN-SUFFIX,apps.apple.com
-#DOMAIN-SUFFIX,itunes.apple.com
-#DOMAIN-SUFFIX,mzstatic.com
+DOMAIN-SUFFIX,apps.apple.com
+DOMAIN-SUFFIX,itunes.apple.com
+DOMAIN-SUFFIX,mzstatic.com
 
 # === Apple 媒体服务 ===
-#DOMAIN-SUFFIX,music.apple.com
-#DOMAIN-SUFFIX,tv.apple.com
+DOMAIN-SUFFIX,music.apple.com
+DOMAIN-SUFFIX,tv.apple.com
 DOMAIN-SUFFIX,books.apple.com
 DOMAIN-SUFFIX,podcasts.apple.com
 DOMAIN-SUFFIX,audiobooks.apple.com
-#DOMAIN-SUFFIX,arcade.apple.com
+DOMAIN-SUFFIX,arcade.apple.com
 DOMAIN-SUFFIX,fitness.apple.com
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
