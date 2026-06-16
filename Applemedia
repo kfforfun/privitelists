@@ -21,7 +21,7 @@ DOMAIN-SUFFIX,fitness.apple.com
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
 DOMAIN-SUFFIX,news-assets.apple.com
-
+DOMAIN-SUFFIX,apple.com
 
 # === USER-AGENT（覆盖 App 级别媒体流）===
 USER-AGENT,Podcasts*
