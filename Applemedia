@@ -1,73 +1,41 @@
 # =========================================
-# Apple Store & Media Rule — Applemedia
-# Strategy: PROXY (US Node)
-# Last Updated: 2026-06-16
-#
-# 变更说明：
-# - 启用此前被注释的 apps.apple.com 和 mzstatic.com
-#   （App Store 核心域名，必须走代理才能正常访问美区）
-# - 启用 Apple Intelligence / Private Cloud Compute 全套代理域名
-#   （apple-relay.apple.com / fastly / cloudflare / cp4.cloudflare.com）
-# - 新增 Apple Intelligence API 端点（京外用户必须走美区节点）
-# - 新增 guzzoni.apple.com（Siri AI 请求）-> 注: 若已在 appledirect 直连则删除
-# - 新增 swallow.apple.com（Apple Foundation Model API，2026 WWDC 新增）
-# - 新增 storeimages CDN（App Store 图片加载）
-# - 新增 phobos.apple.com（应用下载 phobos CDN）
-# - 新增 amp-api.music.apple.com（Apple Music API）
-# - 新增 Podcast / News 相关域名
-# - 注释说明优化
+# 4. Apple Store & Media
+# Strategy: PROXY (US)
 # =========================================
 
-# ---- App Store 核心（必须走美国代理）----
-DOMAIN-SUFFIX,apps.apple.com
-DOMAIN-SUFFIX,mzstatic.com
-DOMAIN-SUFFIX,itunes.apple.com
-DOMAIN-SUFFIX,phobos.apple.com
-DOMAIN-SUFFIX,store.storeimages.apple.com.akadns.net
+# --- Podcast Optimization ---
+#USER-AGENT,Podcasts*
+#USER-AGENT,AppleCoreMedia*
+DOMAIN,bookkeeper.itunes.apple.com
+DOMAIN,amp-api.podcasts.apple.com
+DOMAIN-SUFFIX,news-assets.apple.com
 
-# ---- Apple Media Services ----
+#  App Store & 媒体服务 (美区商店)
+# 浏览商店、Apple Music/TV/News、书
+DOMAIN-SUFFIX,itunes.apple.com
+#DOMAIN-SUFFIX,apps.apple.com
+#DOMAIN-SUFFIX,mzstatic.com
 DOMAIN-SUFFIX,music.apple.com
-DOMAIN,amp-api.music.apple.com
 DOMAIN-SUFFIX,tv.apple.com
 DOMAIN-SUFFIX,books.apple.com
+DOMAIN-SUFFIX,podcasts.apple.com
 DOMAIN-SUFFIX,audiobooks.apple.com
 DOMAIN-SUFFIX,arcade.apple.com
 DOMAIN-SUFFIX,fitness.apple.com
-
-# ---- Apple News ----
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
-DOMAIN-SUFFIX,news-assets.apple.com
+#DOMAIN-SUFFIX,apple.com.co
 
-# ---- Podcasts ----
-DOMAIN-SUFFIX,podcasts.apple.com
-DOMAIN,amp-api.podcasts.apple.com
-DOMAIN,bookkeeper.itunes.apple.com
-# 以下 User-Agent 规则可选启用（对 Podcasts App 生效）
-# USER-AGENT,Podcasts*
-# USER-AGENT,AppleCoreMedia*
+# --- Apple Intelligence & Siri ChatGPT Integration (2026最新) ---
+# 必须走美国节点以绕过苹果的地理围栏限制
+#DOMAIN,apple-relay.apple.com
+#DOMAIN,apple-relay.fastly-edge.com
+#DOMAIN,apple-relay.cloudflare.com
+#DOMAIN,cp4.cloudflare.com
+#DOMAIN,guzzoni.apple.com
 
-# ---- Apple Intelligence & Private Cloud Compute (2026) ----
-# Apple Intelligence 的 AI 请求通过 Private Relay 隧道发往苹果 PCC 服务器
-# 必须走美国节点，否则 Apple Intelligence 功能不可用或降级
-DOMAIN,apple-relay.apple.com
-DOMAIN,apple-relay.fastly-edge.com
-DOMAIN,apple-relay.cloudflare.com
-DOMAIN,cp4.cloudflare.com
+# --- Catch-all ---
+#DOMAIN-SUFFIX,apple.com
 
-# ---- Apple Foundation Model API（WWDC 2026 新增）----
-# 参考：https://developer.apple.com/videos/play/wwdc2026/319/
-DOMAIN,swallow.apple.com
 
-# ---- Siri 云端 AI 请求（走代理以使用完整 AI 功能）----
-DOMAIN,guzzoni.apple.com
 
-# ---- iCloud Private Relay 出口节点（iCloud+ 订阅用户）----
-# 注意：若你使用 iCloud Private Relay，出口 IP 来自以下服务商，需走代理
-# 否则目标网站会看到代理 IP 而非你的真实 IP（行为符合预期）
-# DOMAIN,mask.icloud.com
-# DOMAIN,mask-h2.icloud.com
-# DOMAIN,mask-api.icloud.com
-
-# ---- Apple Store 购物（可选）----
-# DOMAIN-SUFFIX,apple.com
