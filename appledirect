@@ -59,7 +59,6 @@ DOMAIN-SUFFIX,apzones.com
 DOMAIN-SUFFIX,gc.apple.com
 DOMAIN-SUFFIX,iwork.apple.com
 DOMAIN,gateway.icloud.com
-DOMAIN-SUFFIX,apple.com
 
 # === iCloud Private Relay 出口节点 ===
 DOMAIN,mask.icloud.com
