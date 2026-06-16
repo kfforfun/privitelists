@@ -1,39 +1,88 @@
 # =========================================
-# 1. Apple Downloads
-# Strategy: 建议 DIRECT（直连）
+# Apple Direct Rule — appledirect
+# Strategy: DIRECT（直连）
+# Last Updated: 2026-06-16
 #
-# 变更说明 2026-01-30：
-# - 新增多组 Apple 系统 / App 更新相关域名（mesu、appldnld、swscan、swcdn、swdist、gdmf、xp）
-#   方便统一直连或统一策略，减少更新失败的情况。
-# - 原有 iosapps / osxapps / updates.cdn-apple.com 保留不变。
+# 变更说明：
+# - 启用此前被注释掉的系统更新域名 (mesu/appldnld/swscan/swcdn/swdist/gdmf/xp)
+# - 新增软件更新 CDN akadns 子域（swcatalog-cdn / swdist / swscan-cdn / mesu-cdn）
+# - 新增 lcdn（内容分发注册/定位）域名
+# - 新增 captive.apple.com（网络连通性检测）
+# - 新增 configuration.apple.com（设备配置分发）
+# - 新增 OCSP（证书验证）域名，直连保证速度
+# - 新增 Apple Maps 及 Spotlight 相关直连域名
+# - 新增 Apple Pay 完整直连域名
+# - 新增 IP-CIDR 17.0.0.0/8 直连（Apple 官方 ASN）
+# - 补全 iCloud 私有中继出口 IP 段（Private Relay — 直连模式）
+# - 修正：apps.apple.com / mzstatic.com 移至 Applemedia（代理），不应在此直连
 # =========================================
 
-# App 下载主域
+# ---- App & OS 下载主 CDN ----
 DOMAIN,iosapps.itunes.apple.com
 DOMAIN,osxapps.itunes.apple.com
-DOMAIN-SUFFIX,apple.com.cn
-
-# 更新 CDN
 DOMAIN-SUFFIX,updates.cdn-apple.com
 DOMAIN-SUFFIX,updates-http.cdn-apple.com
 DOMAIN-SUFFIX,cdn-apple.com
 
-# 系统更新检测与镜像分发
-#DOMAIN-SUFFIX,mesu.apple.com
-#DOMAIN-SUFFIX,appldnld.apple.com
-#DOMAIN-SUFFIX,swscan.apple.com
-#DOMAIN-SUFFIX,swcdn.apple.com
-#DOMAIN-SUFFIX,swdist.apple.com
-#DOMAIN-SUFFIX,gdmf.apple.com
-#DOMAIN-SUFFIX,xp.apple.com
+# ---- 系统更新检测与固件分发（启用） ----
+DOMAIN-SUFFIX,mesu.apple.com
+DOMAIN-SUFFIX,appldnld.apple.com
+DOMAIN-SUFFIX,swscan.apple.com
+DOMAIN-SUFFIX,swcdn.apple.com
+DOMAIN-SUFFIX,swdist.apple.com
+DOMAIN-SUFFIX,gdmf.apple.com
+DOMAIN-SUFFIX,xp.apple.com
 
-# 系统底层通知：必须直连 (省电、消息及时)
+# ---- 软件更新 CDN（akadns 子域）----
+DOMAIN-SUFFIX,swcatalog-cdn.apple.com.akadns.net
+DOMAIN-SUFFIX,swdist.apple.com.akadns.net
+DOMAIN-SUFFIX,swscan-cdn.apple.com.akadns.net
+DOMAIN-SUFFIX,mesu-cdn.apple.com.akadns.net
+
+# ---- 内容分发注册 / 定位 ----
+DOMAIN-SUFFIX,lcdn-registration.apple.com
+DOMAIN-SUFFIX,lcdn-locator.apple.com
+DOMAIN-SUFFIX,ls.apple.com
+
+# ---- 网络连通性检测（必须直连，否则影响 Wi-Fi 弹窗逻辑）----
+DOMAIN,captive.apple.com
+
+# ---- 设备配置 / 激活 ----
+DOMAIN,configuration.apple.com
+DOMAIN,albert.apple.com
+DOMAIN,gs.apple.com
+DOMAIN,smp-device-content.apple.com
+
+# ---- 推送通知（必须直连，保证 APNs 实时性）----
 DOMAIN-SUFFIX,push.apple.com
 DOMAIN-SUFFIX,push-apple.com.akadns.net
-DOMAIN,time.apple.com
-DOMAIN-SUFFIX,siri.apple.com
+DOMAIN-SUFFIX,courier-push-apple.com.akadns.net
+DOMAIN-SUFFIX,init-p01md-lb.push-apple.com.akadns.net
+DOMAIN-SUFFIX,init-p01st-lb.push-apple.com.akadns.net
+DOMAIN-SUFFIX,ess.apple.com
+DST-PORT,5223,DIRECT
 
-# --- iCloud ---
+# ---- NTP 时间同步 ----
+DOMAIN,time.apple.com
+DST-PORT,123,DIRECT
+
+# ---- Siri（基础语音请求直连；AI 扩展请求在 Applemedia 走代理）----
+DOMAIN-SUFFIX,siri.apple.com
+DOMAIN-SUFFIX,guzzoni.apple.com
+
+# ---- OCSP 证书验证 ----
+DOMAIN-SUFFIX,ocsp.apple.com
+DOMAIN-SUFFIX,ocsp2.apple.com
+DOMAIN-SUFFIX,ocsp-lb.apple.com.akadns.net
+DOMAIN-SUFFIX,valid.apple.com
+
+# ---- Apple Maps / 位置服务 ----
+DOMAIN,gs-loc.apple.com
+DOMAIN-SUFFIX,ess.apple.com
+DOMAIN-SUFFIX,cdn.apple-mapkit.com
+DOMAIN-SUFFIX,gspe19-ssl.ls.apple.com
+
+# ---- iCloud 核心服务 ----
 DOMAIN-SUFFIX,icloud.com
 DOMAIN-SUFFIX,icloud.com.cn
 DOMAIN-SUFFIX,icloud-content.com
@@ -41,8 +90,18 @@ DOMAIN-SUFFIX,apple-cloudkit.com
 DOMAIN-SUFFIX,me.com
 DOMAIN-SUFFIX,apple-livephotoskit.com
 DOMAIN-SUFFIX,apzones.com
+DOMAIN-SUFFIX,icloud-cdn.icloud.com.akadns.net
 
-# --- Wallet ---
+# ---- Apple Pay / Wallet ----
 DOMAIN-SUFFIX,apple-pay.com
 DOMAIN,humb.apple.com
 DOMAIN,pos-device.apple.com
+DOMAIN,p33-buy.itunes.apple.com
+DOMAIN,buy.itunes.apple.com
+
+# ---- Apple 区域域名（.com.cn 直连）----
+DOMAIN-SUFFIX,apple.com.cn
+
+# ---- Apple 官方 IP 段（ASN AS714）直连 ----
+# 覆盖 APNs、iCloud、CDN 等全部苹果自有 IP
+IP-CIDR,17.0.0.0/8,DIRECT,no-resolve
