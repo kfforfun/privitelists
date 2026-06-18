@@ -3,6 +3,9 @@
 # Strategy: DIRECT（直连，无需代理）
 #
 # 变更说明 2026-06-18：
+# - 日志实测补充 Apple Maps 域名与 APNs IP 段
+#   ls.apple.com（Apple Maps Location Services）
+#   IP-CIDR 17.188.128.0/18（APNs UDP 推送）
 # - 新增 iOS Weather app 域名（日志实测）
 #   weatherkit.apple.com, weather-map2.apple.com
 #
@@ -77,6 +80,8 @@ DOMAIN,gsa.apple.com
 # ==========================================
 DOMAIN-SUFFIX,push.apple.com
 DOMAIN-SUFFIX,push-apple.com.akadns.net
+# APNs UDP 推送 IP 段（日志实测发现走 FINAL PROXY 漏网）
+IP-CIDR,17.188.128.0/18,no-resolve
 
 # ==========================================
 # 六、iCloud
@@ -124,7 +129,12 @@ DOMAIN-SUFFIX,apple.com.cn
 # 十、iOS Weather App / WeatherKit
 # 【说明】走代理反而导致天气数据加载失败，强制直连
 # ==========================================
-# WeatherKit API 核心端点
 DOMAIN,weatherkit.apple.com
-# 天气地图 / 雷达分发
 DOMAIN,weather-map2.apple.com
+
+# ==========================================
+# 十一、Apple Maps / Location Services
+# 【说明】ls.apple.com 为地图图块与矢量数据分发节点，
+#        走代理导致地图加载慢，应强制直连
+# ==========================================
+DOMAIN-SUFFIX,ls.apple.com
