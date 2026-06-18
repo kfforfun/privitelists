@@ -2,12 +2,10 @@
 # 5. TikTok Global
 # Strategy: 建议 PROXY（解锁区：US/JP 等）
 #
-# 变更说明 2026-01-30：
-# - 在原有基础上补充了一批目前常见的 TikTok 新域名：
-#   * tiktokcdn-us.com / tiktokd.net / tiktokd.org / tiktokmusic.app / tiktokv.us / ttwebview.com 等；
-#   * snssdk.com（字节系通用域）。
-# - 新增 USER-AGENT,TikTok* 以兜底 App 内请求。
-# - 保留 DOMAIN-KEYWORD,tiktok / musical.ly，位置下移到规则末尾作为兜底。
+# 变更说明 2026-06-18：
+# - 删除冗余 DOMAIN-KEYWORD,tiktok（被上方 SUFFIX 完全覆盖，性能最差）
+# - 删除低效 USER-AGENT,TikTok*（HTTPS/QUIC 下不生效）
+# - 新增 Lemon8 域名 lemon8.app, lemon8-app.com（字节系，与 TikTok 同受监管）
 # =========================================
 
 # ---- Core Domains ----
@@ -15,10 +13,8 @@ DOMAIN-SUFFIX,tiktok.com
 DOMAIN-SUFFIX,tiktokv.com
 DOMAIN-SUFFIX,tiktokcdn.com
 DOMAIN-SUFFIX,tiktok-d.com
-
 DOMAIN-SUFFIX,tiktokw.us
 DOMAIN-SUFFIX,ttdns2.com
-
 
 # ---- New / Regional Domains ----
 DOMAIN-SUFFIX,tiktokcdn-us.com
@@ -27,6 +23,10 @@ DOMAIN-SUFFIX,tiktokd.org
 DOMAIN-SUFFIX,tiktokmusic.app
 DOMAIN-SUFFIX,tiktokv.us
 DOMAIN-SUFFIX,ttwebview.com
+
+# ---- Lemon8 (ByteDance) ----
+DOMAIN-SUFFIX,lemon8.app
+DOMAIN-SUFFIX,lemon8-app.com
 
 # ---- API 接口 / 字节系基础域 ----
 DOMAIN-SUFFIX,tik-tokapi.com
@@ -52,9 +52,5 @@ DOMAIN,p19-tiktokcdn-com.akamaized.net
 DOMAIN,lf16-pkgcdn.pitaya-clientai.com
 DOMAIN,lf16-effectcdn.byteeffecttos-g.com
 
-# ---- User-Agent 兜底 ----
-USER-AGENT,TikTok*
-
-# ---- Keywords 兜底（放在最后） ----
+# ---- Keywords 兜底（仅保留 musical.ly，tiktok KEYWORD 已冗余删除）----
 DOMAIN-KEYWORD,musical.ly
-DOMAIN-KEYWORD,tiktok

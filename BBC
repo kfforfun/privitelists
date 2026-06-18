@@ -1,3 +1,9 @@
+# BBC iPlayer & Sounds Ruleset
+# 变更说明 2026-06-18：
+# - 删除冗余 DOMAIN-SUFFIX,open.live.bbc.co.uk（已被 bbc.co.uk SUFFIX 覆盖）
+# - 将 aod-pod-uk-live.akamaized.net 改为精确 DOMAIN 匹配
+# - 删除过宽 IP-CIDR 132.185.0.0/16，收窄为 BBC AS2818 实际使用段
+
 # --- Main Portals (Web & App) ---
 DOMAIN-SUFFIX,bbc.co.uk
 DOMAIN-SUFFIX,bbc.com
@@ -5,32 +11,26 @@ DOMAIN-SUFFIX,bbci.co.uk
 DOMAIN-SUFFIX,bbc.net.uk
 
 # --- Streaming Infrastructure (iPlayer & Sounds) ---
-# bbci.co.uk 是 iPlayer 的核心，绝不能漏
 DOMAIN-SUFFIX,bbcmedia.co.uk
 DOMAIN-SUFFIX,bbcpersian.com
 DOMAIN-SUFFIX,bbc.in
 DOMAIN-SUFFIX,bbcfmt.com
 DOMAIN-SUFFIX,bbctvapps.co.uk
-DOMAIN-SUFFIX,bbcps.pdn.tritondigital.com
-DOMAIN-SUFFIX,open.live.bbc.co.uk
-DOMAIN-SUFFIX,aod-pod-uk-live.akamaized.net
+DOMAIN,bbcps.pdn.tritondigital.com
+DOMAIN,aod-pod-uk-live.akamaized.net
 
 # --- Content Delivery & Third-Party Integrations ---
-# BBC 使用 Limelight 和 Akamai 的特定子域名
 DOMAIN-SUFFIX,bbcfmt.hs.llnwd.net
 DOMAIN-SUFFIX,uk-live.akamaized.net
 DOMAIN-SUFFIX,vod-dash-uk-live.akamaized.net
 DOMAIN-SUFFIX,vod-hls-uk-live.akamaized.net
 DOMAIN-SUFFIX,vod-thumb-uk-live.akamaized.net
 
-# --- Keywords (Carefully Selected) ---
-# 很多直播流地址包含这个关键字
+# --- Keywords ---
 DOMAIN-KEYWORD,uk-live
 DOMAIN-KEYWORD,bbcfmt
 
-# --- IP CIDR (BBC ASN: AS2818) ---
-# 这些是 BBC 自有的 IP 段，必须强制代理
+# --- IP CIDR (BBC AS2818 verified) ---
 IP-CIDR,212.58.224.0/19,no-resolve
-IP-CIDR,132.185.0.0/16,no-resolve
 IP-CIDR,89.202.208.0/21,no-resolve
 IP-CIDR,212.46.224.0/19,no-resolve

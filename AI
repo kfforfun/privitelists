@@ -2,12 +2,10 @@
 # 8. AI Global Others
 # Strategy: 建议 PROXY（US 节点）
 #
-# 变更说明 2026-01-30：
-# - 新增 Azure OpenAI 相关域名：
-#   * openai.azure.com / services.ai.azure.com / cognitiveservices.azure.com
-#   以覆盖 Azure OpenAI / Foundry 等部署场景。
-# - 其余 OpenAI / Anthropic / Perplexity / xAI / Copilot / Midjourney /
-#   HuggingFace 等域名保持不变。
+# 变更说明 2026-06-18：
+# - 新增 xAI/Grok 域名：x.ai, grok.com
+# - 移除通用第三方域名 auth0.com, sentinelone.net（误伤风险）
+# - 移除 bing.com 系域名（归入 All-AI 策略逻辑不符，由 Microsoft 规则集覆盖）
 # =========================================
 
 # ---- OpenAI (ChatGPT, Sora & DALL-E) ----
@@ -36,8 +34,6 @@ DOMAIN-SUFFIX,arkoselabs.com
 DOMAIN-SUFFIX,persona.org
 DOMAIN-SUFFIX,featuregates.org
 DOMAIN-SUFFIX,identrust.com
-DOMAIN-SUFFIX,auth0.com
-DOMAIN-SUFFIX,sentinelone.net
 
 # ---- Anthropic (Claude) ----
 DOMAIN-SUFFIX,anthropic.com
@@ -55,9 +51,11 @@ DOMAIN-SUFFIX,r2cdn.perplexity.ai
 DOMAIN-SUFFIX,labs.perplexity.ai
 DOMAIN-SUFFIX,api.perplexity.ai
 
+# ---- xAI (Grok) ----
+DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,grok.com
 
-# ---- Microsoft & GitHub ----
-DOMAIN-SUFFIX,bing.com
+# ---- Microsoft Copilot ----
 DOMAIN-SUFFIX,copilot.microsoft.com
 DOMAIN-SUFFIX,edgeservices.bing.com
 DOMAIN-SUFFIX,sydney.bing.com

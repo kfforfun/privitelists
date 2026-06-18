@@ -1,4 +1,9 @@
 # X / Twitter Optimized Ruleset
+# 变更说明 2026-06-18：
+# - 新增 x.ai, grok.com（Grok 由 X Premium 访问，应命中 TWITTER 策略组）
+# - 删除冗余 DOMAIN-KEYWORD,twitter
+# - 清理历史遗留域名 vine.co, twitterflightschool.com, twvid.com
+# - 删除可疑 IP-CIDR 69.195.160.0/19, 209.237.192.0/19（非 X 自有 IP）
 
 # --- Core Domains ---
 DOMAIN-SUFFIX,x.com
@@ -11,13 +16,16 @@ DOMAIN-SUFFIX,twttr.com
 DOMAIN-SUFFIX,twttr.net
 DOMAIN-SUFFIX,twtrdns.net
 
-# --- Services & Legacy ---
+# --- xAI / Grok ---
+DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,grok.com
+
+# --- Services ---
 DOMAIN-SUFFIX,tweetdeck.com
 DOMAIN-SUFFIX,twitpic.com
 DOMAIN-SUFFIX,twitterstat.us
 DOMAIN-SUFFIX,twitter.jp
 DOMAIN-SUFFIX,twittercommunity.com
-DOMAIN-SUFFIX,twitterflightschool.com
 DOMAIN-SUFFIX,twitterinc.com
 DOMAIN-SUFFIX,twitteroauth.com
 DOMAIN-SUFFIX,twitter.biz
@@ -27,22 +35,15 @@ DOMAIN-SUFFIX,ads-twitter.com
 DOMAIN-SUFFIX,tellapart.com
 DOMAIN-SUFFIX,cms-twdigitalassets.com
 
-# --- Video / Streaming (Legacy included) ---
+# --- Video / Streaming ---
 DOMAIN-SUFFIX,periscope.tv
 DOMAIN-SUFFIX,pscp.tv
-DOMAIN-SUFFIX,vine.co
-DOMAIN-SUFFIX,twvid.com
 
-# --- Keyword ---
-DOMAIN-KEYWORD,twitter
-
-# --- IP CIDR (Standard & Expanded) ---
-IP-CIDR,104.244.40.0/21,no-resolve  # (NEW) Critical for Mobile/Media
-IP-CIDR,64.63.0.0/18,no-resolve     # (NEW) Major Server Block
-IP-CIDR,69.195.160.0/19,no-resolve
+# --- IP CIDR (X/Twitter AS13414 verified) ---
+IP-CIDR,104.244.40.0/21,no-resolve
+IP-CIDR,64.63.0.0/18,no-resolve
 IP-CIDR,199.96.56.0/21,no-resolve
-IP-CIDR,209.237.192.0/19,no-resolve
 IP-CIDR,192.133.76.0/22,no-resolve
 IP-CIDR,199.16.156.0/22,no-resolve
 IP-CIDR,199.59.148.0/22,no-resolve
-IP-CIDR,202.160.128.0/22,no-resolve # Asia Pacific Nodes
+IP-CIDR,202.160.128.0/22,no-resolve

@@ -1,11 +1,18 @@
 # =========================================
-# 2. Gemini & AI Live
-# Strategy: PROXY (Taiwan)
+# 2. Gemini & Google AI
+# Strategy: GOOGLEUS
+#
+# 变更说明 2026-06-18：
+# - 新增 Web UI 域名：gemini.google.com, aistudio.google.com, notebooklm.google.com
 # =========================================
 
-# --- Live API & Assistant Backend (新增) ---
+# --- Web UI ---
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,aistudio.google.com
+DOMAIN-SUFFIX,notebooklm.google.com
+
+# --- Live API & Assistant Backend ---
 DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
 DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,firebasevertexai.googleapis.com
 DOMAIN-SUFFIX,aiplatform.googleapis.com
-
