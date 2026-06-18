@@ -80,8 +80,6 @@ DOMAIN,gsa.apple.com
 # ==========================================
 DOMAIN-SUFFIX,push.apple.com
 DOMAIN-SUFFIX,push-apple.com.akadns.net
-# APNs UDP 推送 IP 段（日志实测发现走 FINAL PROXY 漏网）
-IP-CIDR,17.188.128.0/18,no-resolve
 
 # ==========================================
 # 六、iCloud
