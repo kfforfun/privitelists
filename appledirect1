@@ -2,6 +2,10 @@
 # Apple Direct — 直连规则
 # Strategy: DIRECT（直连，无需代理）
 #
+# 变更说明 2026-06-18：
+# - 新增 iOS Weather app 域名（日志实测）
+#   weatherkit.apple.com, weather-map2.apple.com
+#
 # 变更说明 2026-06-17：
 # - 补充 Apple 官方企业网络文档所列全部直连域名
 #   参考: https://support.apple.com/en-us/101555 (更新至 2026-04)
@@ -9,8 +13,7 @@
 # - 新增：2026-01 官方新增 iCloud 连接测试域名
 # - 新增：2025 新增附加组件更新域名 (gdmf-ados, gsra)
 # - 新增：macOS 恢复、内容缓存相关域名
-# - 统一 DOMAIN vs DOMAIN-SUFFIX 写法：
-#   完整主机名用 DOMAIN，需匹配所有子域用 DOMAIN-SUFFIX
+# - 统一 DOMAIN vs DOMAIN-SUFFIX 写法
 # =========================================
 
 # ==========================================
@@ -29,35 +32,25 @@ DOMAIN,time-macos.apple.com
 # ==========================================
 # 二、系统与软件更新 (Software Updates)
 # ==========================================
-# iOS / iPadOS / tvOS / macOS 更新主入口
 DOMAIN,gg.apple.com
-# macOS 专用更新
 DOMAIN,ig.apple.com
 DOMAIN,skl.apple.com
 DOMAIN,swcdn.apple.com
 DOMAIN,swdist.apple.com
 DOMAIN,swdownload.apple.com
 DOMAIN,swscan.apple.com
-# macOS 恢复模式
 DOMAIN,oscdn.apple.com
 DOMAIN,osrecovery.apple.com
-# Rosetta 2 更新
 DOMAIN,configuration.apple.com
-# 更新目录
 DOMAIN,mesu.apple.com
 DOMAIN,gdmf.apple.com
-# 2025 新增：附加组件更新
 DOMAIN,gdmf-ados.apple.com
 DOMAIN,gsra.apple.com
-# 更新 CDN（含子域）
 DOMAIN-SUFFIX,updates.cdn-apple.com
 DOMAIN-SUFFIX,updates-http.cdn-apple.com
-# App 下载主域
 DOMAIN,iosapps.itunes.apple.com
 DOMAIN,osxapps.itunes.apple.com
-# 通用 CDN（用于 iCloud/更新）
 DOMAIN-SUFFIX,cdn-apple.com
-# xp（跨平台功能）
 DOMAIN,xp.apple.com
 
 # ==========================================
@@ -97,13 +90,10 @@ DOMAIN-SUFFIX,apple-livephotoskit.com
 DOMAIN-SUFFIX,apzones.com
 DOMAIN-SUFFIX,gc.apple.com
 DOMAIN-SUFFIX,me.com
-# 2026-01 官方新增：iCloud 连接测试 & 诊断
 DOMAIN,probe.icloud.com
 DOMAIN,pong.icloud.com
 DOMAIN,metrics.icloud.com
-# 2026-01 官方新增：RCS 消息
 DOMAIN,apple-native-relay.apple.com
-# iCloud Private Relay 管理面板（直连）
 DOMAIN,mask-api.icloud.com
 
 # ==========================================
@@ -129,3 +119,12 @@ DOMAIN,idv-prod1.apple.com
 # 九、中国大陆 Apple 服务
 # ==========================================
 DOMAIN-SUFFIX,apple.com.cn
+
+# ==========================================
+# 十、iOS Weather App / WeatherKit
+# 【说明】走代理反而导致天气数据加载失败，强制直连
+# ==========================================
+# WeatherKit API 核心端点
+DOMAIN,weatherkit.apple.com
+# 天气地图 / 雷达分发
+DOMAIN,weather-map2.apple.com
