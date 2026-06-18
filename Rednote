@@ -7,7 +7,7 @@ DOMAIN-SUFFIX,xiaohongshu.net
 DOMAIN-SUFFIX,xiaohongshu.com.cn
 DOMAIN-SUFFIX,xiaohongshu.net.cn
 
-# 国际版域名 (独立品牌)
+# 国际版域名 (独立品牌，2026-04 起强制跳转)
 DOMAIN-SUFFIX,rednote.com
 
 # 静态资源与图片视频分发 (CDN)
@@ -30,5 +30,5 @@ DOMAIN-SUFFIX,xhssys.cn
 DOMAIN-SUFFIX,xhssys.net
 DOMAIN-SUFFIX,xhsos.com
 
-# 兜底关键字匹配 (强制拦截所有URL中包含 xiaohongshu 字符的长尾请求)
-DOMAIN-KEYWORD,xiaohongshu
+# 广告投放与追踪域名（小红书自有）
+DOMAIN-SUFFIX,redbascket.com
