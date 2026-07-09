@@ -131,7 +131,7 @@ DOMAIN-SUFFIX,apple.com.cn
 # ==========================================
 DOMAIN,weatherkit.apple.com
 DOMAIN,weather-map2.apple.com
-
+DOMAIN,weather-analytics-events.apple.com
 # ==========================================
 # 十一、Apple Maps / Location Services
 # 【说明】ls.apple.com 为地图图块与矢量数据分发节点，
