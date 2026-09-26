@@ -9,6 +9,7 @@
 #   DigiCert OCSP/CRL（含 ocsp.digicert.cn）
 # - 补全 APNs 地址段，不使用 17.0.0.0/8
 # - 配置已开启 IPv6，补 APNs IPv6 段
+# - Weather：改为 DOMAIN-SUFFIX，补 weather-data.apple.com、weather-map.apple.com
 #
 # 变更说明 2026-07-09：
 # - 新增 weather-analytics-events.apple.com
@@ -155,10 +156,13 @@ DOMAIN-SUFFIX,apple.com.cn
 # ==========================================
 # 十、iOS Weather App / WeatherKit
 # 【说明】走代理反而导致天气数据加载失败，强制直连
+# weather-map 不包含 weather-map2，两条都要保留
 # ==========================================
-DOMAIN,weatherkit.apple.com
-DOMAIN,weather-map2.apple.com
-DOMAIN,weather-analytics-events.apple.com
+DOMAIN-SUFFIX,weatherkit.apple.com
+DOMAIN-SUFFIX,weather-data.apple.com
+DOMAIN-SUFFIX,weather-map.apple.com
+DOMAIN-SUFFIX,weather-map2.apple.com
+DOMAIN-SUFFIX,weather-analytics-events.apple.com
 
 # ==========================================
 # 十一、Apple Maps / Location Services
