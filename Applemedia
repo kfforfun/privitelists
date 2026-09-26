@@ -8,7 +8,7 @@ DOMAIN,bookkeeper.itunes.apple.com
 DOMAIN,amp-api.podcasts.apple.com
 DOMAIN-SUFFIX,news-assets.apple.com
 
-#  App Store &美区商店
+#  App Store & 媒体服务 (美区商店)
 # 浏览商店、Apple Music/TV/News、书
 DOMAIN-SUFFIX,itunes.apple.com
 DOMAIN-SUFFIX,apps.apple.com
@@ -22,7 +22,6 @@ DOMAIN-SUFFIX,arcade.apple.com
 DOMAIN-SUFFIX,fitness.apple.com
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
-#DOMAIN-SUFFIX,apple.com.co
 
 # --- Siri AI / Apple Intelligence ---
 # 官方清单 2026-08-07: https://support.apple.com/en-us/101555

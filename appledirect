@@ -1,6 +1,17 @@
 # =========================================
 # Apple Direct — 直连规则
-# Strategy: DIRECT（直连，无需代理）
+# Strategy: DIRECT（直连，不可切换到代理）
+#
+# 变更说明 2026-09-27：
+# - 对照 https://support.apple.com/en-us/101555（2026-08-07）补系统直连域名
+#   appldnld / sq-device / appattest / doh.dns / wkms-public / diagassets
+#   *.apple-dns.net / token.safebrowsing.apple / app-site-association.networking.apple
+#   DigiCert OCSP/CRL（含 ocsp.digicert.cn）
+# - 补全 APNs 地址段，不使用 17.0.0.0/8
+# - 配置已开启 IPv6，补 APNs IPv6 段
+#
+# 变更说明 2026-07-09：
+# - 新增 weather-analytics-events.apple.com
 #
 # 变更说明 2026-06-18：
 # - 日志实测补充 Apple Maps 域名与 APNs IP 段
@@ -10,8 +21,8 @@
 #   weatherkit.apple.com, weather-map2.apple.com
 #
 # 变更说明 2026-06-17：
-# - 补充 Apple 官方企业网络文档所列全部直连域名
-#   参考: https://support.apple.com/en-us/101555 (更新至 2026-04)
+# - 补充 Apple 官方企业网络文档所列直连域名
+#   参考: https://support.apple.com/en-us/101555
 # - 新增：设备激活、证书验证 (OCSP/CRL)、Apple ID 认证域名
 # - 新增：2026-01 官方新增 iCloud 连接测试域名
 # - 新增：2025 新增附加组件更新域名 (gdmf-ados, gsra)
@@ -27,6 +38,7 @@ DOMAIN,captive.apple.com
 DOMAIN,gs.apple.com
 DOMAIN,static.ips.apple.com
 DOMAIN,tbsc.apple.com
+DOMAIN,sq-device.apple.com
 # 时间同步 (NTP / UDP 123)
 DOMAIN,time.apple.com
 DOMAIN,time-ios.apple.com
@@ -34,6 +46,7 @@ DOMAIN,time-macos.apple.com
 
 # ==========================================
 # 二、系统与软件更新 (Software Updates)
+# appldnld / wkms-public 官方标明不支持代理
 # ==========================================
 DOMAIN,gg.apple.com
 DOMAIN,ig.apple.com
@@ -49,6 +62,8 @@ DOMAIN,mesu.apple.com
 DOMAIN,gdmf.apple.com
 DOMAIN,gdmf-ados.apple.com
 DOMAIN,gsra.apple.com
+DOMAIN,appldnld.apple.com
+DOMAIN,wkms-public.apple.com
 DOMAIN-SUFFIX,updates.cdn-apple.com
 DOMAIN-SUFFIX,updates-http.cdn-apple.com
 DOMAIN,iosapps.itunes.apple.com
@@ -65,6 +80,10 @@ DOMAIN,crl.apple.com
 DOMAIN,ocsp.apple.com
 DOMAIN,ocsp2.apple.com
 DOMAIN,valid.apple.com
+DOMAIN,ocsp.digicert.cn
+DOMAIN,ocsp.digicert.com
+DOMAIN,crl3.digicert.com
+DOMAIN,crl4.digicert.com
 
 # ==========================================
 # 四、Apple Account / Apple ID 认证
@@ -77,11 +96,19 @@ DOMAIN,gsa.apple.com
 # ==========================================
 # 五、推送通知 (APNs)
 # 【关键】必须直连，否则消息延迟、省电失效
+# 不要放行整段 17.0.0.0/8，否则媒体 CDN 也会被直连
 # ==========================================
 DOMAIN-SUFFIX,push.apple.com
 DOMAIN-SUFFIX,push-apple.com.akadns.net
-# APNs UDP 推送 IP 段（日志实测发现走 FINAL PROXY 漏网）
+IP-CIDR,17.249.0.0/16,no-resolve
+IP-CIDR,17.252.0.0/16,no-resolve
+IP-CIDR,17.57.144.0/22,no-resolve
+IP-CIDR,17.188.20.0/23,no-resolve
 IP-CIDR,17.188.128.0/18,no-resolve
+IP-CIDR6,2620:149:a44::/48,no-resolve
+IP-CIDR6,2403:300:a42::/48,no-resolve
+IP-CIDR6,2403:300:a51::/48,no-resolve
+IP-CIDR6,2a01:b740:a42::/48,no-resolve
 
 # ==========================================
 # 六、iCloud
@@ -132,9 +159,22 @@ DOMAIN-SUFFIX,apple.com.cn
 DOMAIN,weatherkit.apple.com
 DOMAIN,weather-map2.apple.com
 DOMAIN,weather-analytics-events.apple.com
+
 # ==========================================
 # 十一、Apple Maps / Location Services
 # 【说明】ls.apple.com 为地图图块与矢量数据分发节点，
 #        走代理导致地图加载慢，应强制直连
 # ==========================================
 DOMAIN-SUFFIX,ls.apple.com
+
+# ==========================================
+# 十二、必须直连且不能落入 Applemedia 的 apple.com 兜底
+# App Attest、Apple DoH、诊断资产、iCloud DNS、欺诈网站警告、Universal Links
+# token.safebrowsing.apple 与 app-site-association.networking.apple 的后缀是 .apple
+# ==========================================
+DOMAIN-SUFFIX,appattest.apple.com
+DOMAIN,doh.dns.apple.com
+DOMAIN,diagassets.apple.com
+DOMAIN-SUFFIX,apple-dns.net
+DOMAIN,token.safebrowsing.apple
+DOMAIN,app-site-association.networking.apple
