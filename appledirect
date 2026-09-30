@@ -1,0 +1,21 @@
+# Apple Weather / WeatherKit
+# Strategy: DIRECT
+DOMAIN-SUFFIX,weatherkit.apple.com
+DOMAIN-SUFFIX,weather-data.apple.com
+DOMAIN-SUFFIX,weather-map.apple.com
+DOMAIN-SUFFIX,weather-map2.apple.com
+DOMAIN-SUFFIX,weather-analytics-events.apple.com
+# ==========================================
+# 时间同步
+# ==========================================
+DOMAIN,time.apple.com
+DOMAIN,time-ios.apple.com
+DOMAIN,time-macos.apple.com
+
+# ==========================================
+# 支付
+# ==========================================
+DOMAIN-SUFFIX,apple-pay.com
+DOMAIN,humb.apple.com
+DOMAIN,pos-device.apple.com
+DOMAIN,smp-device-content.apple.com
