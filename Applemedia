@@ -1,6 +1,6 @@
 # =========================================
 # 4. Apple Store & Media
-# Strategy: PROXY (US)
+# Strategy: PROXY
 # =========================================
 
 # --- Podcast Optimization ---
@@ -21,6 +21,7 @@ DOMAIN-SUFFIX,arcade.apple.com
 DOMAIN-SUFFIX,fitness.apple.com
 DOMAIN-SUFFIX,news.apple.com
 DOMAIN-SUFFIX,apple.news
+DOMAIN-SUFFIX,itunes.com
 
 # --- Apple ID / 地区判定 ---
 DOMAIN,account.apple.com
@@ -79,3 +80,9 @@ DOMAIN-SUFFIX,smoot.apple.com
 
 # --- Catch-all ---
 DOMAIN-SUFFIX,apple.com
+
+# --- Apple 自有 IP 段（官方防火墙段，仅处理直连 IP 的连接） ---
+IP-CIDR,17.0.0.0/8,no-resolve
+IP-CIDR6,2403:300::/32,no-resolve
+IP-CIDR6,2620:149::/32,no-resolve
+IP-CIDR6,2a01:b740::/32,no-resolve
