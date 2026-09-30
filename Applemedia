@@ -57,11 +57,6 @@ DOMAIN,ocsp.digicert.cn
 DOMAIN,ocsp.digicert.com
 DOMAIN,crl3.digicert.com
 DOMAIN,crl4.digicert.com
-DOMAIN-SUFFIX,weatherkit.apple.com
-DOMAIN-SUFFIX,weather-data.apple.com
-DOMAIN-SUFFIX,weather-map.apple.com
-DOMAIN-SUFFIX,weather-map2.apple.com
-DOMAIN-SUFFIX,weather-analytics-events.apple.com
 DOMAIN-SUFFIX,ls.apple.com
 DOMAIN-SUFFIX,cdn-apple.com
 DOMAIN-SUFFIX,apple-dns.net
