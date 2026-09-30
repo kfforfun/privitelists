@@ -21,18 +21,3 @@ IP-CIDR6,2620:149:a44::/48,no-resolve
 IP-CIDR6,2403:300:a42::/48,no-resolve
 IP-CIDR6,2403:300:a51::/48,no-resolve
 IP-CIDR6,2a01:b740:a42::/48,no-resolve
-
-# ==========================================
-# 时间同步
-# ==========================================
-DOMAIN,time.apple.com
-DOMAIN,time-ios.apple.com
-DOMAIN,time-macos.apple.com
-
-# ==========================================
-# 支付
-# ==========================================
-DOMAIN-SUFFIX,apple-pay.com
-DOMAIN,humb.apple.com
-DOMAIN,pos-device.apple.com
-DOMAIN,smp-device-content.apple.com
