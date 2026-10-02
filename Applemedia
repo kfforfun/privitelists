@@ -58,7 +58,6 @@ DOMAIN,ocsp.digicert.cn
 DOMAIN,ocsp.digicert.com
 DOMAIN,crl3.digicert.com
 DOMAIN,crl4.digicert.com
-DOMAIN-SUFFIX,ls.apple.com
 DOMAIN-SUFFIX,cdn-apple.com
 DOMAIN-SUFFIX,apple-dns.net
 DOMAIN,token.safebrowsing.apple
