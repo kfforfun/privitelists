@@ -19,8 +19,3 @@ DOMAIN-SUFFIX,apple-pay.com
 DOMAIN,humb.apple.com
 DOMAIN,pos-device.apple.com
 DOMAIN,smp-device-content.apple.com
-
-# ==========================================
-# 地图 / 位置服务
-# ==========================================
-DOMAIN-SUFFIX,ls.apple.com
